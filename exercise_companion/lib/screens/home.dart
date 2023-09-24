@@ -16,30 +16,35 @@ class HomePage extends StatelessWidget {
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
+              /*Padding(
                 padding: EdgeInsets.all(15.0),
                 //child: BusinessCardWidget(),
-              ),
+              ),*/
               Stack(
                 //alignment:new Alignment(x, y)
                 children: <Widget>[
-                  Image.asset(
+                  Center(
+                      child: Image.asset(
                     'images/lake.jpg',
                     //width: 600,
-                    //height: 240,
+                    height: 400,
                     //fit: BoxFit.cover,
                     fit: BoxFit.fill,
+                  )),
+                  Column(
+                    children: [
+                      const Padding(padding: EdgeInsets.only(top: 400 - 240)),
+                      Center(
+                        child: Image.asset(
+                          'images/pet_test.png',
+                          //width: 600,
+                          height: 240,
+                          //fit: BoxFit.cover,
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    ],
                   ),
-                  Positioned(
-                    left: 20.0,
-                    child: Image.asset(
-                      'images/pet_test.png',
-                      //width: 600,
-                      //height: 240,
-                      //fit: BoxFit.cover,
-                      fit: BoxFit.fill,
-                    ),
-                  )
                 ],
               ),
             ],
