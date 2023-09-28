@@ -13,76 +13,79 @@ class CustomizationPage extends StatelessWidget {
           appBar: AppBar(),
           title: "Wardrobe",
         ),
-        body: Center(
-          child: Column(
-            //mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              /*Padding(
-                padding: EdgeInsets.all(15.0),
-                //child: BusinessCardWidget(),
-              ),*/
-              SizedBox(
-                  height: MediaQuery.of(context).size.height - 324,
-                  child: Stack(
-                    //alignment:new Alignment(x, y)
-                    children: <Widget>[
-                      Center(
-                          child: Image.asset(
-                        'images/lake.jpg',
+        body: Column(
+          //mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              //alignment:new Alignment(x, y)
+              children: <Widget>[
+                Center(
+                    child: Image.asset(
+                  'images/lake.jpg',
+                  //width: 600,
+                  height: MediaQuery.of(context).size.height - 114,
+                  //fit: BoxFit.cover,
+                  fit: BoxFit.fill,
+                )),
+                Column(
+                  children: [
+                    const Padding(padding: EdgeInsets.only(top: 200)),
+                    Center(
+                      child: Image.asset(
+                        'images/pet_test.png',
                         //width: 600,
-                        height: 400,
+                        height: 240,
                         //fit: BoxFit.cover,
-                        fit: BoxFit.fill,
-                      )),
-                      Column(
-                        children: [
-                          const Padding(padding: EdgeInsets.only(top: 100)),
-                          Center(
-                            child: Image.asset(
-                              'images/pet_test.png',
-                              //width: 600,
-                              height: 240,
-                              //fit: BoxFit.cover,
-                              fit: BoxFit.fill,
-                            ),
-                          )
-                        ],
+                        fit: BoxFit.cover,
                       ),
-                    ],
-                  )),
-              /*SingleChildScrollView(
-                  child: Row(children: [
-                SizedBox(
-                    height: 210,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.all(12),
-                      itemCount: 10,
-                      separatorBuilder: (context, index) {
-                        return const SizedBox(width: 12);
-                      },
-                      itemBuilder: (context, index) {
-                        return AccessoryCardWidget(index);
-                      },
-                    ))
-              ]))*/
-              SizedBox(
-                  height: 210,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.all(12),
-                    itemCount: 10,
-                    separatorBuilder: (context, index) {
-                      return const SizedBox(width: 12);
-                    },
-                    itemBuilder: (context, index) {
-                      return AccessoryCardWidget(index);
-                    },
-                  ))
-            ],
-          ),
+                    )
+                  ],
+                ),
+                accessoryContainer(context),
+              ],
+            ),
+          ],
         ),
         resizeToAvoidBottomInset: false,
         bottomNavigationBar: const BaseBottomNavigationBar());
+  }
+
+  Widget accessoryContainer(BuildContext context) {
+    return Column(children: [
+      Padding(
+          padding:
+              EdgeInsets.only(top: MediaQuery.of(context).size.height - 372)),
+      Padding(
+          padding: EdgeInsets.all(24),
+          child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(24.0)),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 20.0,
+                      color: Colors.grey,
+                    ),
+                  ]),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      //width: 150,
+                      height: 210,
+                      child: SizedBox(
+                          height: 210,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            padding: const EdgeInsets.all(12),
+                            itemCount: 10,
+                            separatorBuilder: (context, index) {
+                              return const SizedBox(width: 12);
+                            },
+                            itemBuilder: (context, index) {
+                              return accessoryCardWidget(index);
+                            },
+                          ))))))
+    ]);
   }
 }

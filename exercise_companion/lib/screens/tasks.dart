@@ -16,8 +16,10 @@ class TaskPage extends StatelessWidget {
         body: ListView(
           children: <Widget>[
             TaskViewWidget(
-                title: "Task 1", text: "Do X Y Z", completion: false),
-            TaskViewWidget(title: "Task 2", text: "Do A B C", completion: true),
+                title: "Step", text: "Walk 200 Steps", completion: false),
+            const Divider(),
+            TaskViewWidget(
+                title: "Pet", text: "Interact with your Pet", completion: true),
           ],
         ),
         resizeToAvoidBottomInset: false,
