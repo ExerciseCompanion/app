@@ -31,20 +31,11 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: <Widget>[
         IconButton(
           icon: const Icon(
-            Icons.search,
-            semanticLabel: 'search',
-          ),
-          onPressed: () {
-            print('Search button');
-          },
-        ),
-        IconButton(
-          icon: const Icon(
-            Icons.tune,
+            Icons.settings,
             semanticLabel: 'filter',
           ),
           onPressed: () {
-            print('Filter button');
+            print('Settings button');
           },
         ),
       ],

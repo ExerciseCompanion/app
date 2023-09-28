@@ -13,6 +13,20 @@ class HomePage extends StatelessWidget {
           title: "Home",
         ),
         body: Center(
+            child: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [
+              0.0,
+              0.7,
+            ],
+            colors: [
+              Colors.teal,
+              Colors.indigo,
+            ],
+          )),
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -47,9 +61,58 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
+              SingleChildScrollView(
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height - 514,
+                  child: ListView(
+                    children: [
+                      ListTile(
+                        title: Text('this is title'),
+                        subtitle: Text('this is sub title'),
+                      ),
+                      ListTile(
+                        title: Text('this is title'),
+                        subtitle: Text('this is sub title'),
+                      ),
+                      ListTile(
+                        title: Text('this is title'),
+                        subtitle: Text('this is sub title'),
+                      ),
+                      ListTile(
+                        title: Text('this is title'),
+                        subtitle: Text('this is sub title'),
+                      ),
+                      ListTile(
+                        title: Text('this is title'),
+                        subtitle: Text('this is sub title'),
+                      ),
+                      ListTile(
+                        title: Text('this is title'),
+                        subtitle: Text('this is sub title'),
+                      ),
+                      ListTile(
+                        title: Text('this is title'),
+                        subtitle: Text('this is sub title'),
+                      ),
+                      ListTile(
+                        title: Text('this is title'),
+                        subtitle: Text('this is sub title'),
+                      ),
+                      ListTile(
+                        title: Text('this is title'),
+                        subtitle: Text('this is sub title'),
+                      ),
+                      ListTile(
+                        title: Text('this is title'),
+                        subtitle: Text('this is sub title'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
-        ),
+        )),
         resizeToAvoidBottomInset: false,
         bottomNavigationBar: const BaseBottomNavigationBar());
   }

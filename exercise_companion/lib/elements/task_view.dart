@@ -19,6 +19,10 @@ class TaskViewWidget extends StatelessWidget {
       color: Colors.green,
       height: 100.0,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+        /*ListTile(
+          title: Text(title),
+          subtitle: Text(text),
+        ),*/
         Text(title),
         Text(text),
         Checkbox(
