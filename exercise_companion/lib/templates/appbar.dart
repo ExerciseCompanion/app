@@ -18,7 +18,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
+      /*leading: IconButton(
         icon: const Icon(
           Icons.menu,
           semanticLabel: 'menu',
@@ -26,7 +26,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () {
           print('Menu button');
         },
-      ),
+      ),*/
       title: Text(title),
       actions: <Widget>[
         IconButton(

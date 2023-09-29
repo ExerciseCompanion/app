@@ -54,11 +54,11 @@ class CustomizationPage extends StatelessWidget {
     return Column(children: [
       Padding(
           padding:
-              EdgeInsets.only(top: MediaQuery.of(context).size.height - 372)),
+              EdgeInsets.only(top: MediaQuery.of(context).size.height - 336)),
       Padding(
-          padding: EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
           child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(24.0)),
                   boxShadow: [
@@ -70,9 +70,9 @@ class CustomizationPage extends StatelessWidget {
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
-                      color: Color.fromARGB(255, 255, 255, 255),
+                      color: Colors.white,
                       //width: 150,
-                      height: 210,
+                      height: 174,
                       child: SizedBox(
                           height: 210,
                           child: ListView.separated(

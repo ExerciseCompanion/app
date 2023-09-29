@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
         ),
         body: SlidingUpPanel(
           panel: _panel(),
-          collapsed: _collapsedPanel(),
+          collapsed: _collapsedPanel(context, 24),
           body: _mainBody(context),
           borderRadius: radius(),
           margin: panelMargins(),
@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: radius(),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 20.0,
               color: Colors.grey,
@@ -53,16 +53,43 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _collapsedPanel() {
+  Widget _collapsedPanel(BuildContext context, steps) {
     return Container(
-      decoration: BoxDecoration(color: Colors.blueGrey, borderRadius: radius()),
+      decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            stops: [
+              0.0,
+              0.7,
+            ],
+            colors: [
+              Colors.teal,
+              Colors.indigo,
+            ],
+          ),
+          //color: Colors.blueGrey,
+          borderRadius: radius()),
       //margin: panelMargins(),
-      child: const Center(
-        child: Text(
-          "Slide Up For Stats",
+      child: Column(children: [
+        const Padding(padding: EdgeInsets.all(7)),
+        Padding(
+            padding: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width / 3,
+                right: MediaQuery.of(context).size.width / 3),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  color: Colors.grey,
+                  //width: 250,
+                  height: 5,
+                ))),
+        const Padding(padding: EdgeInsets.all(13)),
+        Text(
+          "$steps Taken Today",
           style: TextStyle(color: Colors.white),
         ),
-      ),
+      ]),
     );
   }
 

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 class BaseBottomNavigationBar extends StatefulWidget {
   final int index = 0;
-  const BaseBottomNavigationBar({super.key}); //, required index});
+  const BaseBottomNavigationBar({super.key, index}); //, required index});
 
   @override
   State<BaseBottomNavigationBar> createState() =>
@@ -67,7 +67,7 @@ class _BottomNavigationBarExampleState extends State<BaseBottomNavigationBar> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Theme.of(context).primaryColor,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed);
   }
