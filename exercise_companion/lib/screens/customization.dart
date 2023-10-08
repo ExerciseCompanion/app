@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../templates/appbar.dart';
 import '../templates/bottombar.dart';
 import '../elements/accessory_card.dart';
+import '../elements/pet.dart';
+import 'dart:math';
 
 class CustomizationPage extends StatelessWidget {
   const CustomizationPage({Key? key}) : super(key: key);
@@ -13,39 +15,29 @@ class CustomizationPage extends StatelessWidget {
           appBar: AppBar(),
           title: "Wardrobe",
         ),
-        body: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Stack(
-              //alignment:new Alignment(x, y)
-              children: <Widget>[
-                Center(
-                    child: Image.asset(
-                  'images/lake.jpg',
-                  //width: 600,
-                  height: MediaQuery.of(context).size.height - 114,
-                  //fit: BoxFit.cover,
-                  fit: BoxFit.fill,
-                )),
-                Column(
-                  children: [
-                    const Padding(padding: EdgeInsets.only(top: 200)),
-                    Center(
-                      child: Image.asset(
-                        'images/pet_test.png',
-                        //width: 600,
-                        height: 240,
-                        //fit: BoxFit.cover,
-                        fit: BoxFit.cover,
-                      ),
-                    )
-                  ],
-                ),
-                accessoryContainer(context),
-              ],
-            ),
-          ],
-        ),
+        /*body: Column(children: [
+          Container(
+              decoration: const BoxDecoration(
+                color: Color(0xFF3D2C50),
+                /*image: DecorationImage(
+                image: AssetImage('images/backgrounds/test.jpg'),
+                fit: BoxFit.cover,
+              ),*/
+              ),
+              height: MediaQuery.of(context).size.height - 114,
+              child: Pet(
+                  background: 'images/backgrounds/test.jpg',
+                  pet: 'images/pet_test.png',
+                  accessory: 'images/red_cap.png')),
+          accessoryContainer(context),
+        ]),*/
+        body: Stack(children: [
+          Pet(
+              background: 'images/backgrounds/test.jpg',
+              pet: 'images/pet_test.png',
+              accessory: 'images/red_cap.png'),
+          accessoryContainer(context)
+        ]),
         resizeToAvoidBottomInset: false,
         bottomNavigationBar: const BaseBottomNavigationBar());
   }
@@ -53,8 +45,8 @@ class CustomizationPage extends StatelessWidget {
   Widget accessoryContainer(BuildContext context) {
     return Column(children: [
       Padding(
-          padding:
-              EdgeInsets.only(top: MediaQuery.of(context).size.height - 336)),
+          padding: EdgeInsets.only(
+              top: max(MediaQuery.of(context).size.height - 336, 0))),
       Padding(
           padding: const EdgeInsets.all(24),
           child: Container(

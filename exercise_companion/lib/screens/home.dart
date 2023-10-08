@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import '../templates/appbar.dart';
 import '../templates/bottombar.dart';
+import '../elements/line_chart.dart';
+import '../elements/aspect_box.dart';
+import '../elements/pet.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,14 +12,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: BaseAppBar(
+        /*appBar: BaseAppBar(
           appBar: AppBar(),
           title: "Home",
-        ),
+        ),*/
         body: SlidingUpPanel(
           panel: _panel(),
           collapsed: _collapsedPanel(context, 24),
-          body: _mainBody(context),
+          body: Pet(
+              background: 'images/backgrounds/test.jpg',
+              pet: 'images/pet_test.png',
+              accessory: 'images/red_cap.png'),
           borderRadius: radius(),
           margin: panelMargins(),
         ),
@@ -37,20 +43,23 @@ class HomePage extends StatelessWidget {
 
   Widget _panel() {
     return Container(
-      decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: radius(),
-          boxShadow: const [
-            BoxShadow(
-              blurRadius: 20.0,
-              color: Colors.grey,
-            ),
-          ]),
-      //margin: panelMargins(),
-      child: Center(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: radius(),
+            boxShadow: const [
+              BoxShadow(
+                blurRadius: 20.0,
+                color: Colors.grey,
+              ),
+            ]),
+        //margin: panelMargins(),
+        child: SingleChildScrollView(
+            child: Column(children: [
+          LineChartSample2()
+        ])) /*Center(
         child: Text("Walking Statics and Pet Info Goes Here"),
-      ),
-    );
+      ),*/
+        );
   }
 
   Widget _collapsedPanel(BuildContext context, steps) {
@@ -86,45 +95,10 @@ class HomePage extends StatelessWidget {
                 ))),
         const Padding(padding: EdgeInsets.all(13)),
         Text(
-          "$steps Taken Today",
+          "$steps Steps Taken Today",
           style: TextStyle(color: Colors.white),
         ),
       ]),
-    );
-  }
-
-  Widget _mainBody(BuildContext context) {
-    return Column(
-      //mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Stack(
-          //alignment:new Alignment(x, y)
-          children: <Widget>[
-            Center(
-                child: Image.asset(
-              'images/lake.jpg',
-              //width: 600,
-              //height: MediaQuery.of(context).size.height,
-              //fit: BoxFit.cover,
-              fit: BoxFit.fill,
-            )),
-            Column(
-              children: [
-                const Padding(padding: EdgeInsets.only(top: 400 - 240)),
-                Center(
-                  child: Image.asset(
-                    'images/pet_test.png',
-                    //width: 600,
-                    height: 240,
-                    //fit: BoxFit.cover,
-                    fit: BoxFit.cover,
-                  ),
-                )
-              ],
-            ),
-          ],
-        ),
-      ],
     );
   }
 }
