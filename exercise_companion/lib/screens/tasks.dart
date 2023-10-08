@@ -1,3 +1,5 @@
+import 'package:exercise_companion/data_model/user_db.dart';
+import 'package:exercise_companion/data_model/user_task_db.dart';
 import 'package:flutter/material.dart';
 import '../templates/appbar.dart';
 import '../templates/bottombar.dart';
@@ -14,13 +16,7 @@ class TaskPage extends StatelessWidget {
           title: "Tasks",
         ),
         body: ListView(
-          children: <Widget>[
-            TaskViewWidget(
-                title: "Step", text: "Walk 200 Steps", completion: false),
-            const Divider(),
-            TaskViewWidget(
-                title: "Pet", text: "Interact with your Pet", completion: true),
-          ],
+          children: userTasksDB.getTaskWidgets(currentUserID),
         ),
         resizeToAvoidBottomInset: false,
         bottomNavigationBar: const BaseBottomNavigationBar());

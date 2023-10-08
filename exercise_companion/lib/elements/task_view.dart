@@ -5,7 +5,8 @@ import 'checkbox.dart';
 class TaskViewWidget extends StatelessWidget {
   final String title;
   final String text;
-  final bool completion;
+  //final bool completion;
+  final int completion;
 
   const TaskViewWidget(
       {super.key,
@@ -13,23 +14,25 @@ class TaskViewWidget extends StatelessWidget {
       required this.text,
       required this.completion});
 
-  Widget getCompletionWidget(bool completion) {
-    if (completion) {
+  Widget getCompletionWidget(int completion) {
+    if (completion == 1) {
       return ElevatedButton(
           style: ElevatedButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20)),
           onPressed: () {},
           child: const Text('Claim'));
+    } else if (completion == 0) {
+      return const Text("In Progress");
     } else {
-      return Text("In Progress");
+      return const Text("Claimed");
     }
   }
 
-  Icon getCompletionIcon(bool completion, BuildContext context) {
-    if (completion) {
-      return Icon(Icons.task, color: Theme.of(context).primaryColor);
-    } else {
+  Icon getCompletionIcon(int completion, BuildContext context) {
+    if (completion == 0) {
       return Icon(Icons.task_outlined, color: Theme.of(context).primaryColor);
+    } else {
+      return Icon(Icons.task, color: Theme.of(context).primaryColor);
     }
   }
 
