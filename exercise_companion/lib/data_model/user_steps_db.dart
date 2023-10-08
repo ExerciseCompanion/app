@@ -67,6 +67,15 @@ class UserStepsDB {
     print(sortedDateMapValues);
     return sortedDateMapValues;
   }
+
+  int getTodaysSteps(userID) {
+    final DateTime currentDate = DateTime.now();
+    final String date = DateFormat('MM/dd/yyyy').format(currentDate);
+
+    return _userSteps
+        .firstWhere((stepLog) => stepLog.userID == 0 && stepLog.date == date)
+        .steps;
+  }
 }
 
 UserStepsDB userStepsDB = UserStepsDB();

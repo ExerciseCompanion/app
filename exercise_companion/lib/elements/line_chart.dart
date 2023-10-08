@@ -1,3 +1,4 @@
+import 'package:exercise_companion/data_model/user_db.dart';
 import 'package:exercise_companion/data_model/user_steps_db.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -134,7 +135,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
   LineChartData mainData() {
     //print(userStepsDB.getPastWeekAsList(0));
-    List<int> steps = userStepsDB.getPastWeekAsList(0);
+    List<int> steps = userStepsDB.getPastWeekAsList(currentUserID);
     List<FlSpot> entries = [];
     for (int i = 0; i < steps.length; i++) {
       entries.add(FlSpot(i.toDouble(), steps[i].toDouble()));

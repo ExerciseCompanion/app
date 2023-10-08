@@ -1,3 +1,5 @@
+import 'package:exercise_companion/data_model/user_db.dart';
+import 'package:exercise_companion/data_model/user_steps_db.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import '../templates/appbar.dart';
@@ -18,7 +20,8 @@ class HomePage extends StatelessWidget {
         ),*/
         body: SlidingUpPanel(
           panel: _panel(),
-          collapsed: _collapsedPanel(context, 24),
+          collapsed: _collapsedPanel(
+              context, userStepsDB.getTodaysSteps(currentUserID)),
           body: Pet(
               background: 'images/backgrounds/test.jpg',
               pet: 'images/pet_test.png',
