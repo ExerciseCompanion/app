@@ -15,9 +15,9 @@ class UserTaskDB {
     UserTaskData(id: 0, userID: 0, rewardAccepted: false),
   ];
 
-  /*UserData getUser(String userID) {
-    return _users.firstWhere((userData) => userData.id == userID);
-  }*/
+  List<UserTaskData> getTasks(String userID) {
+    return _userTasks.where((task) => task.userID == userID).toList();
+  }
 }
 
 UserTaskDB userTasksDB = UserTaskDB();

@@ -1,3 +1,4 @@
+import 'package:exercise_companion/data_model/user_db.dart';
 import 'package:flutter/material.dart';
 import '../templates/appbar.dart';
 import '../templates/bottombar.dart';
@@ -10,6 +11,8 @@ class CustomizationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
+
     return Scaffold(
         appBar: BaseAppBar(
           appBar: AppBar(),
@@ -33,9 +36,9 @@ class CustomizationPage extends StatelessWidget {
         ]),*/
         body: Stack(children: [
           Pet(
-              background: 'images/backgrounds/test.jpg',
-              pet: 'images/pet_test.png',
-              accessory: 'images/red_cap.png'),
+              background: assets["background"] ?? "",
+              pet: assets["pet"] ?? "",
+              accessory: assets["accessory"] ?? ""),
           accessoryContainer(context)
         ]),
         resizeToAvoidBottomInset: false,

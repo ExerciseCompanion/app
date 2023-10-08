@@ -17,12 +17,12 @@ class AccessoryDB {
         id: 0,
         name: "Red Cap",
         description: "A Red Cap",
-        asset: "images/red_cap"),
+        asset: "images/red_cap.png"),
   ];
 
-  /*UserData getUser(String userID) {
-    return _users.firstWhere((userData) => userData.id == userID);
-  }*/
+  AccessoryData getAccessory(int id) {
+    return _accessories.firstWhere((item) => item.id == 0);
+  }
 }
 
 AccessoryDB accessoryDB = AccessoryDB();

@@ -1,6 +1,11 @@
+import 'package:exercise_companion/data_model/accessory_db.dart';
+import 'package:exercise_companion/data_model/pet_db.dart';
+
 import 'user_pets_db.dart';
 import 'user_task_db.dart';
 import 'user_steps_db.dart';
+import 'user_pets_db.dart';
+import 'accessory_db.dart';
 
 /// The data associated with users.
 class UserData {
@@ -51,6 +56,22 @@ class UserDB {
     return _users.firstWhere((userData) => userData.id == userID);
   }
 
+  Map<String, String> getMainPetAsset(userID) {
+    int mainPetID = userDB.getUser(userID).mainPetID;
+    UserPetData userPet = userPetDB.getPet(mainPetID);
+    int petID = userPet.petID;
+    int? accessoryID = userPet.accessoryID;
+
+    Map<String, String> assets = {
+      "accessory": accessoryID == null
+          ? ""
+          : accessoryDB.getAccessory(accessoryID).asset,
+      "pet": petDB.getPet(userPet.petID).asset,
+      "background": userDB.getUser(userID).backdropAsset
+    };
+
+    return assets;
+  }
   /*List<UserData> getUsers(List<String> userIDs) {
     return _users.where((userData) => userIDs.contains(userData.id)).toList();
   }

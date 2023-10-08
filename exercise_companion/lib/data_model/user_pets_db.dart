@@ -1,3 +1,6 @@
+import 'package:exercise_companion/data_model/user_db.dart';
+import './pet_db.dart';
+
 class UserPetData {
   UserPetData(
       {required this.id,
@@ -29,9 +32,9 @@ class UserPetDB {
         exp: 100),
   ];
 
-  /*UserData getUser(String userID) {
-    return _users.firstWhere((userData) => userData.id == userID);
-  }*/
+  UserPetData getPet(int petID) {
+    return _userPets.firstWhere((pet) => pet.id == petID);
+  }
 }
 
 UserPetDB userPetDB = UserPetDB();

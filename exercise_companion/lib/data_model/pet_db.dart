@@ -26,12 +26,12 @@ class PetDB {
         maxHealth: 100,
         maxHunger: 100,
         maxExp: 100,
-        asset: "images/pet_test"),
+        asset: "images/pet_test.png"),
   ];
 
-  /*UserData getUser(String userID) {
-    return _users.firstWhere((userData) => userData.id == userID);
-  }*/
+  PetData getPet(int petID) {
+    return _pets.firstWhere((pet) => pet.id == petID);
+  }
 }
 
 PetDB petDB = PetDB();

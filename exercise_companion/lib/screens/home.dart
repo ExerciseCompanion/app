@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
     return Scaffold(
         /*appBar: BaseAppBar(
           appBar: AppBar(),
@@ -23,9 +24,13 @@ class HomePage extends StatelessWidget {
           collapsed: _collapsedPanel(
               context, userStepsDB.getTodaysSteps(currentUserID)),
           body: Pet(
-              background: 'images/backgrounds/test.jpg',
+            background: assets["background"] ?? "",
+            pet: assets["pet"] ?? "",
+            accessory: assets["accessory"] ?? "",
+            /*background: 'images/backgrounds/test.jpg',
               pet: 'images/pet_test.png',
-              accessory: 'images/red_cap.png'),
+              accessory: 'images/red_cap.png'*/
+          ),
           borderRadius: radius(),
           margin: panelMargins(),
         ),
