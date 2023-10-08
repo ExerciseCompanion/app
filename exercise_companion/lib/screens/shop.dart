@@ -28,6 +28,6 @@ new pets.
 - stores new purchased item in databse
 '''),
         resizeToAvoidBottomInset: false,
-        bottomNavigationBar: const BaseBottomNavigationBar());
+        bottomNavigationBar: BaseBottomNavigationBar());
   }
 }

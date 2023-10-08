@@ -5,17 +5,10 @@ import 'package:flutter/material.dart';
 
 /// Flutter code sample for [BottomNavigationBar].
 
-class BaseBottomNavigationBar extends StatefulWidget {
-  final int index = 0;
-  const BaseBottomNavigationBar({super.key, index}); //, required index});
-
-  @override
-  State<BaseBottomNavigationBar> createState() =>
-      _BottomNavigationBarExampleState();
-}
-
-class _BottomNavigationBarExampleState extends State<BaseBottomNavigationBar> {
+class BaseBottomNavigationBar extends StatelessWidget {
   int _selectedIndex = 0;
+  List<String> pages = ["/task", "/pet", "/", "/customization", "/shop"];
+
   /*static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -33,42 +26,47 @@ class _BottomNavigationBarExampleState extends State<BaseBottomNavigationBar> {
     ),
   ];*/
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-    const pages = ["/", "/task", "/customization", "/pet", "/shop"];
+  void _onItemTapped(BuildContext context, int index) {
+    //const pages = ["/task", "/pet", "/", "/customization", "/shop"];
     Navigator.pushNamed(context, pages[index]);
   }
 
   @override
   Widget build(BuildContext context) {
+    print(ModalRoute.of(context)?.settings.name);
+    _selectedIndex = pages
+        .indexWhere((item) => item == ModalRoute.of(context)?.settings.name);
     return BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.task),
-            label: 'Tasks',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.checkroom),
-            label: 'Customization',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.pets),
-            label: 'Pets',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Shop',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Theme.of(context).primaryColor,
-        onTap: _onItemTapped,
-        type: BottomNavigationBarType.fixed);
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.task, size: 30),
+          label: 'Tasks',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.pets, size: 30),
+          label: 'Pets',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home, size: 50),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.checkroom, size: 30),
+          label: 'Customization',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.shopping_cart, size: 30),
+          label: 'Shop',
+        ),
+      ],
+      currentIndex: _selectedIndex,
+      selectedItemColor: Theme.of(context).primaryColor,
+      onTap: (int index) {
+        _onItemTapped(context, index);
+      },
+      type: BottomNavigationBarType.fixed,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+    );
   }
 }

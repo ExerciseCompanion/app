@@ -19,6 +19,6 @@ class TaskPage extends StatelessWidget {
           children: userTasksDB.getTaskWidgets(currentUserID),
         ),
         resizeToAvoidBottomInset: false,
-        bottomNavigationBar: const BaseBottomNavigationBar());
+        bottomNavigationBar: BaseBottomNavigationBar());
   }
 }

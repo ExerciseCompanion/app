@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
           margin: panelMargins(),
         ),
         resizeToAvoidBottomInset: false,
-        bottomNavigationBar: const BaseBottomNavigationBar());
+        bottomNavigationBar: BaseBottomNavigationBar());
   }
 
   EdgeInsets panelMargins() {

@@ -26,6 +26,6 @@ A page to allow to user to select/ change primary pet
 
 '''),
         resizeToAvoidBottomInset: false,
-        bottomNavigationBar: const BaseBottomNavigationBar());
+        bottomNavigationBar: BaseBottomNavigationBar());
   }
 }

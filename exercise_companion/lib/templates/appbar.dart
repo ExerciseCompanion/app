@@ -1,5 +1,6 @@
 //https://stackoverflow.com/questions/53411890/how-can-i-have-my-appbar-in-a-separate-file-in-flutter-while-still-having-the-wi
 
+import 'package:exercise_companion/data_model/user_db.dart';
 import 'package:flutter/material.dart';
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -28,7 +29,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
         },
       ),*/
       title: Text(title),
-      actions: <Widget>[
+      /*actions: <Widget>[
         IconButton(
           icon: const Icon(
             Icons.settings,
@@ -38,6 +39,11 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
             print('Settings button');
           },
         ),
+      ],*/
+
+      actions: <Widget>[
+        Text("\$${userDB.getUser(currentUserID).currency}    ",
+            style: const TextStyle(fontSize: 20)),
       ],
     );
   }

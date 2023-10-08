@@ -43,7 +43,7 @@ class CustomizationPage extends StatelessWidget {
           accessoryContainer(context)
         ]),
         resizeToAvoidBottomInset: false,
-        bottomNavigationBar: const BaseBottomNavigationBar());
+        bottomNavigationBar: BaseBottomNavigationBar());
   }
 
   Widget accessoryContainer(BuildContext context) {
@@ -52,7 +52,7 @@ class CustomizationPage extends StatelessWidget {
     return Column(children: [
       Padding(
           padding: EdgeInsets.only(
-              top: max(MediaQuery.of(context).size.height - 286, 0))),
+              top: max(MediaQuery.of(context).size.height - 312, 0))),
       Padding(
           padding: const EdgeInsets.all(24),
           child: Container(
