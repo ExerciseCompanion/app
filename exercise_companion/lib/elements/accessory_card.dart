@@ -1,7 +1,7 @@
 //https://www.youtube.com/watch?v=4okl2LsLUaU
 import 'package:flutter/material.dart';
 
-Widget accessoryCardWidget(int index) {
+Widget accessoryCardWidget(int index, String name) {
   return Column(
     mainAxisSize: MainAxisSize.min,
     children: [
@@ -33,20 +33,21 @@ Widget accessoryCardWidget(int index) {
                   //color: const Color.fromARGB(255, 192, 192, 192),
                   width: 100,
                   height: 100,
-                  child: Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: Stack(children: [
-                        Image.asset("images/red_cap.png"),
-                        Padding(
-                            padding: const EdgeInsets.only(top: 55),
+                  child: Stack(children: [
+                    Padding(
+                        padding: const EdgeInsets.only(
+                            top: 0, left: 10, right: 10, bottom: 20),
+                        child: Image.asset("images/red_cap.png")),
+                    Padding(
+                        padding: const EdgeInsets.only(top: 70),
+                        child: Center(
                             child: Text(
-                              "$index",
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ))
-                      ] //Center(child: Text("$index")),
-                          ))))),
+                          name,
+                          style: const TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        )))
+                  ] //Center(child: Text("$index")),
+                      )))),
       //const SizedBox(height: 8),
       //Text("$index")
     ],

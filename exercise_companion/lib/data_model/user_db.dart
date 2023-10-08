@@ -49,11 +49,23 @@ class UserDB {
         taskIDs: [0],
         stepIDs: [0],
         petInventoryIDs: [0],
-        accessoryInventoryIDs: [0]),
+        accessoryInventoryIDs: [0, 0]),
   ];
 
   UserData getUser(int userID) {
     return _users.firstWhere((userData) => userData.id == userID);
+  }
+
+  List<AccessoryData> getAccessories(int userID) {
+    List<AccessoryData> accessories = [];
+    List<int> accessoryIDs = userDB.getUser(userID).accessoryInventoryIDs;
+    for (int accessoryID in accessoryIDs) {
+      accessories.add(accessoryDB.getAccessory(accessoryID));
+    }
+
+    return accessories;
+    //return accessoryDB.getAccessories(userDB.getUser(userID).accessoryInventoryIDs);
+    //return accessoryDB.getAccessories();
   }
 
   Map<String, String> getMainPetAsset(userID) {

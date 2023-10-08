@@ -1,5 +1,6 @@
 import 'package:exercise_companion/data_model/user_db.dart';
 import 'package:flutter/material.dart';
+import '../data_model/accessory_db.dart';
 import '../templates/appbar.dart';
 import '../templates/bottombar.dart';
 import '../elements/accessory_card.dart';
@@ -46,6 +47,8 @@ class CustomizationPage extends StatelessWidget {
   }
 
   Widget accessoryContainer(BuildContext context) {
+    List<AccessoryData> accesssories = userDB.getAccessories(currentUserID);
+
     return Column(children: [
       Padding(
           padding: EdgeInsets.only(
@@ -73,12 +76,13 @@ class CustomizationPage extends StatelessWidget {
                           child: ListView.separated(
                             scrollDirection: Axis.horizontal,
                             padding: const EdgeInsets.all(12),
-                            itemCount: 10,
+                            itemCount: accesssories.length,
                             separatorBuilder: (context, index) {
                               return const SizedBox(width: 12);
                             },
                             itemBuilder: (context, index) {
-                              return accessoryCardWidget(index);
+                              return accessoryCardWidget(
+                                  index, accesssories[index].name);
                             },
                           ))))))
     ]);

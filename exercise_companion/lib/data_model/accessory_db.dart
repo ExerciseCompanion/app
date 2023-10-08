@@ -21,7 +21,15 @@ class AccessoryDB {
   ];
 
   AccessoryData getAccessory(int id) {
-    return _accessories.firstWhere((item) => item.id == 0);
+    return _accessories.firstWhere((item) => item.id == id);
+  }
+
+  List<AccessoryData> getAccessories(List<int> ids) {
+    Map<int, int> lookUp = {};
+    for (int id in ids) {
+      lookUp[id] = 0;
+    }
+    return _accessories.where((item) => lookUp.containsKey(item.id)).toList();
   }
 }
 
