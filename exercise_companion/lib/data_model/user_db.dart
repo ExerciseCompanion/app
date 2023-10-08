@@ -1,4 +1,6 @@
+import 'user_pets_db.dart';
 import 'user_task_db.dart';
+import 'user_steps_db.dart';
 
 /// The data associated with users.
 class UserData {
@@ -43,53 +45,9 @@ class UserDB {
         stepIDs: [0],
         petInventoryIDs: [0],
         accessoryInventoryIDs: [0]),
-    /*UserData(
-        id: 'user-002',
-        username: '@jesse',
-        email: 'jessebeck@gmail.com',
-        currency: 0,
-        mainPetID: "0",
-        backdropAsset: "images/backgrounds/test.jpg",
-        taskIDs: [0],
-        stepIDs: [0],
-        petInventoryIDs: [0],
-        accessoryInventoryIDs: [0]),
-    UserData(
-        id: 'user-003',
-        username: '@joanne',
-        email: 'joanne.amberg@gmail.com',
-        currency: 0,
-        mainPetID: "0",
-        backdropAsset: "images/backgrounds/test.jpg",
-        taskIDs: [0],
-        stepIDs: [0],
-        petInventoryIDs: [0],
-        accessoryInventoryIDs: [0]),
-    UserData(
-        id: 'user-004',
-        username: '@fiveoclockphil',
-        email: 'johnson@hawaii.edu',
-        currency: 0,
-        mainPetID: "0",
-        backdropAsset: "images/backgrounds/test.jpg",
-        taskIDs: [0],
-        stepIDs: [0],
-        petInventoryIDs: [0],
-        accessoryInventoryIDs: [0]),
-    UserData(
-        id: 'user-005',
-        username: '@katiekai',
-        email: 'katieambergjohnson@gmail.com',
-        currency: 0,
-        mainPetID: "0",
-        backdropAsset: "images/backgrounds/test.jpg",
-        taskIDs: [0],
-        stepIDs: [0],
-        petInventoryIDs: [0],
-        accessoryInventoryIDs: [0])*/
   ];
 
-  UserData getUser(String userID) {
+  UserData getUser(int userID) {
     return _users.firstWhere((userData) => userData.id == userID);
   }
 

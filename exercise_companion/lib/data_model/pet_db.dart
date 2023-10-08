@@ -23,9 +23,9 @@ class PetDB {
         id: 0,
         name: "Test Pet",
         description: "A Friendly Companion",
-        maxHealth: 0,
-        maxHunger: 0,
-        maxExp: 0,
+        maxHealth: 100,
+        maxHunger: 100,
+        maxExp: 100,
         asset: "images/pet_test"),
   ];
 

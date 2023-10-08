@@ -1,5 +1,7 @@
+import 'package:exercise_companion/data_model/user_steps_db.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class LineChartSample2 extends StatefulWidget {
   const LineChartSample2({super.key});
@@ -76,7 +78,6 @@ class _LineChartSample2State extends State<LineChartSample2> {
       }
       return "${date.month}/${date.day}";
     }
-
     //
 
     text = Text(formatDate(dates[value.toInt()]), style: style);
@@ -119,29 +120,11 @@ class _LineChartSample2State extends State<LineChartSample2> {
       fontWeight: FontWeight.bold,
       fontSize: 15,
     );
+
     String text;
-    /*switch (value.toInt()) {
-      case 0:
-        text = '0';
-        break;
-      case 1:
-        text = '0';
-        break;
-      case 3:
-        text = '30k';
-        break;
-      case 5:
-        text = '50k';
-        break;
-      case 6:
-        text = '0k';
-        break;
-      default:
-        return Container();
-    }*/
     int step = value.toInt();
-    if (step % 2 == 0) {
-      text = "${step}K";
+    if (step % 10 == 0) {
+      text = "${step}";
     } else {
       return Container();
     }
@@ -150,6 +133,13 @@ class _LineChartSample2State extends State<LineChartSample2> {
   }
 
   LineChartData mainData() {
+    //print(userStepsDB.getPastWeekAsList(0));
+    List<int> steps = userStepsDB.getPastWeekAsList(0);
+    List<FlSpot> entries = [];
+    for (int i = 0; i < steps.length; i++) {
+      entries.add(FlSpot(i.toDouble(), steps[i].toDouble()));
+    }
+
     return LineChartData(
       gridData: FlGridData(
         show: true,
@@ -201,10 +191,11 @@ class _LineChartSample2State extends State<LineChartSample2> {
       minX: 0,
       maxX: 6,
       minY: 0,
-      maxY: 9,
+      maxY: steps.reduce((curr, next) => max(curr, next)).toDouble(),
       lineBarsData: [
         LineChartBarData(
-          spots: const [
+          spots: entries,
+          /*const [
             FlSpot(0, 3),
             FlSpot(1, 2),
             FlSpot(2, 5),
@@ -212,7 +203,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
             FlSpot(4, 4),
             FlSpot(5, 3),
             FlSpot(6, 4),
-          ],
+          ],*/
           isCurved: true,
           gradient: LinearGradient(
             colors: gradientColors,
