@@ -40,7 +40,7 @@ class Pet extends StatelessWidget {
           //alignment:new Alignment(x, y)
           children: <Widget>[
             Positioned(
-                bottom: 100,
+                bottom: 150,
                 left: adjusted,
                 right: adjusted,
                 child: Image.asset(
@@ -51,7 +51,7 @@ class Pet extends StatelessWidget {
                   fit: BoxFit.cover,
                 )),
             Positioned(
-                bottom: 200,
+                bottom: 250,
                 left: adjusted,
                 right: adjusted,
                 child: Image.asset(

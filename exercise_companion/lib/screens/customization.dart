@@ -46,7 +46,7 @@ class CustomizationPage extends StatelessWidget {
     return Column(children: [
       Padding(
           padding: EdgeInsets.only(
-              top: max(MediaQuery.of(context).size.height - 336, 0))),
+              top: max(MediaQuery.of(context).size.height - 286, 0))),
       Padding(
           padding: const EdgeInsets.all(24),
           child: Container(
@@ -64,7 +64,7 @@ class CustomizationPage extends StatelessWidget {
                   child: Container(
                       color: Colors.white,
                       //width: 150,
-                      height: 174,
+                      height: 124,
                       child: SizedBox(
                           height: 210,
                           child: ListView.separated(

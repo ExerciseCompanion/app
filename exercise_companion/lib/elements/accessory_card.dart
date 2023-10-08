@@ -31,14 +31,14 @@ Widget accessoryCardWidget(int index) {
                     ],
                   )),
                   //color: const Color.fromARGB(255, 192, 192, 192),
-                  width: 150,
-                  height: 150,
+                  width: 100,
+                  height: 100,
                   child: Padding(
                       padding: const EdgeInsets.all(15),
                       child: Stack(children: [
                         Image.asset("images/red_cap.png"),
                         Padding(
-                            padding: const EdgeInsets.only(top: 100),
+                            padding: const EdgeInsets.only(top: 55),
                             child: Text(
                               "$index",
                               style: const TextStyle(
