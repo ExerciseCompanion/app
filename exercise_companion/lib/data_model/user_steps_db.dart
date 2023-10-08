@@ -48,12 +48,12 @@ class UserStepsDB {
       datesMap[log.date] = log.steps;
     }
 
+    print(datesMap);
     return datesMap;
   }
 
   List<int> getPastWeekAsList(userID) {
     Map<String, int> dateMap = getPastWeek(userID);
-    print(dateMap);
 
     // To be honest, not sure if sorting is actually neccessary...
     List<String> sortedDateMapKeys = dateMap.keys.toList()..sort();
@@ -64,6 +64,7 @@ class UserStepsDB {
         .cast<int>()
         .toList();
 
+    print(sortedDateMapValues);
     return sortedDateMapValues;
   }
 }
