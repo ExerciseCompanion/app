@@ -1,3 +1,5 @@
+import 'package:exercise_companion/data_model/user_db.dart';
+import 'package:exercise_companion/data_model/user_pets_db.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import '../templates/appbar.dart';
@@ -13,7 +15,10 @@ class PetPage extends StatelessWidget {
           appBar: AppBar(),
           title: "Pets",
         ),
-        body: const Markdown(data: '''
+        body: ListView(
+          children: userPetDB.getPetWidgets(currentUserID),
+        ),
+        /*body: const Markdown(data: '''
 # Pets Page
 ## Goals
 A page to allow to user to select/ change primary pet
@@ -24,7 +29,7 @@ A page to allow to user to select/ change primary pet
 ## Action
 - Ability to select pet as primary
 
-'''),
+'''),*/
         resizeToAvoidBottomInset: false,
         bottomNavigationBar: BaseBottomNavigationBar());
   }
