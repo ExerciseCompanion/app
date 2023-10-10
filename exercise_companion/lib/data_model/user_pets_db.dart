@@ -67,7 +67,7 @@ class UserPetDB {
           health: pet.health,
           exp: pet.exp,
           selected: selected));
-      widgets.add(const Divider());
+      //widgets.add(const Divider());
     }
 
     return widgets;

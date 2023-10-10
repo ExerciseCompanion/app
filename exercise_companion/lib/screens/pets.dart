@@ -15,7 +15,8 @@ class PetPage extends StatelessWidget {
           appBar: AppBar(),
           title: "Pets",
         ),
-        body: ListView(
+        body: GridView.count(
+          crossAxisCount: 2,
           children: userPetDB.getPetWidgets(currentUserID),
         ),
         /*body: const Markdown(data: '''
