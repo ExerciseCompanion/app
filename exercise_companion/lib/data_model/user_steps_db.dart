@@ -71,10 +71,12 @@ class UserStepsDB {
   int getTodaysSteps(userID) {
     final DateTime currentDate = DateTime.now();
     final String date = DateFormat('MM/dd/yyyy').format(currentDate);
-
-    return _userSteps
-        .firstWhere((stepLog) => stepLog.userID == 0 && stepLog.date == date)
+    final int steps = _userSteps
+        .firstWhere((stepLog) => stepLog.userID == 0 && stepLog.date == date,
+            orElse: () => UserStepsData(id: -1, userID: -1, date: "", steps: 0))
         .steps;
+
+    return steps;
   }
 }
 

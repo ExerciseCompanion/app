@@ -42,6 +42,7 @@ class CustomizationPage extends StatelessWidget {
               accessory: assets["accessory"] ?? ""),
           accessoryContainer(context)
         ]),
+        extendBodyBehindAppBar: true,
         resizeToAvoidBottomInset: false,
         bottomNavigationBar: BaseBottomNavigationBar());
   }

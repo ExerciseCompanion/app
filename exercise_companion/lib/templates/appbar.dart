@@ -28,6 +28,8 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
           print('Menu button');
         },
       ),*/
+      //elevation: 0,
+      backgroundColor: Color.fromARGB(41, 255, 255, 255),
       title: Text(title),
       /*actions: <Widget>[
         IconButton(
