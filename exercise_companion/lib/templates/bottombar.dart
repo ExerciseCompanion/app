@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 class BaseBottomNavigationBar extends StatelessWidget {
   int _selectedIndex = 0;
-  List<String> pages = ["/task", "/pet", "/", "/customization", "/shop"];
+  List<String> pages = ["/task", "/customization", "/", "/pet", "/shop"];
 
   /*static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -43,16 +43,16 @@ class BaseBottomNavigationBar extends StatelessWidget {
           label: 'Tasks',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.pets, size: 30),
-          label: 'Pets',
+          icon: Icon(Icons.checkroom, size: 30),
+          label: 'Customization',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.home, size: 50),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.checkroom, size: 30),
-          label: 'Customization',
+          icon: Icon(Icons.pets, size: 30),
+          label: 'Pets',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.shopping_cart, size: 30),
