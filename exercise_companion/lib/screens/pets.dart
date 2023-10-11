@@ -16,6 +16,9 @@ class PetPage extends StatelessWidget {
           title: "Pets",
         ),
         body: GridView.count(
+          padding: EdgeInsets.all(10),
+          childAspectRatio: 0.75,
+          crossAxisSpacing: 10,
           crossAxisCount: 2,
           children: userPetDB.getPetWidgets(currentUserID),
         ),
