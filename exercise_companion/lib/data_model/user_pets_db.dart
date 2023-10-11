@@ -61,11 +61,12 @@ class UserPetDB {
 
     for (UserPetData pet in pets) {
       bool selected = (userDB.getUser(currentUserID).mainPetID == pet.id);
+      PetData petData = petDB.getPet(pet.petID);
       widgets.add(PetViewWidget(
-          asset: petDB.getPet(pet.petID).asset,
+          asset: petData.asset,
           name: pet.name,
-          health: pet.health,
-          exp: pet.exp,
+          healthRatio: pet.health / petData.maxHealth,
+          expRatio: pet.exp / petData.maxExp,
           selected: selected));
       //widgets.add(const Divider());
     }

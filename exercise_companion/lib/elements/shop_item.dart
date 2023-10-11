@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 
-class PetViewWidget extends StatelessWidget {
+class ShopViewWidget extends StatelessWidget {
   final String name;
   final String asset;
-  final double healthRatio;
-  final double expRatio;
-  final bool selected;
+  final int type;
+  final int productID;
 
-  const PetViewWidget(
-      {super.key,
-      required this.asset,
-      required this.name,
-      required this.healthRatio,
-      required this.expRatio,
-      required this.selected});
+  const ShopViewWidget({
+    super.key,
+    required this.asset,
+    required this.name,
+    required this.type,
+    required this.productID,
+  });
 
-  Widget getSelectedWidget(bool completion) {
+  /*Widget getSelectedWidget(bool completion) {
     if (completion) {
       return const Center(
           child: Padding(
@@ -30,6 +29,14 @@ class PetViewWidget extends StatelessWidget {
           onPressed: () {},
           child: const Text('Select'));
     }
+  }*/
+
+  Widget buyButton() {
+    return ElevatedButton(
+        style:
+            ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20)),
+        onPressed: () {},
+        child: const Text('Buy'));
   }
 
   Image petIcon(String asset, BuildContext context) {
@@ -59,10 +66,8 @@ class PetViewWidget extends StatelessWidget {
                     0.7,
                   ],
                   colors: [
-                    HSVColor.fromAHSV(1, (healthRatio * 360) % 360, 0.8, 1)
-                        .toColor(),
-                    HSVColor.fromAHSV(1, ((expRatio * 360) + 20) % 360, 0.8, 1)
-                        .toColor(),
+                    HSVColor.fromAHSV(1, 200 % 360, 0.8, 1).toColor(),
+                    HSVColor.fromAHSV(1, (200 + 20) % 360, 0.8, 1).toColor(),
                   ],
                 )),
                 //color: const Color.fromARGB(255, 192, 192, 192),
@@ -86,7 +91,7 @@ class PetViewWidget extends StatelessWidget {
                       bottom: 10,
                       left: 10,
                       right: 10,
-                      child: getSelectedWidget(selected))
+                      child: buyButton()) //getSelectedWidget(selected))
                 ] //Center(child: Text("$index")),
                     ))));
   }

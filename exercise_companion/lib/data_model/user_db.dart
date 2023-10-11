@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:exercise_companion/data_model/accessory_db.dart';
 import 'package:exercise_companion/data_model/pet_db.dart';
 
@@ -55,6 +57,11 @@ class UserDB {
   UserData getUser(int userID) {
     return _users.firstWhere((userData) => userData.id == userID);
   }
+
+  /*bool isAccessoryOwned(int userID) {
+
+    return false;
+  }*/
 
   List<AccessoryData> getAccessories(int userID) {
     List<AccessoryData> accessories = [];
