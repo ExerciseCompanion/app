@@ -27,6 +27,14 @@ class PetDB {
         maxHunger: 100,
         maxExp: 100,
         asset: "images/pet_test.png"),
+    PetData(
+        id: 1,
+        name: "Test Pet 2",
+        description: "A Friendly Companion",
+        maxHealth: 100,
+        maxHunger: 100,
+        maxExp: 100,
+        asset: "images/pet_test.png"),
   ];
 
   PetData getPet(int petID) {

@@ -45,6 +45,15 @@ class UserPetDB {
         hunger: 100,
         exp: 100,
         name: "Pet B"),
+    UserPetData(
+        id: 2,
+        userID: 1,
+        petID: 0,
+        accessoryID: 0,
+        health: 100,
+        hunger: 100,
+        exp: 100,
+        name: "Pet A"),
   ];
 
   UserPetData getPet(int petID) {

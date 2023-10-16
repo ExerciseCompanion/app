@@ -48,9 +48,20 @@ class UserDB {
         currency: 0,
         mainPetID: 0,
         backdropAsset: "images/backgrounds/test.jpg",
-        taskIDs: [0],
-        stepIDs: [0],
+        taskIDs: [0, 1, 2, 3, 4, 5, 6], // no need doubly linked
+        stepIDs: [0, 1, 2, 3, 4, 5, 6], // no need doubly linked
         petInventoryIDs: [0],
+        accessoryInventoryIDs: [0, 0]),
+    UserData(
+        id: 1,
+        username: '@fakeuser',
+        email: 'fakeuser@hawaii.edu',
+        currency: 0,
+        mainPetID: 0,
+        backdropAsset: "images/backgrounds/test.jpg",
+        taskIDs: [0], // no need doubly linked
+        stepIDs: [0], // no need doubly linked
+        petInventoryIDs: [1],
         accessoryInventoryIDs: [0, 0]),
   ];
 
