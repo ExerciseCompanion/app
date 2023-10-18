@@ -7,13 +7,15 @@ import '../templates/bottombar.dart';
 import '../elements/line_chart.dart';
 import '../elements/aspect_box.dart';
 import '../elements/pet.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/pet_home_provider.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends ConsumerWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
+  Widget build(BuildContext context, WidgetRef ref) {
+    //Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
     return Scaffold(
         /*appBar: BaseAppBar(
           appBar: AppBar(),
@@ -23,14 +25,12 @@ class HomePage extends StatelessWidget {
           panel: _panel(),
           collapsed: _collapsedPanel(
               context, userStepsDB.getTodaysSteps(currentUserID)),
-          body: Pet(
+          body: ref.read(homePetProvider),
+          /*Pet(
             background: assets["background"] ?? "",
             pet: assets["pet"] ?? "",
             accessory: assets["accessory"] ?? "",
-            /*background: 'images/backgrounds/test.jpg',
-              pet: 'images/pet_test.png',
-              accessory: 'images/red_cap.png'*/
-          ),
+          ),*/
           borderRadius: radius(),
           margin: panelMargins(),
         ),

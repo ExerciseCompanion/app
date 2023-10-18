@@ -1,4 +1,5 @@
 import 'package:exercise_companion/providers/pet_customization_provider.dart';
+import 'package:exercise_companion/providers/pet_home_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/pet_select_provider.dart';
@@ -23,6 +24,7 @@ class PetViewWidget extends ConsumerWidget {
   void onSelectPet(WidgetRef ref) {
     ref.read(selectPetProvider.notifier).select(userPetId);
     ref.read(customizePetProvider.notifier).refresh();
+    ref.read(homePetProvider.notifier).refresh();
   }
 
   Widget getSelectedWidget(bool completion, WidgetRef ref) {

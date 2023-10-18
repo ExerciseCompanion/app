@@ -15,7 +15,7 @@ final taskProvider = StateNotifierProvider<TaskNotifier, List<Widget>>((ref) {
 
 class TaskNotifier extends StateNotifier<List<Widget>> {
   TaskNotifier() : super([]) {
-    state = userTasksDB.getTaskWidgets(currentUserID);
+    refresh();
   }
 
   void claim(int taskID) {

@@ -1,4 +1,5 @@
 //https://www.youtube.com/watch?v=4okl2LsLUaU
+import 'package:exercise_companion/providers/pet_home_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/pet_customization_provider.dart';
@@ -15,6 +16,11 @@ class AccessoryCardWidget extends ConsumerWidget {
       required this.asset,
       required this.accessoryId});
 
+  void onAccessorySelect(WidgetRef ref, int accessoryId) {
+    ref.read(customizePetProvider.notifier).setAccessory(accessoryId);
+    ref.read(homePetProvider.notifier).refresh();
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
@@ -22,9 +28,7 @@ class AccessoryCardWidget extends ConsumerWidget {
       children: [
         GestureDetector(
             onTap: () => {
-                  ref
-                      .read(customizePetProvider.notifier)
-                      .setAccessory(accessoryId)
+                  onAccessorySelect(ref, accessoryId),
                 },
             child: Container(
                 decoration: const BoxDecoration(

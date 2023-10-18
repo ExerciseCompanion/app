@@ -14,7 +14,7 @@ final currencyProvider = StateNotifierProvider<CurrencyNotifier, int>((ref) {
 
 class CurrencyNotifier extends StateNotifier<int> {
   CurrencyNotifier() : super(0) {
-    state = userDB.getUser(currentUserID).currency;
+    refresh();
   }
 
   void addCurrency(int currency) {
