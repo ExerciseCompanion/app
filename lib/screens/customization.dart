@@ -6,13 +6,15 @@ import '../templates/bottombar.dart';
 import '../elements/accessory_card.dart';
 import '../elements/pet.dart';
 import 'dart:math';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/pet_customization_provider.dart';
 
-class CustomizationPage extends StatelessWidget {
+class CustomizationPage extends ConsumerWidget {
   const CustomizationPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
+  Widget build(BuildContext context, WidgetRef ref) {
+    //Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
 
     return Scaffold(
         appBar: BaseAppBar(
@@ -36,10 +38,7 @@ class CustomizationPage extends StatelessWidget {
           accessoryContainer(context),
         ]),*/
         body: Stack(children: [
-          Pet(
-              background: assets["background"] ?? "",
-              pet: assets["pet"] ?? "",
-              accessory: assets["accessory"] ?? ""),
+          ref.watch(customizePetProvider),
           accessoryContainer(context)
         ]),
         extendBodyBehindAppBar: true,
@@ -82,8 +81,11 @@ class CustomizationPage extends StatelessWidget {
                               return const SizedBox(width: 12);
                             },
                             itemBuilder: (context, index) {
-                              return accessoryCardWidget(
-                                  index, accesssories[index].name);
+                              return AccessoryCardWidget(
+                                  index: index,
+                                  name: accesssories[index].name,
+                                  asset: accesssories[index].asset,
+                                  accessoryId: accesssories[index].id);
                             },
                           ))))))
     ]);

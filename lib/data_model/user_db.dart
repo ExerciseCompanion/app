@@ -51,7 +51,7 @@ class UserDB {
         taskIDs: [0, 1, 2, 3, 4, 5, 6], // no need doubly linked
         stepIDs: [0, 1, 2, 3, 4, 5, 6], // no need doubly linked
         petInventoryIDs: [0],
-        accessoryInventoryIDs: [0, 0]),
+        accessoryInventoryIDs: [0, 0, 1]),
     UserData(
         id: 1,
         username: '@fakeuser',
@@ -106,6 +106,7 @@ class UserDB {
   void setMainPet(int userId, int mainPetId) {
     _users.firstWhere((element) => element.id == userId).mainPetID = mainPetId;
   }
+
   /*List<UserData> getUsers(List<String> userIDs) {
     return _users.where((userData) => userIDs.contains(userData.id)).toList();
   }

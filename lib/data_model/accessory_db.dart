@@ -18,6 +18,11 @@ class AccessoryDB {
         name: "Red Cap",
         description: "A Red Cap",
         asset: "images/red_cap.png"),
+    AccessoryData(
+        id: 1,
+        name: "Top Hat",
+        description: "A Top Hat",
+        asset: "images/top_hat.png"),
   ];
 
   AccessoryData getAccessory(int id) {

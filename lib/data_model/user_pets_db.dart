@@ -83,6 +83,12 @@ class UserPetDB {
 
     return widgets;
   }
+
+  void setMainPetAccessory(int userID, int acessoryID) {
+    int mainPetId = userDB.getUser(userID).mainPetID;
+    _userPets.firstWhere((element) => element.id == mainPetId).accessoryID =
+        acessoryID;
+  }
 }
 
 UserPetDB userPetDB = UserPetDB();

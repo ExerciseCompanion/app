@@ -1,3 +1,4 @@
+import 'package:exercise_companion/providers/pet_customization_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/pet_select_provider.dart';
@@ -19,6 +20,11 @@ class PetViewWidget extends ConsumerWidget {
       required this.selected,
       required this.userPetId});
 
+  void onSelectPet(WidgetRef ref) {
+    ref.read(selectPetProvider.notifier).select(userPetId);
+    ref.read(customizePetProvider.notifier).refresh();
+  }
+
   Widget getSelectedWidget(bool completion, WidgetRef ref) {
     //final counter = ref.watch(selectPetProvider);
     //print(counter);
@@ -33,8 +39,7 @@ class PetViewWidget extends ConsumerWidget {
       return ElevatedButton(
           style: ElevatedButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20)),
-          onPressed: () =>
-              {ref.read(selectPetProvider.notifier).select(userPetId)},
+          onPressed: () => {onSelectPet(ref)},
           child: const Text('Select'));
     }
   }
