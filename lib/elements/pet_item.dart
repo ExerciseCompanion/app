@@ -2,11 +2,13 @@ import 'package:exercise_companion/providers/pet_customization_provider.dart';
 import 'package:exercise_companion/providers/pet_home_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../elements/pet_only.dart';
 import '../providers/pet_select_provider.dart';
 
 class PetViewWidget extends ConsumerWidget {
   final String name;
-  final String asset;
+  final String petAsset;
+  final String accessoryAsset;
   final double healthRatio;
   final double expRatio;
   final bool selected;
@@ -14,7 +16,8 @@ class PetViewWidget extends ConsumerWidget {
 
   const PetViewWidget(
       {super.key,
-      required this.asset,
+      required this.petAsset,
+      required this.accessoryAsset,
       required this.name,
       required this.healthRatio,
       required this.expRatio,
@@ -87,7 +90,9 @@ class PetViewWidget extends ConsumerWidget {
                   Padding(
                       padding: const EdgeInsets.only(
                           top: 40, left: 20, right: 20, bottom: 40),
-                      child: Image.asset(asset)),
+                      child: PetOnly(
+                          pet: petAsset,
+                          accessory: accessoryAsset)), //Image.asset(asset)),
                   Positioned(
                       top: 10,
                       left: 0,

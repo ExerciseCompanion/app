@@ -18,8 +18,8 @@ class UserData {
     required this.currency,
     required this.mainPetID,
     required this.backdropAsset,
-    required this.taskIDs,
-    required this.stepIDs,
+    //required this.taskIDs,
+    //required this.stepIDs,
     required this.petInventoryIDs,
     required this.accessoryInventoryIDs,
   });
@@ -32,8 +32,8 @@ class UserData {
   int mainPetID;
   String backdropAsset;
 
-  List<int> taskIDs;
-  List<int> stepIDs;
+  //List<int> taskIDs;
+  //List<int> stepIDs;
 
   List<int> petInventoryIDs;
   List<int> accessoryInventoryIDs;
@@ -48,8 +48,8 @@ class UserDB {
         currency: 0,
         mainPetID: 0,
         backdropAsset: "images/backgrounds/test.jpg",
-        taskIDs: [0, 1, 2, 3, 4, 5, 6], // no need doubly linked
-        stepIDs: [0, 1, 2, 3, 4, 5, 6], // no need doubly linked
+        //taskIDs: [0, 1, 2, 3, 4, 5, 6], // no need doubly linked
+        //stepIDs: [0, 1, 2, 3, 4, 5, 6], // no need doubly linked
         petInventoryIDs: [0],
         accessoryInventoryIDs: [0, 0, 1]),
     UserData(
@@ -59,8 +59,8 @@ class UserDB {
         currency: 0,
         mainPetID: 0,
         backdropAsset: "images/backgrounds/test.jpg",
-        taskIDs: [0], // no need doubly linked
-        stepIDs: [0], // no need doubly linked
+        //taskIDs: [0], // no need doubly linked
+        //stepIDs: [0], // no need doubly linked
         petInventoryIDs: [1],
         accessoryInventoryIDs: [0, 0]),
   ];

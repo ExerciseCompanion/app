@@ -1,3 +1,4 @@
+import 'package:exercise_companion/data_model/accessory_db.dart';
 import 'package:exercise_companion/data_model/user_db.dart';
 import './pet_db.dart';
 import '../elements/pet_item.dart';
@@ -8,7 +9,7 @@ class UserPetData {
       {required this.id,
       required this.userID,
       required this.petID,
-      this.accessoryID,
+      required this.accessoryID,
       required this.name,
       required this.health,
       required this.hunger,
@@ -17,7 +18,7 @@ class UserPetData {
   int id;
   int userID;
   int petID;
-  int? accessoryID;
+  int accessoryID;
   int health;
   int hunger;
   int exp;
@@ -71,8 +72,10 @@ class UserPetDB {
     for (UserPetData pet in pets) {
       bool selected = (userDB.getUser(currentUserID).mainPetID == pet.id);
       PetData petData = petDB.getPet(pet.petID);
+      AccessoryData accessoryData = accessoryDB.getAccessory(pet.accessoryID);
       widgets.add(PetViewWidget(
-          asset: petData.asset,
+          petAsset: petData.asset,
+          accessoryAsset: accessoryData.asset,
           name: pet.name,
           healthRatio: pet.health / petData.maxHealth,
           expRatio: pet.exp / petData.maxExp,

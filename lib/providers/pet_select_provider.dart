@@ -16,12 +16,16 @@ final selectPetProvider =
 
 class SelectPetNotifier extends StateNotifier<List<Widget>> {
   SelectPetNotifier() : super([]) {
-    state = userPetDB.getPetWidgets(currentUserID);
+    refresh();
   }
 
   void select(int userPetId) {
     print("Selected Pet ${userPetId}");
     userDB.setMainPet(currentUserID, userPetId);
+    state = userPetDB.getPetWidgets(currentUserID);
+  }
+
+  void refresh() {
     state = userPetDB.getPetWidgets(currentUserID);
   }
 }

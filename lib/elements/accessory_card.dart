@@ -1,5 +1,6 @@
 //https://www.youtube.com/watch?v=4okl2LsLUaU
 import 'package:exercise_companion/providers/pet_home_provider.dart';
+import 'package:exercise_companion/providers/pet_select_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/pet_customization_provider.dart';
@@ -19,6 +20,7 @@ class AccessoryCardWidget extends ConsumerWidget {
   void onAccessorySelect(WidgetRef ref, int accessoryId) {
     ref.read(customizePetProvider.notifier).setAccessory(accessoryId);
     ref.read(homePetProvider.notifier).refresh();
+    ref.read(selectPetProvider.notifier).refresh();
   }
 
   @override
