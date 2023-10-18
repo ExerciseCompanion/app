@@ -26,11 +26,23 @@ class StoreDB {
     return _users.firstWhere((userData) => userData.id == userID);
   }*/
 
-  List<Widget> getShopWidgets() {
+  List<StoreData> getAllStoreItems() {
+    return _store.toList();
+  }
+
+  List<int> getAllStoreItemIDs() {
+    return _store.map((e) => e.id).toList();
+  }
+
+  List<StoreData> getStoreItemsByIDs(List<int> ids) {
+    return _store.where((element) => ids.contains(element.id)).toList();
+  }
+
+  List<Widget> getShopWidgetsByStoreDatas(List<StoreData> items) {
     List<Widget> widgets = [];
     String name = "";
     String asset = "";
-    for (StoreData item in _store) {
+    for (StoreData item in items) {
       if (item.type == 0) {
         AccessoryData accessory = accessoryDB.getAccessory(item.itemID);
         name = accessory.name;
@@ -45,6 +57,10 @@ class StoreDB {
           asset: asset, name: name, type: item.type, productID: item.itemID));
     }
     return widgets;
+  }
+
+  List<Widget> getShopWidgets() {
+    return getShopWidgetsByStoreDatas(_store);
   }
 }
 

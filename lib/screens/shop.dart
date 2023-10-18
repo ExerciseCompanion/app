@@ -21,7 +21,8 @@ class ShopPage extends StatelessWidget {
             childAspectRatio: 0.75,
             crossAxisSpacing: 10,
             crossAxisCount: 2,
-            children: storeDB.getShopWidgets()),
+            children: storeDB.getShopWidgetsByStoreDatas(
+                userDB.getUnPurcahsedItems(currentUserID))),
         /*body: const Markdown(data: '''
 # Shop Page
 ## Goals

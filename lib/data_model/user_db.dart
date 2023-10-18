@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:exercise_companion/data_model/accessory_db.dart';
 import 'package:exercise_companion/data_model/pet_db.dart';
+import 'package:exercise_companion/data_model/store_db.dart';
 
 import 'user_pets_db.dart';
 import 'user_task_db.dart';
@@ -20,6 +21,7 @@ class UserData {
     required this.backdropAsset,
     //required this.taskIDs,
     //required this.stepIDs,
+    required this.purchasedItemsIDs,
     required this.petInventoryIDs,
     required this.accessoryInventoryIDs,
   });
@@ -34,6 +36,7 @@ class UserData {
 
   //List<int> taskIDs;
   //List<int> stepIDs;
+  List<int> purchasedItemsIDs;
 
   List<int> petInventoryIDs;
   List<int> accessoryInventoryIDs;
@@ -50,6 +53,7 @@ class UserDB {
         backdropAsset: "images/backgrounds/test.jpg",
         //taskIDs: [0, 1, 2, 3, 4, 5, 6], // no need doubly linked
         //stepIDs: [0, 1, 2, 3, 4, 5, 6], // no need doubly linked
+        purchasedItemsIDs: [],
         petInventoryIDs: [0],
         accessoryInventoryIDs: [0, 0, 1]),
     UserData(
@@ -61,6 +65,7 @@ class UserDB {
         backdropAsset: "images/backgrounds/test.jpg",
         //taskIDs: [0], // no need doubly linked
         //stepIDs: [0], // no need doubly linked
+        purchasedItemsIDs: [0],
         petInventoryIDs: [1],
         accessoryInventoryIDs: [0, 0]),
   ];
@@ -73,6 +78,14 @@ class UserDB {
 
     return false;
   }*/
+
+  List<StoreData> getUnPurcahsedItems(int userID) {
+    Set<int> items = userDB.getUser(userID).purchasedItemsIDs.toSet();
+    Set<int> allItems = storeDB.getAllStoreItemIDs().toSet();
+    Set<int> nonPurchasedIds = allItems.difference(items);
+
+    return storeDB.getStoreItemsByIDs(nonPurchasedIds.toList());
+  }
 
   List<AccessoryData> getAccessories(int userID) {
     List<AccessoryData> accessories = [];
