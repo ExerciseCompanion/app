@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/task_provider.dart';
 //import 'package:percent_indicator/percent_indicator.dart';
 import 'checkbox.dart';
 
-class TaskViewWidget extends StatelessWidget {
+class TaskViewWidget extends ConsumerWidget {
   final String title;
   final String text;
   //final bool completion;
   final int completion;
+  final int taskID;
 
   const TaskViewWidget(
       {super.key,
       required this.title,
       required this.text,
-      required this.completion});
+      required this.completion,
+      required this.taskID});
 
-  Widget getCompletionWidget(int completion) {
+  void onClaim(WidgetRef ref) {
+    ref.read(taskProvider.notifier).claim(taskID);
+  }
+
+  Widget getCompletionWidget(int completion, WidgetRef ref) {
     if (completion == 1) {
       return ElevatedButton(
           style: ElevatedButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20)),
-          onPressed: () {},
+          onPressed: () => {onClaim(ref)},
           child: const Text('Claim'));
     } else if (completion == 0) {
       return const Text("In Progress");
@@ -37,12 +45,12 @@ class TaskViewWidget extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ListTile(
       leading: getCompletionIcon(completion, context),
       title: Text(title),
       subtitle: Text(text),
-      trailing: getCompletionWidget(completion),
+      trailing: getCompletionWidget(completion, ref),
       /*Checkbox(
         value: completion,
         onChanged: (value) => (),

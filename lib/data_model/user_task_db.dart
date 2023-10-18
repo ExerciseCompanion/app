@@ -9,6 +9,7 @@ class UserTaskData {
     required this.title,
     required this.description,
     //required this.rewardAccepted
+    required this.reward,
     required this.status,
   });
 
@@ -16,6 +17,7 @@ class UserTaskData {
   int userID;
   String title;
   String description;
+  int reward;
   int status; // enum 0: in progress, 1: completed but not claimed, 2: claimed
   //bool rewardAccepted;
 }
@@ -27,21 +29,28 @@ class UserTaskDB {
         userID: 0,
         title: "Step",
         description: "Walk 200 Steps",
+        reward: 10,
         status: 0),
     UserTaskData(
         id: 1,
         userID: 0,
         title: "Pet",
         description: "Interact with your pet",
+        reward: 10,
         status: 1),
     UserTaskData(
         id: 2,
         userID: 0,
         title: "Accessorize",
         description: "Change your pet's accessory",
+        reward: 10,
         status: 2),
     //rewardAccepted: false),
   ];
+
+  UserTaskData getTask(int taskID) {
+    return _userTasks.firstWhere((task) => task.id == taskID);
+  }
 
   List<UserTaskData> getTasks(int userID) {
     return _userTasks.where((task) => task.userID == userID).toList();
@@ -53,7 +62,11 @@ class UserTaskDB {
 
     for (UserTaskData task in tasks) {
       widgets.add(TaskViewWidget(
-          title: task.title, text: task.description, completion: task.status));
+        title: task.title,
+        text: task.description,
+        completion: task.status,
+        taskID: task.id,
+      ));
       widgets.add(const Divider());
     }
 
