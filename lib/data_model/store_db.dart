@@ -26,6 +26,10 @@ class StoreDB {
     return _users.firstWhere((userData) => userData.id == userID);
   }*/
 
+  StoreData getStoreItem(int id) {
+    return _store.firstWhere((element) => element.id == id);
+  }
+
   List<StoreData> getAllStoreItems() {
     return _store.toList();
   }
@@ -54,7 +58,11 @@ class StoreDB {
       }
 
       widgets.add(ShopViewWidget(
-          asset: asset, name: name, type: item.type, productID: item.itemID));
+          asset: asset,
+          name: name,
+          type: item.type,
+          productID: item.itemID,
+          cost: item.cost));
     }
     return widgets;
   }

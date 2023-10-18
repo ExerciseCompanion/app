@@ -1,16 +1,18 @@
 import 'package:exercise_companion/data_model/store_db.dart';
 import 'package:exercise_companion/data_model/user_db.dart';
 import 'package:exercise_companion/data_model/user_pets_db.dart';
+import 'package:exercise_companion/providers/store_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import '../templates/appbar.dart';
 import '../templates/bottombar.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ShopPage extends StatelessWidget {
+class ShopPage extends ConsumerWidget {
   const ShopPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         appBar: BaseAppBar(
           appBar: AppBar(),
@@ -21,8 +23,7 @@ class ShopPage extends StatelessWidget {
             childAspectRatio: 0.75,
             crossAxisSpacing: 10,
             crossAxisCount: 2,
-            children: storeDB.getShopWidgetsByStoreDatas(
-                userDB.getUnPurcahsedItems(currentUserID))),
+            children: ref.read(storeProvider)),
         /*body: const Markdown(data: '''
 # Shop Page
 ## Goals

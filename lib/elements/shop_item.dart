@@ -5,6 +5,7 @@ class ShopViewWidget extends StatelessWidget {
   final String asset;
   final int type;
   final int productID;
+  final int cost;
 
   const ShopViewWidget({
     super.key,
@@ -12,6 +13,7 @@ class ShopViewWidget extends StatelessWidget {
     required this.name,
     required this.type,
     required this.productID,
+    required this.cost,
   });
 
   /*Widget getSelectedWidget(bool completion) {
