@@ -102,6 +102,10 @@ class UserDB {
 
     return assets;
   }
+
+  void setMainPet(int userId, int mainPetId) {
+    _users.firstWhere((element) => element.id == userId).mainPetID = mainPetId;
+  }
   /*List<UserData> getUsers(List<String> userIDs) {
     return _users.where((userData) => userIDs.contains(userData.id)).toList();
   }

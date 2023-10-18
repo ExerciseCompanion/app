@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/pet_select_provider.dart';
 
-class PetViewWidget extends StatelessWidget {
+class PetViewWidget extends ConsumerWidget {
   final String name;
   final String asset;
   final double healthRatio;
   final double expRatio;
   final bool selected;
+  final int userPetId;
 
   const PetViewWidget(
       {super.key,
@@ -13,9 +16,12 @@ class PetViewWidget extends StatelessWidget {
       required this.name,
       required this.healthRatio,
       required this.expRatio,
-      required this.selected});
+      required this.selected,
+      required this.userPetId});
 
-  Widget getSelectedWidget(bool completion) {
+  Widget getSelectedWidget(bool completion, WidgetRef ref) {
+    //final counter = ref.watch(selectPetProvider);
+    //print(counter);
     if (completion) {
       return const Center(
           child: Padding(
@@ -27,7 +33,8 @@ class PetViewWidget extends StatelessWidget {
       return ElevatedButton(
           style: ElevatedButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20)),
-          onPressed: () {},
+          onPressed: () =>
+              {ref.read(selectPetProvider.notifier).select(userPetId)},
           child: const Text('Select'));
     }
   }
@@ -37,7 +44,9 @@ class PetViewWidget extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    //final petSelection = ref.watch(selectPetProvider);
+
     return Container(
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(24.0)),
@@ -86,7 +95,7 @@ class PetViewWidget extends StatelessWidget {
                       bottom: 10,
                       left: 10,
                       right: 10,
-                      child: getSelectedWidget(selected))
+                      child: getSelectedWidget(selected, ref))
                 ] //Center(child: Text("$index")),
                     ))));
   }

@@ -76,7 +76,8 @@ class UserPetDB {
           name: pet.name,
           healthRatio: pet.health / petData.maxHealth,
           expRatio: pet.exp / petData.maxExp,
-          selected: selected));
+          selected: selected,
+          userPetId: pet.id));
       //widgets.add(const Divider());
     }
 

@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import '../templates/appbar.dart';
 import '../templates/bottombar.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/pet_select_provider.dart';
 
-class PetPage extends StatelessWidget {
+class PetPage extends ConsumerWidget {
   const PetPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         appBar: BaseAppBar(
           appBar: AppBar(),
@@ -20,7 +22,8 @@ class PetPage extends StatelessWidget {
           childAspectRatio: 0.75,
           crossAxisSpacing: 10,
           crossAxisCount: 2,
-          children: userPetDB.getPetWidgets(currentUserID),
+          children: ref.watch(selectPetProvider),
+          //children: userPetDB.getPetWidgets(currentUserID),
         ),
         resizeToAvoidBottomInset: false,
         bottomNavigationBar: BaseBottomNavigationBar());

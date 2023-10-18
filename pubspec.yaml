@@ -49,6 +49,7 @@ dev_dependencies:
   sliding_up_panel: ^2.0.0+1
   fl_chart: ^0.63.0
   intl: ^0.17.0 # DateFormat
+  flutter_riverpod: ^2.3.6
   #percent_indicator: ^4.2.3
 
 # For information on the generic Dart part of this file, see the
