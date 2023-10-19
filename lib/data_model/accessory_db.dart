@@ -14,12 +14,14 @@ class AccessoryData {
 class AccessoryDB {
   final List<AccessoryData> _accessories = [
     AccessoryData(
-        id: 0,
+        id: 0, name: "None", description: "None", asset: "images/empty.png"),
+    AccessoryData(
+        id: 1,
         name: "Red Cap",
         description: "A Red Cap",
         asset: "images/red_cap.png"),
     AccessoryData(
-        id: 1,
+        id: 2,
         name: "Top Hat",
         description: "A Top Hat",
         asset: "images/top_hat.png"),

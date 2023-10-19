@@ -18,7 +18,7 @@ class StoreData {
 
 class StoreDB {
   final List<StoreData> _store = [
-    StoreData(id: 0, type: 0, itemID: 0, cost: 10),
+    StoreData(id: 0, type: 0, itemID: 2, cost: 10),
     StoreData(id: 1, type: 1, itemID: 0, cost: 10),
   ];
 

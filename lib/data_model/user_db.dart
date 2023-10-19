@@ -55,7 +55,7 @@ class UserDB {
         //stepIDs: [0, 1, 2, 3, 4, 5, 6], // no need doubly linked
         purchasedItemsIDs: [],
         petInventoryIDs: [0],
-        accessoryInventoryIDs: [0, 0, 1]),
+        accessoryInventoryIDs: [0, 1, 1]),
     UserData(
         id: 1,
         username: '@fakeuser',
@@ -67,7 +67,7 @@ class UserDB {
         //stepIDs: [0], // no need doubly linked
         purchasedItemsIDs: [0],
         petInventoryIDs: [1],
-        accessoryInventoryIDs: [0, 0]),
+        accessoryInventoryIDs: [0, 1]),
   ];
 
   UserData getUser(int userID) {

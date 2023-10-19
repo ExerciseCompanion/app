@@ -61,15 +61,16 @@ class UserPetDB {
     int maxID = _userPets
         .reduce((current, next) => current.id > next.id ? current : next)
         .id;
+    PetData pet = petDB.getPet(petID);
     UserPetData petData = UserPetData(
         id: maxID += 1,
         userID: userID,
         petID: petID,
-        accessoryID: -1,
-        health: 100,
-        hunger: 100,
-        exp: 100,
-        name: "Pet A");
+        accessoryID: 0,
+        health: pet.maxHealth,
+        hunger: pet.maxHunger,
+        exp: pet.maxExp,
+        name: "Pet");
     _userPets.add(petData);
     //TODO: cjange hp to pet's deafult
   }
