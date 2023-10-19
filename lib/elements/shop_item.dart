@@ -1,9 +1,16 @@
+import 'package:exercise_companion/data_model/store_db.dart';
+import 'package:exercise_companion/providers/currency_provider.dart';
+import 'package:exercise_companion/providers/pet_customization_provider.dart';
+import 'package:exercise_companion/providers/pet_select_provider.dart';
+import 'package:exercise_companion/providers/store_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ShopViewWidget extends StatelessWidget {
+class ShopViewWidget extends ConsumerWidget {
   final String name;
   final String asset;
   final int type;
+  final int itemID;
   final int productID;
   final int cost;
 
@@ -12,6 +19,7 @@ class ShopViewWidget extends StatelessWidget {
     required this.asset,
     required this.name,
     required this.type,
+    required this.itemID,
     required this.productID,
     required this.cost,
   });
@@ -33,11 +41,19 @@ class ShopViewWidget extends StatelessWidget {
     }
   }*/
 
-  Widget buyButton() {
+  void onBuy(WidgetRef ref, int itemID, int productID, int itemType, int cost) {
+    ref.read(storeProvider.notifier).purchase(itemID, productID, itemID, cost);
+    ref.read(storeProvider.notifier).refresh();
+    ref.read(selectPetProvider.notifier).refresh();
+    ref.read(customizePetProvider.notifier).refresh();
+    ref.read(currencyProvider.notifier).refresh();
+  }
+
+  Widget buyButton(WidgetRef ref) {
     return ElevatedButton(
         style:
             ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20)),
-        onPressed: () {},
+        onPressed: () => {onBuy(ref, itemID, productID, type, cost)},
         child: const Text('Buy'));
   }
 
@@ -46,7 +62,7 @@ class ShopViewWidget extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(24.0)),
@@ -93,7 +109,7 @@ class ShopViewWidget extends StatelessWidget {
                       bottom: 10,
                       left: 10,
                       right: 10,
-                      child: buyButton()) //getSelectedWidget(selected))
+                      child: buyButton(ref)) //getSelectedWidget(selected))
                 ] //Center(child: Text("$index")),
                     ))));
   }

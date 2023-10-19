@@ -79,6 +79,19 @@ class UserDB {
     return false;
   }*/
 
+  void addPurchasedItem(int userID, int itemID, int productId, int itemType) {
+    UserData user = getUser(userID);
+    user.purchasedItemsIDs.add(itemID);
+    if (itemType == 0) {
+      // accessory
+      user.accessoryInventoryIDs.add(productId);
+    } else if (itemType == 1) {
+      // pet
+      //user.petInventoryIDs.add(productId);
+      userPetDB.addPet(userID, productId);
+    }
+  }
+
   List<StoreData> getUnPurcahsedItems(int userID) {
     Set<int> items = userDB.getUser(userID).purchasedItemsIDs.toSet();
     Set<int> allItems = storeDB.getAllStoreItemIDs().toSet();

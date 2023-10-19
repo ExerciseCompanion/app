@@ -57,6 +57,23 @@ class UserPetDB {
         name: "Pet A"),
   ];
 
+  void addPet(int userID, int petID) {
+    int maxID = _userPets
+        .reduce((current, next) => current.id > next.id ? current : next)
+        .id;
+    UserPetData petData = UserPetData(
+        id: maxID += 1,
+        userID: userID,
+        petID: petID,
+        accessoryID: -1,
+        health: 100,
+        hunger: 100,
+        exp: 100,
+        name: "Pet A");
+    _userPets.add(petData);
+    //TODO: cjange hp to pet's deafult
+  }
+
   UserPetData getPet(int petID) {
     return _userPets.firstWhere((pet) => pet.id == petID);
   }

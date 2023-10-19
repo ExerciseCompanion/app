@@ -21,8 +21,13 @@ class StoreNotifier extends StateNotifier<List<Widget>> {
 
   // definately safer to include int cost in case of cost change on db unreflected in app
   // potental null during id search, etc...
-  void purchase(int itemID, int cost) {
-    userDB.getUser(currentUserID).currency -= cost;
+  void purchase(int itemID, int productId, int itemType, int cost) {
+    if (userDB.getUser(currentUserID).currency >= cost) {
+      userDB.getUser(currentUserID).currency -= cost;
+      userDB.addPurchasedItem(currentUserID, itemID, productId, itemType);
+    } else {
+      print("Insufficent Funds");
+    }
     refresh();
   }
 

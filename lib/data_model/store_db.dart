@@ -7,7 +7,7 @@ class StoreData {
   StoreData(
       {required this.id,
       required this.type,
-      required this.itemID,
+      required this.itemID, //Change to product id
       required this.cost});
 
   int id;
@@ -61,6 +61,7 @@ class StoreDB {
           asset: asset,
           name: name,
           type: item.type,
+          itemID: item.id,
           productID: item.itemID,
           cost: item.cost));
     }
