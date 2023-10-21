@@ -11,11 +11,14 @@ import 'package:flutter/material.dart';
 });*/
 
 final storeProvider = StateNotifierProvider<StoreNotifier, List<Widget>>((ref) {
-  return StoreNotifier();
+  int currentUserID = ref.watch(currentUserIDProvider);
+  return StoreNotifier(currentUserID);
 });
 
 class StoreNotifier extends StateNotifier<List<Widget>> {
-  StoreNotifier() : super([]) {
+  int currentUserID;
+
+  StoreNotifier(this.currentUserID) : super([]) {
     refresh();
   }
 

@@ -88,7 +88,7 @@ class UserPetDB {
     List<Widget> widgets = [];
 
     for (UserPetData pet in pets) {
-      bool selected = (userDB.getUser(currentUserID).mainPetID == pet.id);
+      bool selected = (userDB.getUser(userID).mainPetID == pet.id);
       PetData petData = petDB.getPet(pet.petID);
       AccessoryData accessoryData = accessoryDB.getAccessory(pet.accessoryID);
       widgets.add(PetViewWidget(

@@ -11,11 +11,14 @@ import 'package:flutter/material.dart';
 
 final selectPetProvider =
     StateNotifierProvider<SelectPetNotifier, List<Widget>>((ref) {
-  return SelectPetNotifier();
+  int currentUserID = ref.watch(currentUserIDProvider);
+  return SelectPetNotifier(currentUserID);
 });
 
 class SelectPetNotifier extends StateNotifier<List<Widget>> {
-  SelectPetNotifier() : super([]) {
+  int currentUserID;
+
+  SelectPetNotifier(this.currentUserID) : super([]) {
     refresh();
   }
 

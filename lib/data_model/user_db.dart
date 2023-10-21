@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:exercise_companion/data_model/accessory_db.dart';
 import 'package:exercise_companion/data_model/pet_db.dart';
 import 'package:exercise_companion/data_model/store_db.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'user_pets_db.dart';
 import 'user_task_db.dart';
@@ -65,13 +66,17 @@ class UserDB {
         backdropAsset: "images/backgrounds/test.jpg",
         //taskIDs: [0], // no need doubly linked
         //stepIDs: [0], // no need doubly linked
-        purchasedItemsIDs: [0],
+        purchasedItemsIDs: [],
         petInventoryIDs: [1],
         accessoryInventoryIDs: [0, 1]),
   ];
 
   UserData getUser(int userID) {
     return _users.firstWhere((userData) => userData.id == userID);
+  }
+
+  UserData getUserByEmail(String email) {
+    return _users.firstWhere((userData) => userData.email == email);
   }
 
   /*bool isAccessoryOwned(int userID) {
@@ -133,6 +138,16 @@ class UserDB {
     _users.firstWhere((element) => element.id == userId).mainPetID = mainPetId;
   }
 
+  bool checkUserEmail(String email) {
+    //_users.firstWhere((element) => element.email == email, orElse: () => -1);
+    try {
+      UserData user = _users.firstWhere((element) => element.email == email);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
   /*List<UserData> getUsers(List<String> userIDs) {
     return _users.where((userData) => userIDs.contains(userData.id)).toList();
   }
@@ -154,4 +169,12 @@ class UserDB {
 UserDB userDB = UserDB();
 
 /// The currently logged in user.
-int currentUserID = 0;
+//int currentUserID = 0;
+
+final userDBProvider = Provider<UserDB>((ref) {
+  return UserDB();
+});
+
+final currentUserIDProvider = StateProvider<int>((ref) {
+  return 0;
+});

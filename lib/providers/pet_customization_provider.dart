@@ -12,11 +12,15 @@ import '../elements/pet.dart';
 
 final customizePetProvider =
     StateNotifierProvider<CustomizePetNotifier, Pet>((ref) {
-  return CustomizePetNotifier();
+  int currentUserID = ref.watch(currentUserIDProvider);
+  return CustomizePetNotifier(currentUserID);
 });
 
 class CustomizePetNotifier extends StateNotifier<Pet> {
-  CustomizePetNotifier() : super(Pet(background: "", pet: "", accessory: "")) {
+  int currentUserID;
+
+  CustomizePetNotifier(this.currentUserID)
+      : super(Pet(background: "", pet: "", accessory: "")) {
     refresh();
   }
 

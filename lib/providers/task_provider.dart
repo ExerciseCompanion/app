@@ -10,11 +10,14 @@ import 'package:flutter/material.dart';
 });*/
 
 final taskProvider = StateNotifierProvider<TaskNotifier, List<Widget>>((ref) {
-  return TaskNotifier();
+  int currentUserID = ref.watch(currentUserIDProvider);
+  return TaskNotifier(currentUserID);
 });
 
 class TaskNotifier extends StateNotifier<List<Widget>> {
-  TaskNotifier() : super([]) {
+  int currentUserID;
+
+  TaskNotifier(this.currentUserID) : super([]) {
     refresh();
   }
 

@@ -16,13 +16,14 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     //Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
+    int currentUserID = ref.watch(currentUserIDProvider);
     return Scaffold(
         /*appBar: BaseAppBar(
           appBar: AppBar(),
           title: "Home",
         ),*/
         body: SlidingUpPanel(
-          panel: _panel(),
+          panel: _panel(currentUserID),
           collapsed: _collapsedPanel(
               context, userStepsDB.getTodaysSteps(currentUserID)),
           body: ref.read(homePetProvider),
@@ -49,7 +50,7 @@ class HomePage extends ConsumerWidget {
     );
   }
 
-  Widget _panel() {
+  Widget _panel(int currentUserID) {
     return Container(
         decoration: BoxDecoration(
             color: Colors.white,
@@ -63,7 +64,7 @@ class HomePage extends ConsumerWidget {
         //margin: panelMargins(),
         child: SingleChildScrollView(
             child: Column(children: [
-          LineChartSample2()
+          LineChartSample2(userID: currentUserID)
         ])) /*Center(
         child: Text("Walking Statics and Pet Info Goes Here"),
       ),*/

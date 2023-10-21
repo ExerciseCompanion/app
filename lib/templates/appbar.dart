@@ -2,8 +2,9 @@
 
 import 'package:exercise_companion/data_model/user_db.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
+class BaseAppBar extends ConsumerWidget implements PreferredSizeWidget {
   //final Color backgroundColor = Colors.red;
   final String title;
   final AppBar appBar;
@@ -17,7 +18,8 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BaseAppBar({super.key, required this.appBar, required this.title});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    int currentUserID = ref.watch(currentUserIDProvider);
     return AppBar(
       /*leading: IconButton(
         icon: const Icon(

@@ -5,6 +5,7 @@
 /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
 /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/data/flutter_assets/version.json
 /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/data/flutter_assets/images/empty.png
 /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/data/flutter_assets/images/pet_test.png
 /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/data/flutter_assets/images/red_cap.png
 /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/data/flutter_assets/images/lake.jpg

@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class LineChartSample2 extends StatefulWidget {
-  const LineChartSample2({super.key});
+  final int userID;
+  const LineChartSample2({super.key, required this.userID});
 
   @override
   State<LineChartSample2> createState() => _LineChartSample2State();
@@ -30,7 +31,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
               bottom: 12,
             ),
             child: LineChart(
-              showAvg ? avgData() : mainData(),
+              showAvg ? avgData() : mainData(widget.userID),
             ),
           ),
         ),
@@ -133,9 +134,9 @@ class _LineChartSample2State extends State<LineChartSample2> {
     return Text(text, style: style, textAlign: TextAlign.left);
   }
 
-  LineChartData mainData() {
+  LineChartData mainData(int userID) {
     //print(userStepsDB.getPastWeekAsList(0));
-    List<int> steps = userStepsDB.getPastWeekAsList(currentUserID);
+    List<int> steps = userStepsDB.getPastWeekAsList(userID);
     List<FlSpot> entries = [];
     for (int i = 0; i < steps.length; i++) {
       entries.add(FlSpot(i.toDouble(), steps[i].toDouble()));

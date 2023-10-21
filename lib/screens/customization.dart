@@ -39,14 +39,15 @@ class CustomizationPage extends ConsumerWidget {
         ]),*/
         body: Stack(children: [
           ref.watch(customizePetProvider),
-          accessoryContainer(context)
+          accessoryContainer(context, ref)
         ]),
         extendBodyBehindAppBar: true,
         resizeToAvoidBottomInset: false,
         bottomNavigationBar: BaseBottomNavigationBar());
   }
 
-  Widget accessoryContainer(BuildContext context) {
+  Widget accessoryContainer(BuildContext context, WidgetRef ref) {
+    int currentUserID = ref.watch(currentUserIDProvider);
     List<AccessoryData> accesssories = userDB.getAccessories(currentUserID);
 
     return Column(children: [
@@ -74,6 +75,8 @@ class CustomizationPage extends ConsumerWidget {
                       child: SizedBox(
                           height: 210,
                           child: ListView.separated(
+                            controller: ScrollController(),
+                            shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             padding: const EdgeInsets.all(12),
                             itemCount: accesssories.length,
