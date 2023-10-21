@@ -1,3 +1,5 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 class PetData {
   PetData(
       {required this.id,
@@ -43,3 +45,7 @@ class PetDB {
 }
 
 PetDB petDB = PetDB();
+
+final petDBProvider = Provider<PetDB>((ref) {
+  return PetDB();
+});

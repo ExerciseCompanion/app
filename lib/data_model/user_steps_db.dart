@@ -1,6 +1,7 @@
 import 'dart:collection';
 import 'package:intl/intl.dart';
 import 'package:exercise_companion/data_model/user_db.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class UserStepsData {
   UserStepsData(
@@ -81,3 +82,7 @@ class UserStepsDB {
 }
 
 UserStepsDB userStepsDB = UserStepsDB();
+
+final userStepsDBProvider = Provider<UserStepsDB>((ref) {
+  return UserStepsDB();
+});

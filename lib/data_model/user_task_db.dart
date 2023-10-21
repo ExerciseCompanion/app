@@ -1,5 +1,6 @@
 import '../elements/task_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class UserTaskData {
   UserTaskData({
@@ -75,3 +76,7 @@ class UserTaskDB {
 }
 
 UserTaskDB userTasksDB = UserTaskDB();
+
+final userTasksDBProvider = Provider<UserTaskDB>((ref) {
+  return UserTaskDB();
+});

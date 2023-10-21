@@ -3,6 +3,7 @@ import 'package:exercise_companion/data_model/user_db.dart';
 import './pet_db.dart';
 import '../elements/pet_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class UserPetData {
   UserPetData(
@@ -113,3 +114,7 @@ class UserPetDB {
 }
 
 UserPetDB userPetDB = UserPetDB();
+
+final userPetDBProvider = Provider<UserPetDB>((ref) {
+  return UserPetDB();
+});

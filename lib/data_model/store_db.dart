@@ -2,6 +2,7 @@ import 'package:exercise_companion/data_model/accessory_db.dart';
 import 'package:exercise_companion/data_model/pet_db.dart';
 import 'package:flutter/material.dart';
 import '../elements/shop_item.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class StoreData {
   StoreData(
@@ -74,3 +75,7 @@ class StoreDB {
 }
 
 StoreDB storeDB = StoreDB();
+
+final storeDBProvider = Provider<StoreDB>((ref) {
+  return StoreDB();
+});
