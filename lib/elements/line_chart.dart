@@ -1,12 +1,13 @@
 import 'package:exercise_companion/data_model/user_db.dart';
 import 'package:exercise_companion/data_model/user_steps_db.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
 class LineChartSample2 extends StatefulWidget {
-  final int userID;
-  const LineChartSample2({super.key, required this.userID});
+  final WidgetRef ref;
+  const LineChartSample2({super.key, required this.ref});
 
   @override
   State<LineChartSample2> createState() => _LineChartSample2State();
@@ -31,7 +32,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
               bottom: 12,
             ),
             child: LineChart(
-              showAvg ? avgData() : mainData(widget.userID),
+              showAvg ? avgData() : mainData(widget.ref),
             ),
           ),
         ),
@@ -134,9 +135,12 @@ class _LineChartSample2State extends State<LineChartSample2> {
     return Text(text, style: style, textAlign: TextAlign.left);
   }
 
-  LineChartData mainData(int userID) {
+  LineChartData mainData(WidgetRef ref) {
     //print(userStepsDB.getPastWeekAsList(0));
-    List<int> steps = userStepsDB.getPastWeekAsList(userID);
+    final currentUserID = ref.watch(currentUserIDProvider);
+    final userStepsDB = ref.watch(userStepsDBProvider);
+
+    List<int> steps = userStepsDB.getPastWeekAsList(currentUserID);
     List<FlSpot> entries = [];
     for (int i = 0; i < steps.length; i++) {
       entries.add(FlSpot(i.toDouble(), steps[i].toDouble()));

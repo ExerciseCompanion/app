@@ -17,6 +17,9 @@ class UserStepsData {
 }
 
 class UserStepsDB {
+  UserStepsDB(this.ref);
+  final ProviderRef<UserStepsDB> ref;
+
   final List<UserStepsData> _userSteps = [
     UserStepsData(id: 0, userID: 0, date: "10/07/2023", steps: 10),
     UserStepsData(id: 1, userID: 0, date: "10/06/2023", steps: 5),
@@ -81,8 +84,8 @@ class UserStepsDB {
   }
 }
 
-UserStepsDB userStepsDB = UserStepsDB();
+//UserStepsDB userStepsDB = UserStepsDB();
 
 final userStepsDBProvider = Provider<UserStepsDB>((ref) {
-  return UserStepsDB();
+  return UserStepsDB(ref);
 });

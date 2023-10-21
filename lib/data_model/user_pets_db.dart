@@ -1,5 +1,4 @@
 import 'package:exercise_companion/data_model/accessory_db.dart';
-import 'package:exercise_companion/data_model/user_db.dart';
 import './pet_db.dart';
 import '../elements/pet_item.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +27,9 @@ class UserPetData {
 }
 
 class UserPetDB {
+  UserPetDB(this.ref);
+  final ProviderRef<UserPetDB> ref;
+
   final List<UserPetData> _userPets = [
     UserPetData(
         id: 0,
@@ -84,12 +86,15 @@ class UserPetDB {
     return _userPets.where((pet) => pet.userID == userID).toList();
   }
 
-  List<Widget> getPetWidgets(int userID) {
+  List<Widget> getPetWidgets(int userID, int mainPetID) {
+    final accessoryDB = ref.read(accessoryDBProvider);
+
     List<UserPetData> pets = getPets(userID);
     List<Widget> widgets = [];
 
     for (UserPetData pet in pets) {
-      bool selected = (userDB.getUser(userID).mainPetID == pet.id);
+      bool selected =
+          mainPetID == pet.id; //(userDB.getUser(userID).mainPetID == pet.id);
       PetData petData = petDB.getPet(pet.petID);
       AccessoryData accessoryData = accessoryDB.getAccessory(pet.accessoryID);
       widgets.add(PetViewWidget(
@@ -106,15 +111,17 @@ class UserPetDB {
     return widgets;
   }
 
-  void setMainPetAccessory(int userID, int acessoryID) {
+  /*void setMainPetAccessory(int userID, int acessoryID) {
+    final userDB = ref.read(userDBProvider);
+
     int mainPetId = userDB.getUser(userID).mainPetID;
     _userPets.firstWhere((element) => element.id == mainPetId).accessoryID =
         acessoryID;
-  }
+  }*/
 }
 
-UserPetDB userPetDB = UserPetDB();
+//UserPetDB userPetDB = UserPetDB();
 
 final userPetDBProvider = Provider<UserPetDB>((ref) {
-  return UserPetDB();
+  return UserPetDB(ref);
 });

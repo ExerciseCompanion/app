@@ -19,7 +19,9 @@ class BaseAppBar extends ConsumerWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    int currentUserID = ref.watch(currentUserIDProvider);
+    int currentUserID = ref.read(currentUserIDProvider);
+    final userDB = ref.read(userDBProvider);
+
     return AppBar(
       /*leading: IconButton(
         icon: const Icon(

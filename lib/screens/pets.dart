@@ -1,7 +1,4 @@
-import 'package:exercise_companion/data_model/user_db.dart';
-import 'package:exercise_companion/data_model/user_pets_db.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import '../templates/appbar.dart';
 import '../templates/bottombar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

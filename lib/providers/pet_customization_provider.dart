@@ -12,21 +12,26 @@ import '../elements/pet.dart';
 
 final customizePetProvider =
     StateNotifierProvider<CustomizePetNotifier, Pet>((ref) {
-  int currentUserID = ref.watch(currentUserIDProvider);
-  return CustomizePetNotifier(currentUserID);
+  int currentUserID = ref.read(currentUserIDProvider);
+  final userDB = ref.watch(userDBProvider);
+  final userPetDB = ref.watch(userPetDBProvider);
+
+  return CustomizePetNotifier(currentUserID, userDB, userPetDB);
 });
 
 class CustomizePetNotifier extends StateNotifier<Pet> {
   int currentUserID;
+  UserDB userDB;
+  UserPetDB userPetDB;
 
-  CustomizePetNotifier(this.currentUserID)
+  CustomizePetNotifier(this.currentUserID, this.userDB, this.userPetDB)
       : super(Pet(background: "", pet: "", accessory: "")) {
     refresh();
   }
 
   void setAccessory(int accessoryID) {
     print("Selected accessory ${accessoryID}");
-    userPetDB.setMainPetAccessory(currentUserID, accessoryID);
+    userDB.setMainPetAccessory(currentUserID, accessoryID);
 
     Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
     state = Pet(

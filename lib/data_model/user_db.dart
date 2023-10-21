@@ -1,15 +1,9 @@
-import 'dart:ffi';
-
 import 'package:exercise_companion/data_model/accessory_db.dart';
 import 'package:exercise_companion/data_model/pet_db.dart';
 import 'package:exercise_companion/data_model/store_db.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'user_pets_db.dart';
-import 'user_task_db.dart';
-import 'user_steps_db.dart';
-import 'user_pets_db.dart';
-import 'accessory_db.dart';
 
 /// The data associated with users.
 class UserData {
@@ -44,6 +38,9 @@ class UserData {
 }
 
 class UserDB {
+  UserDB(this.ref);
+  final ProviderRef<UserDB> ref;
+
   final List<UserData> _users = [
     UserData(
         id: 0,
@@ -85,6 +82,8 @@ class UserDB {
   }*/
 
   void addPurchasedItem(int userID, int itemID, int productId, int itemType) {
+    final userPetDB = ref.watch(userPetDBProvider);
+
     UserData user = getUser(userID);
     user.purchasedItemsIDs.add(itemID);
     if (itemType == 0) {
@@ -98,7 +97,9 @@ class UserDB {
   }
 
   List<StoreData> getUnPurcahsedItems(int userID) {
-    Set<int> items = userDB.getUser(userID).purchasedItemsIDs.toSet();
+    final storeDB = ref.watch(storeDBProvider);
+
+    Set<int> items = getUser(userID).purchasedItemsIDs.toSet();
     Set<int> allItems = storeDB.getAllStoreItemIDs().toSet();
     Set<int> nonPurchasedIds = allItems.difference(items);
 
@@ -106,8 +107,10 @@ class UserDB {
   }
 
   List<AccessoryData> getAccessories(int userID) {
+    final accessoryDB = ref.watch(accessoryDBProvider);
+
     List<AccessoryData> accessories = [];
-    List<int> accessoryIDs = userDB.getUser(userID).accessoryInventoryIDs;
+    List<int> accessoryIDs = getUser(userID).accessoryInventoryIDs;
     for (int accessoryID in accessoryIDs) {
       accessories.add(accessoryDB.getAccessory(accessoryID));
     }
@@ -118,9 +121,11 @@ class UserDB {
   }
 
   Map<String, String> getMainPetAsset(userID) {
-    int mainPetID = userDB.getUser(userID).mainPetID;
+    final userPetDB = ref.watch(userPetDBProvider);
+    final accessoryDB = ref.watch(accessoryDBProvider);
+
+    int mainPetID = getUser(userID).mainPetID;
     UserPetData userPet = userPetDB.getPet(mainPetID);
-    int petID = userPet.petID;
     int? accessoryID = userPet.accessoryID;
 
     Map<String, String> assets = {
@@ -128,10 +133,17 @@ class UserDB {
           ? ""
           : accessoryDB.getAccessory(accessoryID).asset,
       "pet": petDB.getPet(userPet.petID).asset,
-      "background": userDB.getUser(userID).backdropAsset
+      "background": getUser(userID).backdropAsset
     };
 
     return assets;
+  }
+
+  void setMainPetAccessory(int userID, int acessoryID) {
+    final userPetDB = ref.read(userPetDBProvider);
+
+    int mainPetId = getUser(userID).mainPetID;
+    userPetDB.getPet(mainPetId).accessoryID = acessoryID;
   }
 
   void setMainPet(int userId, int mainPetId) {
@@ -141,7 +153,7 @@ class UserDB {
   bool checkUserEmail(String email) {
     //_users.firstWhere((element) => element.email == email, orElse: () => -1);
     try {
-      UserData user = _users.firstWhere((element) => element.email == email);
+      _users.firstWhere((element) => element.email == email);
       return true;
     } catch (e) {
       return false;
@@ -166,13 +178,13 @@ class UserDB {
 }
 
 /// The singleton instance providing access to all user data for clients.
-UserDB userDB = UserDB();
+//UserDB userDB = UserDB();
 
 /// The currently logged in user.
 //int currentUserID = 0;
 
 final userDBProvider = Provider<UserDB>((ref) {
-  return UserDB();
+  return UserDB(ref);
 });
 
 final currentUserIDProvider = StateProvider<int>((ref) {

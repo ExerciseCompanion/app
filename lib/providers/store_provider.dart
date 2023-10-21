@@ -12,13 +12,18 @@ import 'package:flutter/material.dart';
 
 final storeProvider = StateNotifierProvider<StoreNotifier, List<Widget>>((ref) {
   int currentUserID = ref.watch(currentUserIDProvider);
-  return StoreNotifier(currentUserID);
+  final userDB = ref.watch(userDBProvider);
+  final storeDB = ref.read(storeDBProvider);
+
+  return StoreNotifier(currentUserID, userDB, storeDB);
 });
 
 class StoreNotifier extends StateNotifier<List<Widget>> {
   int currentUserID;
+  UserDB userDB;
+  StoreDB storeDB;
 
-  StoreNotifier(this.currentUserID) : super([]) {
+  StoreNotifier(this.currentUserID, this.userDB, this.storeDB) : super([]) {
     refresh();
   }
 

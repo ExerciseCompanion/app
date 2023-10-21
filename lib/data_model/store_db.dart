@@ -18,6 +18,9 @@ class StoreData {
 }
 
 class StoreDB {
+  StoreDB(this.ref);
+  final ProviderRef<StoreDB> ref;
+
   final List<StoreData> _store = [
     StoreData(id: 0, type: 0, itemID: 2, cost: 10),
     StoreData(id: 1, type: 1, itemID: 0, cost: 10),
@@ -44,6 +47,8 @@ class StoreDB {
   }
 
   List<Widget> getShopWidgetsByStoreDatas(List<StoreData> items) {
+    final accessoryDB = ref.watch(accessoryDBProvider);
+
     List<Widget> widgets = [];
     String name = "";
     String asset = "";
@@ -74,8 +79,8 @@ class StoreDB {
   }
 }
 
-StoreDB storeDB = StoreDB();
+//StoreDB storeDB = StoreDB();
 
 final storeDBProvider = Provider<StoreDB>((ref) {
-  return StoreDB();
+  return StoreDB(ref);
 });

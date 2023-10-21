@@ -42,7 +42,7 @@ class AccessoryDB {
   }
 }
 
-AccessoryDB accessoryDB = AccessoryDB();
+//AccessoryDB accessoryDB = AccessoryDB();
 
 final accessoryDBProvider = Provider<AccessoryDB>((ref) {
   return AccessoryDB();

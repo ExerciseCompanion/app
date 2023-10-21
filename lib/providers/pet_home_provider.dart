@@ -11,14 +11,17 @@ import '../elements/pet.dart';
 });*/
 
 final homePetProvider = StateNotifierProvider<HomePetNotifier, Pet>((ref) {
-  int currentUserID = ref.watch(currentUserIDProvider);
-  return HomePetNotifier(currentUserID);
+  int currentUserID = ref.read(currentUserIDProvider);
+  final userDB = ref.read(userDBProvider);
+
+  return HomePetNotifier(currentUserID, userDB);
 });
 
 class HomePetNotifier extends StateNotifier<Pet> {
   int currentUserID;
+  UserDB userDB;
 
-  HomePetNotifier(this.currentUserID)
+  HomePetNotifier(this.currentUserID, this.userDB)
       : super(Pet(background: "", pet: "", accessory: "")) {
     refresh();
   }

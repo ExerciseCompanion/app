@@ -15,6 +15,7 @@ class LoginPage extends ConsumerWidget {
   void onPressed(BuildContext context, WidgetRef ref) {
     bool validEmailAndPassword =
         _formKey.currentState?.saveAndValidate() ?? false;
+    UserDB userDB = ref.read(userDBProvider);
     //UserDB userDB = ref.read(userDBProvider);
 
     if (validEmailAndPassword) {

@@ -24,6 +24,9 @@ class UserTaskData {
 }
 
 class UserTaskDB {
+  UserTaskDB(this.ref);
+  final ProviderRef<UserTaskDB> ref;
+
   final List<UserTaskData> _userTasks = [
     UserTaskData(
         id: 0,
@@ -75,8 +78,8 @@ class UserTaskDB {
   }
 }
 
-UserTaskDB userTasksDB = UserTaskDB();
+//UserTaskDB userTasksDB = UserTaskDB();
 
 final userTasksDBProvider = Provider<UserTaskDB>((ref) {
-  return UserTaskDB();
+  return UserTaskDB(ref);
 });

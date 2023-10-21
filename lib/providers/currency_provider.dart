@@ -9,14 +9,17 @@ import 'package:flutter/material.dart';
 });*/
 
 final currencyProvider = StateNotifierProvider<CurrencyNotifier, int>((ref) {
-  int currentUserID = ref.watch(currentUserIDProvider);
-  return CurrencyNotifier(currentUserID);
+  int currentUserID = ref.read(currentUserIDProvider);
+  final userDB = ref.watch(userDBProvider);
+
+  return CurrencyNotifier(currentUserID, userDB);
 });
 
 class CurrencyNotifier extends StateNotifier<int> {
   int currentUserID;
+  UserDB userDB;
 
-  CurrencyNotifier(this.currentUserID) : super(0) {
+  CurrencyNotifier(this.currentUserID, this.userDB) : super(0) {
     refresh();
   }
 

@@ -47,7 +47,9 @@ class CustomizationPage extends ConsumerWidget {
   }
 
   Widget accessoryContainer(BuildContext context, WidgetRef ref) {
-    int currentUserID = ref.watch(currentUserIDProvider);
+    int currentUserID = ref.read(currentUserIDProvider);
+    final userDB = ref.read(userDBProvider);
+
     List<AccessoryData> accesssories = userDB.getAccessories(currentUserID);
 
     return Column(children: [
