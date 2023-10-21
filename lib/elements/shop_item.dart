@@ -1,5 +1,4 @@
 import 'package:exercise_companion/data_model/store_db.dart';
-import 'package:exercise_companion/providers/currency_provider.dart';
 import 'package:exercise_companion/providers/pet_customization_provider.dart';
 import 'package:exercise_companion/providers/pet_select_provider.dart';
 import 'package:exercise_companion/providers/store_provider.dart';
@@ -46,7 +45,7 @@ class ShopViewWidget extends ConsumerWidget {
     ref.read(storeProvider.notifier).refresh();
     ref.read(selectPetProvider.notifier).refresh();
     ref.read(customizePetProvider.notifier).refresh();
-    ref.read(currencyProvider.notifier).refresh();
+    //ref.read(currencyProvider.notifier).refresh();
   }
 
   Widget buyButton(WidgetRef ref) {
