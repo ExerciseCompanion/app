@@ -88,6 +88,14 @@ class UserStepsDB {
     // ASSUME THAT THE LAST ENTRY IS THE LATEST STEP COUNTER
     return _userSteps.lastWhere((element) => element.userID == userID);
   }
+
+  // Must be idempotent, i.e. state based
+  double calculatePetHealthBasedOnLastStepEntry(int userID) {
+    int recommendedSteps = 100;
+    num ratio = (getLastStepEntry(userID).steps / recommendedSteps)
+        .clamp(0, recommendedSteps);
+    return ratio.toDouble();
+  }
 }
 
 //UserStepsDB userStepsDB = UserStepsDB();
