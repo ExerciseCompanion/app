@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'dart:math';
 import 'package:intl/intl.dart';
 import 'package:exercise_companion/data_model/user_db.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -81,6 +82,11 @@ class UserStepsDB {
         .steps;
 
     return steps;
+  }
+
+  UserStepsData getLastStepEntry(int userID) {
+    // ASSUME THAT THE LAST ENTRY IS THE LATEST STEP COUNTER
+    return _userSteps.lastWhere((element) => element.userID == userID);
   }
 }
 

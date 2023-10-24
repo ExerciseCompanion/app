@@ -67,7 +67,7 @@ class ShopViewWidget extends ConsumerWidget {
             borderRadius: BorderRadius.all(Radius.circular(24.0)),
             boxShadow: [
               BoxShadow(
-                blurRadius: 20.0,
+                blurRadius: 7.0,
                 color: Color.fromARGB(160, 0, 0, 0),
               ),
             ]),
