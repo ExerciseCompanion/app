@@ -1,0 +1,14 @@
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/CMakeFiles/install/strip.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/CMakeFiles/install/local.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/CMakeFiles/install.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/CMakeFiles/list_install_components.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/CMakeFiles/rebuild_cache.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/CMakeFiles/edit_cache.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/CMakeFiles/exercise_companion.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter/CMakeFiles/install/strip.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter/CMakeFiles/install/local.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter/CMakeFiles/install.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter/CMakeFiles/list_install_components.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter/CMakeFiles/rebuild_cache.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter/CMakeFiles/edit_cache.dir
+/root/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter/CMakeFiles/flutter_assemble.dir

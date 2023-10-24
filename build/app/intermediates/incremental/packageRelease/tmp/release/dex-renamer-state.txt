@@ -1,0 +1,4 @@
+#Sat Oct 21 11:42:32 HST 2023
+base.0=/root/projects-synced/school/MAD/final/exercise_companion/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

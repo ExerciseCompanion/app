@@ -1,0 +1,12 @@
+com.example.pedometer-jetified-window-1.0.0-beta04-0 /root/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/res
+com.example.pedometer-jetified-annotation-experimental-1.1.0-1 /root/.gradle/caches/transforms-3/6c0c163cc77ae6c91f9f7dfcd179c29c/transformed/jetified-annotation-experimental-1.1.0/res
+com.example.pedometer-core-1.6.0-2 /root/.gradle/caches/transforms-3/7e9df2ac2213a6bd3cef0f2f27870d79/transformed/core-1.6.0/res
+com.example.pedometer-jetified-window-java-1.0.0-beta04-3 /root/.gradle/caches/transforms-3/ae81e06d24c799147c26814497a2a305/transformed/jetified-window-java-1.0.0-beta04/res
+com.example.pedometer-main-4 /root/.pub-cache/hosted/pub.dev/pedometer-4.0.1/android/src/main/res
+com.example.pedometer-release-5 /root/.pub-cache/hosted/pub.dev/pedometer-4.0.1/android/src/release/res
+com.example.pedometer-pngs-6 /root/projects-synced/school/MAD/final/exercise_companion/build/pedometer/generated/res/pngs/release
+com.example.pedometer-resValues-7 /root/projects-synced/school/MAD/final/exercise_companion/build/pedometer/generated/res/resValues/release
+com.example.pedometer-rs-8 /root/projects-synced/school/MAD/final/exercise_companion/build/pedometer/generated/res/rs/release
+com.example.pedometer-mergeReleaseResources-9 /root/projects-synced/school/MAD/final/exercise_companion/build/pedometer/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.example.pedometer-mergeReleaseResources-10 /root/projects-synced/school/MAD/final/exercise_companion/build/pedometer/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.example.pedometer-merged_res-11 /root/projects-synced/school/MAD/final/exercise_companion/build/pedometer/intermediates/merged_res/release

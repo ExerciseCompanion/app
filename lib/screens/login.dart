@@ -23,7 +23,7 @@ class LoginPage extends ConsumerWidget {
       if (userDB.checkUserEmail(email)) {
         ref.read(currentUserIDProvider.notifier).state =
             userDB.getUserByEmail(email).id;
-        Navigator.pushReplacementNamed(context, '/');
+        Navigator.pushReplacementNamed(context, '/home');
       } else {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text("Unknown User"),

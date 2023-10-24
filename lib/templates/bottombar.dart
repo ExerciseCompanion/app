@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 class BaseBottomNavigationBar extends StatelessWidget {
   int _selectedIndex = 0;
-  List<String> pages = ["/task", "/customization", "/", "/pet", "/shop"];
+  List<String> pages = ["/task", "/customization", "/home", "/pet", "/shop"];
 
   /*static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);

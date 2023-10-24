@@ -5,6 +5,7 @@ import 'screens/shop.dart';
 import 'screens/tasks.dart';
 import 'screens/customization.dart';
 import 'screens/login.dart';
+import 'screens/pedometer.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,10 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Shrine',
-      initialRoute: '/login',
+      initialRoute: '/',
       routes: {
-        '/login': (BuildContext context) => LoginPage(),
-        '/': (BuildContext context) => const HomePage(),
+        '/ptest': (BuildContext context) => PedoMeterPage(),
+        '/': (BuildContext context) => LoginPage(),
+        '/home': (BuildContext context) => const HomePage(),
         '/shop': (BuildContext context) => const ShopPage(),
         '/pet': (BuildContext context) => const PetPage(),
         '/task': (BuildContext context) => const TaskPage(),
