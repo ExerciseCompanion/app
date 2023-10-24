@@ -21,13 +21,13 @@ class UserStepsDB {
   final ProviderRef<UserStepsDB> ref;
 
   final List<UserStepsData> _userSteps = [
-    UserStepsData(id: 0, userID: 0, date: "10/07/2023", steps: 10),
-    UserStepsData(id: 1, userID: 0, date: "10/06/2023", steps: 5),
-    UserStepsData(id: 2, userID: 0, date: "10/05/2023", steps: 20),
-    UserStepsData(id: 3, userID: 0, date: "10/04/2023", steps: 21),
-    UserStepsData(id: 4, userID: 0, date: "10/03/2023", steps: 22),
-    UserStepsData(id: 5, userID: 0, date: "10/02/2023", steps: 23),
-    UserStepsData(id: 6, userID: 0, date: "10/01/2023", steps: 24),
+    UserStepsData(id: 0, userID: 0, date: "10/24/2023", steps: 10),
+    UserStepsData(id: 1, userID: 0, date: "10/23/2023", steps: 5),
+    UserStepsData(id: 2, userID: 0, date: "10/22/2023", steps: 20),
+    UserStepsData(id: 3, userID: 0, date: "10/21/2023", steps: 21),
+    UserStepsData(id: 4, userID: 0, date: "10/20/2023", steps: 22),
+    UserStepsData(id: 5, userID: 0, date: "10/19/2023", steps: 23),
+    UserStepsData(id: 6, userID: 0, date: "10/18/2023", steps: 24),
   ];
 
   /*UserData getUser(String userID) {

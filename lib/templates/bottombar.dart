@@ -36,6 +36,8 @@ class BaseBottomNavigationBar extends StatelessWidget {
     print(ModalRoute.of(context)?.settings.name);
     _selectedIndex = pages
         .indexWhere((item) => item == ModalRoute.of(context)?.settings.name);
+    _selectedIndex == -1 ? 2 : _selectedIndex;
+
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
