@@ -1,4 +1,6 @@
+import 'package:exercise_companion/data_model/pet_db.dart';
 import 'package:exercise_companion/data_model/user_db.dart';
+import 'package:exercise_companion/data_model/user_pets_db.dart';
 import 'package:exercise_companion/data_model/user_steps_db.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -6,6 +8,7 @@ import '../templates/appbar.dart';
 import '../templates/bottombar.dart';
 import '../elements/line_chart.dart';
 import '../elements/aspect_box.dart';
+import '../elements/bar.dart';
 import '../elements/pet.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/pet_home_provider.dart';
@@ -17,6 +20,7 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     //Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
     int currentUserID = ref.read(currentUserIDProvider);
+    final userDB = ref.read(userDBProvider);
     final userStepsDB = ref.read(userStepsDBProvider);
 
     return Scaffold(
@@ -53,6 +57,13 @@ class HomePage extends ConsumerWidget {
   }
 
   Widget _panel(WidgetRef ref) {
+    int currentUserID = ref.read(currentUserIDProvider);
+    final userDB = ref.read(userDBProvider);
+    final userPetDB = ref.read(userPetDBProvider);
+    final petDB = ref.read(petDBProvider);
+    int mainPetID = userDB.getUser(currentUserID).mainPetID;
+    UserPetData userPet = userPetDB.getPet(mainPetID);
+
     return Container(
         decoration: BoxDecoration(
             color: Colors.white,
@@ -66,7 +77,14 @@ class HomePage extends ConsumerWidget {
         //margin: panelMargins(),
         child: SingleChildScrollView(
             child: Column(children: [
-          LineChartSample2(ref: ref)
+          Padding(padding: EdgeInsets.all(10)),
+          Text("Health"),
+          BarWidget(
+              percentage:
+                  userPet.health / petDB.getPet(userPet.petID).maxHealth),
+          Padding(padding: EdgeInsets.all(10)),
+          Text("Steps"),
+          LineChartSample2(ref: ref),
         ])) /*Center(
         child: Text("Walking Statics and Pet Info Goes Here"),
       ),*/
