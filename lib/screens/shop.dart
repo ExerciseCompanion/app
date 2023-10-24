@@ -23,6 +23,7 @@ class ShopPage extends ConsumerWidget {
             childAspectRatio: 0.75,
             crossAxisSpacing: 10,
             crossAxisCount: 2,
+            mainAxisSpacing: 10,
             children: ref.watch(storeProvider)),
         /*body: const Markdown(data: '''
 # Shop Page

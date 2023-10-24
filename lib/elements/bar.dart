@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 
 class BarWidget extends StatelessWidget {
   final double percentage;
+  final Color color;
 
-  BarWidget({required this.percentage});
+  BarWidget({required this.percentage, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class BarWidget extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(10)),
         child: LinearProgressIndicator(
           value: percentage,
-          valueColor: AlwaysStoppedAnimation<Color>(Color(0xff00ff00)),
+          valueColor: AlwaysStoppedAnimation<Color>(color),
           backgroundColor: Color(0xffD6D6D6),
         ),
       ),

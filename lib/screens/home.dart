@@ -77,13 +77,19 @@ class HomePage extends ConsumerWidget {
         //margin: panelMargins(),
         child: SingleChildScrollView(
             child: Column(children: [
-          Padding(padding: EdgeInsets.all(10)),
-          Text("Health"),
+          const Padding(padding: EdgeInsets.all(10)),
+          const Text("Experience"),
+          BarWidget(
+              percentage: userPet.exp / petDB.getPet(userPet.petID).maxExp,
+              color: Color.fromARGB(255, 0, 140, 255)),
+          const Padding(padding: EdgeInsets.all(10)),
+          const Text("Health"),
           BarWidget(
               percentage:
-                  userPet.health / petDB.getPet(userPet.petID).maxHealth),
-          Padding(padding: EdgeInsets.all(10)),
-          Text("Steps"),
+                  userPet.health / petDB.getPet(userPet.petID).maxHealth,
+              color: Color.fromARGB(255, 0, 208, 10)),
+          const Padding(padding: EdgeInsets.all(10)),
+          const Text("Steps"),
           LineChartSample2(ref: ref),
         ])) /*Center(
         child: Text("Walking Statics and Pet Info Goes Here"),

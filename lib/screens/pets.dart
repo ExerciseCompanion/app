@@ -19,6 +19,7 @@ class PetPage extends ConsumerWidget {
           childAspectRatio: 0.75,
           crossAxisSpacing: 10,
           crossAxisCount: 2,
+          mainAxisSpacing: 10,
           children: ref.watch(selectPetProvider),
           //children: userPetDB.getPetWidgets(currentUserID),
         ),
