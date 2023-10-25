@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
+import '../../user/data/user_db_provider.dart';
 
 class LineChartSample2 extends StatefulWidget {
   final WidgetRef ref;

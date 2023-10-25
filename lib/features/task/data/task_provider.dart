@@ -3,6 +3,8 @@ import 'package:exercise_companion/features/task/domain/user_task_db.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import './user_task_db_provider.dart';
+import '../../user/data/user_db_provider.dart';
 
 /*final selectPetProvider = StateProvider<int>((ref) {
   print("Selected Pet");

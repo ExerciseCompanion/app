@@ -8,6 +8,7 @@ import 'pet.dart';
 import 'dart:math';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../data/pet_customization_provider.dart';
+import '../../user/data/user_db_provider.dart';
 
 class CustomizationPage extends ConsumerWidget {
   const CustomizationPage({Key? key}) : super(key: key);

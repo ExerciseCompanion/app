@@ -44,8 +44,5 @@ class PetDB {
   }
 }
 
-PetDB petDB = PetDB();
+//PetDB petDB = PetDB();
 
-final petDBProvider = Provider<PetDB>((ref) {
-  return PetDB();
-});

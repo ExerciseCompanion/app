@@ -1,8 +1,10 @@
 import 'package:exercise_companion/features/accessory/domain/accessory_db.dart';
+import 'package:exercise_companion/features/pet/data/pet_db_provider.dart';
 import 'package:exercise_companion/features/pet/domain/pet_db.dart';
 import 'package:flutter/material.dart';
 import '../presentation/shop_item.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../accessory/data/accessory_db_provider.dart';
 
 class StoreData {
   StoreData(
@@ -48,6 +50,7 @@ class StoreDB {
 
   List<Widget> getShopWidgetsByStoreDatas(List<StoreData> items) {
     final accessoryDB = ref.watch(accessoryDBProvider);
+    PetDB petDB = ref.watch(petDBProvider);
 
     List<Widget> widgets = [];
     String name = "";
@@ -81,6 +84,3 @@ class StoreDB {
 
 //StoreDB storeDB = StoreDB();
 
-final storeDBProvider = Provider<StoreDB>((ref) {
-  return StoreDB(ref);
-});

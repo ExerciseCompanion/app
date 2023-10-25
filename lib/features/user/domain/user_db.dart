@@ -1,9 +1,13 @@
 import 'package:exercise_companion/features/accessory/domain/accessory_db.dart';
+import 'package:exercise_companion/features/pet/data/pet_db_provider.dart';
 import 'package:exercise_companion/features/pet/domain/pet_db.dart';
 import 'package:exercise_companion/features/store/domain/store_db.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../pet/domain/user_pets_db.dart';
+import '../../accessory/data/accessory_db_provider.dart';
+import '../../pet/data/user_pet_db_provider.dart';
+import '../../store/data/store_db_provider.dart';
 
 /// The data associated with users.
 class UserData {
@@ -123,6 +127,7 @@ class UserDB {
   Map<String, String> getMainPetAsset(userID) {
     final userPetDB = ref.watch(userPetDBProvider);
     final accessoryDB = ref.watch(accessoryDBProvider);
+    final petDB = ref.watch(petDBProvider);
 
     int mainPetID = getUser(userID).mainPetID;
     UserPetData userPet = userPetDB.getPet(mainPetID);
@@ -183,10 +188,3 @@ class UserDB {
 /// The currently logged in user.
 //int currentUserID = 0;
 
-final userDBProvider = Provider<UserDB>((ref) {
-  return UserDB(ref);
-});
-
-final currentUserIDProvider = StateProvider<int>((ref) {
-  return 0;
-});

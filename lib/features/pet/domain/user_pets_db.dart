@@ -1,8 +1,10 @@
 import 'package:exercise_companion/features/accessory/domain/accessory_db.dart';
+import 'package:exercise_companion/features/pet/data/pet_db_provider.dart';
 import 'pet_db.dart';
 import '../presentation/pet_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../accessory/data/accessory_db_provider.dart';
 
 class UserPetData {
   UserPetData(
@@ -64,6 +66,7 @@ class UserPetDB {
     int maxID = _userPets
         .reduce((current, next) => current.id > next.id ? current : next)
         .id;
+    PetDB petDB = ref.watch(petDBProvider);
     PetData pet = petDB.getPet(petID);
     UserPetData petData = UserPetData(
         id: maxID += 1,
@@ -95,6 +98,7 @@ class UserPetDB {
     for (UserPetData pet in pets) {
       bool selected =
           mainPetID == pet.id; //(userDB.getUser(userID).mainPetID == pet.id);
+      PetDB petDB = ref.watch(petDBProvider);
       PetData petData = petDB.getPet(pet.petID);
       AccessoryData accessoryData = accessoryDB.getAccessory(pet.accessoryID);
       widgets.add(PetViewWidget(
@@ -121,7 +125,3 @@ class UserPetDB {
 }
 
 //UserPetDB userPetDB = UserPetDB();
-
-final userPetDBProvider = Provider<UserPetDB>((ref) {
-  return UserPetDB(ref);
-});

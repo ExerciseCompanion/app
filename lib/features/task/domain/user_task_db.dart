@@ -80,6 +80,3 @@ class UserTaskDB {
 
 //UserTaskDB userTasksDB = UserTaskDB();
 
-final userTasksDBProvider = Provider<UserTaskDB>((ref) {
-  return UserTaskDB(ref);
-});
