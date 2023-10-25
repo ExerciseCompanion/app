@@ -138,8 +138,8 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
   LineChartData mainData(WidgetRef ref) {
     //print(userStepsDB.getPastWeekAsList(0));
-    final currentUserID = ref.watch(currentUserIDProvider);
-    final userStepsDB = ref.watch(userStepsDBProvider);
+    final int currentUserID = ref.read(currentUserIDProvider);
+    final UserStepsDB userStepsDB = ref.read(userStepsDBProvider);
 
     List<int> steps = userStepsDB.getPastWeekAsList(currentUserID);
     List<FlSpot> entries = [];

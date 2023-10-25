@@ -46,7 +46,7 @@ class UserStepsDB {
 
     List<UserStepsData> stepLogs = _userSteps
         .where((stepLog) =>
-            stepLog.userID == 0 && datesMap.containsKey(stepLog.date))
+            stepLog.userID == userID && datesMap.containsKey(stepLog.date))
         .toList();
 
     for (UserStepsData log in stepLogs) {
@@ -77,7 +77,8 @@ class UserStepsDB {
     final DateTime currentDate = DateTime.now();
     final String date = DateFormat('MM/dd/yyyy').format(currentDate);
     final int steps = _userSteps
-        .firstWhere((stepLog) => stepLog.userID == 0 && stepLog.date == date,
+        .firstWhere(
+            (stepLog) => stepLog.userID == userID && stepLog.date == date,
             orElse: () => UserStepsData(id: -1, userID: -1, date: "", steps: 0))
         .steps;
 
