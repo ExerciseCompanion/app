@@ -39,6 +39,8 @@ class UserData {
 
   List<int> petInventoryIDs;
   List<int> accessoryInventoryIDs;
+
+  //Todo: add theme?
 }
 
 class UserDB {
