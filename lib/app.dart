@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
-import 'screens/pets.dart';
-import 'screens/shop.dart';
-import 'screens/tasks.dart';
-import 'screens/customization.dart';
-import 'screens/login.dart';
-import 'screens/pedometer.dart';
+import 'features/home/presentation/home.dart';
+import 'features/pet/presentation/pets.dart';
+import 'features/store/presentation/shop.dart';
+import 'features/task/presentation/tasks.dart';
+import 'features/pet/presentation/customization.dart';
+import 'features/login/presentation/login.dart';
+import 'features/pedometer/presentation/pedometer.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
