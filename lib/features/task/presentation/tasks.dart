@@ -1,8 +1,8 @@
 import 'package:exercise_companion/features/user/domain/user_db.dart';
 import 'package:exercise_companion/features/task/domain/user_task_db.dart';
 import 'package:flutter/material.dart';
-import '../../generic/presentation/appbar.dart';
-import '../../generic/presentation/bottombar.dart';
+import '../../generic/presentation/app_bar.dart';
+import '../../generic/presentation/bottom_bar.dart';
 import 'task_view.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../data/task_provider.dart';

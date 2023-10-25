@@ -4,8 +4,8 @@ import 'package:exercise_companion/features/pet/domain/user_pets_db.dart';
 import 'package:exercise_companion/features/store/data/store_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import '../../generic/presentation/appbar.dart';
-import '../../generic/presentation/bottombar.dart';
+import '../../generic/presentation/app_bar.dart';
+import '../../generic/presentation/bottom_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ShopPage extends ConsumerWidget {

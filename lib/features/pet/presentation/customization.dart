@@ -1,8 +1,8 @@
 import 'package:exercise_companion/features/user/domain/user_db.dart';
 import 'package:flutter/material.dart';
 import '../../accessory/domain/accessory_db.dart';
-import '../../generic/presentation/appbar.dart';
-import '../../generic/presentation/bottombar.dart';
+import '../../generic/presentation/app_bar.dart';
+import '../../generic/presentation/bottom_bar.dart';
 import '../../accessory/presentation/accessory_card.dart';
 import 'pet.dart';
 import 'dart:math';

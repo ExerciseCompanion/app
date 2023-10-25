@@ -4,8 +4,8 @@ import 'package:exercise_companion/features/pet/domain/user_pets_db.dart';
 import 'package:exercise_companion/features/user/domain/user_steps_db.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import '../../generic/presentation/appbar.dart';
-import '../../generic/presentation/bottombar.dart';
+import '../../generic/presentation/app_bar.dart';
+import '../../generic/presentation/bottom_bar.dart';
 import '../../generic/presentation/line_chart.dart';
 import '../../generic/presentation/aspect_box.dart';
 import '../../generic/presentation/bar.dart';
@@ -32,7 +32,7 @@ class HomePage extends ConsumerWidget {
           title: "Home",
         ),*/
         body: SlidingUpPanel(
-          panel: _panel(ref),
+          panel: _panel(context, ref),
           collapsed: _collapsedPanel(
               context, userStepsDB.getTodaysSteps(currentUserID)),
           body: ref.read(homePetProvider),
@@ -59,7 +59,7 @@ class HomePage extends ConsumerWidget {
     );
   }
 
-  Widget _panel(WidgetRef ref) {
+  Widget _panel(BuildContext context, WidgetRef ref) {
     int currentUserID = ref.read(currentUserIDProvider);
     final userDB = ref.read(userDBProvider);
     final userPetDB = ref.read(userPetDBProvider);
@@ -94,6 +94,11 @@ class HomePage extends ConsumerWidget {
           const Padding(padding: EdgeInsets.all(10)),
           const Text("Steps"),
           LineChartSample2(ref: ref),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  textStyle: const TextStyle(fontSize: 20)),
+              onPressed: () => {Navigator.pushNamed(context, "/settings")},
+              child: const Text('⚙️ Settings'))
         ])) /*Center(
         child: Text("Walking Statics and Pet Info Goes Here"),
       ),*/
