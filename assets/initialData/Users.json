@@ -1,0 +1,22 @@
+[{
+    "id": 0,
+    "username": "@cleeuh",
+    "email": "clee48@hawaii.edu",
+    "currency": 0,
+    "mainPetID": 0,
+    "backdropAsset": "images/backgrounds/test.jpg",
+    "purchasedItemsIDs": [],
+    "petInventoryIDs": [0],
+    "accessoryInventoryIDs": [0, 1, 1]
+},
+{
+    "id": 1,
+    "username": "@fakeuser",
+    "email": "fakeuser@hawaii.edu",
+    "currency": 0,
+    "mainPetID": 0,
+    "backdropAsset": "images/backgrounds/test.jpg",
+    "purchasedItemsIDs": [],
+    "petInventoryIDs": [1],
+    "accessoryInventoryIDs": [0, 1]
+}]
