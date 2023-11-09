@@ -1,4 +1,4 @@
-import 'package:exercise_companion/features/store/domain/store_db.dart';
+import 'package:exercise_companion/features/store/domain/store_db.dart.delete';
 import 'package:exercise_companion/features/user/domain/user_db.dart';
 import 'package:exercise_companion/features/task/domain/user_task_db.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
