@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Pet extends StatelessWidget {
+class PetImg extends StatelessWidget {
   final String background;
   final String pet;
   final String accessory;
 
-  Pet({required this.background, required this.pet, required this.accessory});
+  PetImg(
+      {required this.background, required this.pet, required this.accessory});
 
   @override
   Widget build(BuildContext context) {

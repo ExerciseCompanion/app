@@ -3,7 +3,7 @@ import 'package:exercise_companion/features/pet/domain/user_pets_db.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../presentation/pet.dart';
+import '../presentation/pet_img.dart';
 import './user_pet_db_provider.dart';
 import '../../user/data/user_db_provider.dart';
 
@@ -27,7 +27,7 @@ class CustomizePetNotifier extends StateNotifier<Pet> {
   UserPetDB userPetDB;
 
   CustomizePetNotifier(this.currentUserID, this.userDB, this.userPetDB)
-      : super(Pet(background: "", pet: "", accessory: "")) {
+      : super(PetImg(background: "", pet: "", accessory: "")) {
     refresh();
   }
 
@@ -36,7 +36,7 @@ class CustomizePetNotifier extends StateNotifier<Pet> {
     userDB.setMainPetAccessory(currentUserID, accessoryID);
 
     Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
-    state = Pet(
+    state = PetImg(
         background: assets["background"] ?? "",
         pet: assets["pet"] ?? "",
         accessory: assets["accessory"] ?? "");
@@ -44,7 +44,7 @@ class CustomizePetNotifier extends StateNotifier<Pet> {
 
   void refresh() {
     Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
-    state = Pet(
+    state = PetImg(
         background: assets["background"] ?? "",
         pet: assets["pet"] ?? "",
         accessory: assets["accessory"] ?? "");

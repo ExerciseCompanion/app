@@ -9,7 +9,7 @@ import '../../generic/presentation/bottom_bar.dart';
 import '../../generic/presentation/line_chart.dart';
 import '../../generic/presentation/aspect_box.dart';
 import '../../generic/presentation/bar.dart';
-import '../../pet/presentation/pet.dart';
+import '../../pet/presentation/pet_img.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../pet/data/pet_home_provider.dart';
 import '../../pet/data/user_pet_db_provider.dart';

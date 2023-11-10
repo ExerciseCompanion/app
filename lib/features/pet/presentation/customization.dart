@@ -4,7 +4,7 @@ import '../../accessory/domain/accessory_db.dart';
 import '../../generic/presentation/app_bar.dart';
 import '../../generic/presentation/bottom_bar.dart';
 import '../../accessory/presentation/accessory_card.dart';
-import 'pet.dart';
+import 'pet_img.dart';
 import 'dart:math';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../data/pet_customization_provider.dart';
