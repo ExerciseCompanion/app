@@ -38,17 +38,40 @@ class AllData {
   final int currentUserID;
 }
 
-@riverpod
-Future<AllData> allData(AllDataRef ref) async {
-  final chapters = ref.watch(chaptersProvider.future);
-  final gardens = ref.watch(gardensProvider.future);
+final allDataProvider = FutureProvider((ref) async {
   final users = ref.watch(usersProvider.future);
-  final news = ref.watch(newsProvider.future);
+  final userSteps = ref.watch(userStepsProvider.future);
+  final userTasks = ref.watch(userTasksProvider.future);
+  final userPets = ref.watch(userPetsProvider.future);
+  final pets = ref.watch(petsProvider.future);
+  final stores = ref.watch(storesProvider.future);
+  final accessories = ref.watch(accessoriesProvider.future);
+
   final currentUserID = ref.watch(currentUserIDProvider);
   return AllData(
-      chapters: await chapters,
-      gardens: await gardens,
       users: await users,
-      news: await news,
+      userSteps: await userSteps,
+      userTasks: await userTasks,
+      userPets: await userPets,
+      pets: await pets,
+      stores: await stores,
+      accessories: await accessories,
       currentUserID: currentUserID);
-}
+});
+
+
+
+// @riverpod
+// Future<AllData> allData(AllDataRef ref) async {
+//   final chapters = ref.watch(chaptersProvider.future);
+//   final gardens = ref.watch(gardensProvider.future);
+//   final users = ref.watch(usersProvider.future);
+//   final news = ref.watch(newsProvider.future);
+//   final currentUserID = ref.watch(currentUserIDProvider);
+//   return AllData(
+//       chapters: await chapters,
+//       gardens: await gardens,
+//       users: await users,
+//       news: await news,
+//       currentUserID: currentUserID);
+// }
