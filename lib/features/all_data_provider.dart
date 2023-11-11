@@ -1,10 +1,17 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'chapter/data/chapter_provider.dart';
-import 'garden/data/garden_provider.dart';
-import 'news/data/news_provider.dart';
-import 'user/data/user_providers.dart';
+import 'accessory/data/accessory_provider.dart';
+//import 'chapter/data/chapter_provider.dart';
+//import 'garden/data/garden_provider.dart';
+//import 'news/data/news_provider.dart';
+import 'pet/data/pet_provider.dart';
+import 'pet/data/user_pet_provider.dart';
+import 'store/data/store_provider.dart';
+import 'task/data/user_task_provider.dart';
+import 'user/data/user_provider.dart';
+//import 'user/data/user_providers.dart';
 
+import 'user/data/user_step_provider.dart';
 import 'user/domain/user.dart';
 import 'user/domain/user_step.dart';
 import 'pet/domain/pet.dart';
@@ -13,7 +20,7 @@ import 'store/domain/store.dart';
 import 'task/domain/user_task.dart';
 import 'accessory/domain/accessory.dart';
 
-part 'all_data_provider.g.dart';
+//part 'all_data_provider.g.dart';
 
 // Based on: https://stackoverflow.com/questions/69929734/combining-futureproviders-using-a-futureprovider-riverpod
 
@@ -36,6 +43,18 @@ class AllData {
   final List<Store> stores;
   final List<Accessory> accessories;
   final int currentUserID;
+
+  static AllData empty() {
+    return AllData(
+        users: List.empty(),
+        userSteps: List.empty(),
+        userTasks: List.empty(),
+        userPets: List.empty(),
+        pets: List.empty(),
+        stores: List.empty(),
+        accessories: List.empty(),
+        currentUserID: 0);
+  }
 }
 
 final allDataProvider = FutureProvider((ref) async {

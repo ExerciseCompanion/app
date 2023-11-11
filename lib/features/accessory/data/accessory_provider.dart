@@ -13,7 +13,7 @@ final accessoryDatabaseProvider = Provider<AccessoryDatabase>((ref) {
   return AccessoryDatabase(ref);
 });
 
-final accessorysProvider = StreamProvider<List<Accessory>>((ref) {
+final accessoriesProvider = StreamProvider<List<Accessory>>((ref) {
   final database = ref.watch(accessoryDatabaseProvider);
   return database.watchAccessorys();
 });

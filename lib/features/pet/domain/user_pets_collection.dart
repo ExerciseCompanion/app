@@ -1,7 +1,9 @@
-import 'package:exercise_companion/features/accessory/domain/accessory_db.dart';
+//import 'package:exercise_companion/features/accessory/domain/accessory_db.dart';
 import 'package:exercise_companion/features/pet/data/pet_provider.dart';
 import 'package:exercise_companion/features/pet/domain/pet_collection.dart';
-import 'pet_db.dart';
+import '../../accessory/domain/accessory.dart';
+//import 'pet_db.dart';
+import '../../accessory/domain/accessory_collection.dart';
 import '../presentation/pet_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -17,12 +19,12 @@ class UserPetCollection {
   UserPetCollection(userPets) : _userPets = userPets;
   final List<UserPet> _userPets;
 
-  void addPet(int userID, int petID) {
+  void addPet(int userID, int petID, PetCollection petDB) {
     int maxID = _userPets
         .reduce((current, next) => current.id > next.id ? current : next)
         .id;
-    PetDB petDB = ref.watch(petDBProvider);
-    PetCollection pet = petDB.getPet(petID);
+    // PetDB petDB = ref.watch(petDBProvider);
+    Pet pet = petDB.getPet(petID);
     UserPet petData = UserPet(
         id: maxID += 1,
         userID: userID,
@@ -44,8 +46,9 @@ class UserPetCollection {
     return _userPets.where((pet) => pet.userID == userID).toList();
   }
 
-  List<Widget> getPetWidgets(int userID, int mainPetID) {
-    final accessoryDB = ref.read(accessoryDBProvider);
+  List<Widget> getPetWidgets(int userID, int mainPetID, PetCollection petDB,
+      AccessoryCollection accessoryDB) {
+    //final accessoryDB = ref.read(accessoryDBProvider);
 
     List<UserPet> pets = getPets(userID);
     List<Widget> widgets = [];
@@ -53,9 +56,9 @@ class UserPetCollection {
     for (UserPet pet in pets) {
       bool selected =
           mainPetID == pet.id; //(userDB.getUser(userID).mainPetID == pet.id);
-      PetDB petDB = ref.watch(petDBProvider);
-      PetData petData = petDB.getPet(pet.petID);
-      AccessoryData accessoryData = accessoryDB.getAccessory(pet.accessoryID);
+      //PetDB petDB = ref.watch(petDBProvider);
+      Pet petData = petDB.getPet(pet.petID);
+      Accessory accessoryData = accessoryDB.getAccessory(pet.accessoryID);
       widgets.add(PetViewWidget(
           petAsset: petData.asset,
           accessoryAsset: accessoryData.asset,
