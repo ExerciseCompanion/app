@@ -1,8 +1,8 @@
-import 'package:exercise_companion/features/user/domain/user_db.dart';
-import 'package:exercise_companion/features/pet/domain/user_pets_db.dart';
+//import 'package:exercise_companion/features/user/domain/user_db.dart';
+//import 'package:exercise_companion/features/pet/domain/user_pets_db.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import './user_pet_db_provider.dart';
+import 'user_pet_provider.dart';
 import '../../user/data/user_provider.dart';
 
 /*final selectPetProvider = StateProvider<int>((ref) {
@@ -13,8 +13,8 @@ import '../../user/data/user_provider.dart';
 final selectPetProvider =
     StateNotifierProvider<SelectPetNotifier, List<Widget>>((ref) {
   int currentUserID = ref.read(currentUserIDProvider);
-  final userDB = ref.watch(userDBProvider);
-  final userPetDB = ref.read(userPetDBProvider);
+  final userDB = ref.watch(userDatabaseProvider);
+  final userPetDB = ref.read(userPetDatabaseProvider);
 
   return SelectPetNotifier(currentUserID, userDB, userPetDB);
 });

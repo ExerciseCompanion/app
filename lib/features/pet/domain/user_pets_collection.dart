@@ -1,11 +1,11 @@
 import 'package:exercise_companion/features/accessory/domain/accessory_db.dart';
-import 'package:exercise_companion/features/pet/data/pet_db_provider.dart';
+import 'package:exercise_companion/features/pet/data/pet_provider.dart';
 import 'package:exercise_companion/features/pet/domain/pet_collection.dart';
 import 'pet_db.dart';
 import '../presentation/pet_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../accessory/data/accessory_db_provider.dart';
+import '../../accessory/data/accessory_provider.dart';
 
 import 'user_pet.dart';
 import 'pet.dart';

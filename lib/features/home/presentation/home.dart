@@ -12,8 +12,8 @@ import '../../generic/presentation/bar.dart';
 import '../../pet/presentation/pet_img.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../pet/data/pet_home_provider.dart';
-import '../../pet/data/user_pet_db_provider.dart';
-import '../../pet/data/pet_db_provider.dart';
+import '../../pet/data/user_pet_provider.dart';
+import '../../pet/data/pet_provider.dart';
 import '../../user/data/user_provider.dart';
 
 class HomePage extends ConsumerWidget {

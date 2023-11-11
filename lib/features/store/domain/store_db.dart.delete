@@ -1,12 +1,10 @@
 import 'package:exercise_companion/features/accessory/domain/accessory_db.dart';
-import 'package:exercise_companion/features/pet/data/pet_db_provider.dart';
+import 'package:exercise_companion/features/pet/data/pet_provider.dart';
 import 'package:exercise_companion/features/pet/domain/pet_db.dart';
 import 'package:flutter/material.dart';
 import '../presentation/shop_item.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../accessory/data/accessory_db_provider.dart';
-
-class StoreData {
+import '..'../../accessory/data/accessory_provider.dart'class StoreData {
   StoreData(
       {required this.id,
       required this.type,

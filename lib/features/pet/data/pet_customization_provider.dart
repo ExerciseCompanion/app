@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../presentation/pet_img.dart';
-import './user_pet_db_provider.dart';
+import 'user_pet_provider.dart';
 import '../../user/data/user_provider.dart';
 
 /*final selectPetProvider = StateProvider<int>((ref) {
