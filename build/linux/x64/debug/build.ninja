@@ -101,13 +101,13 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 #############################################
 # Order-only phony target for exercise_companion
 
-build cmake_object_order_depends_target_exercise_companion: phony || flutter/flutter_assemble
+build cmake_object_order_depends_target_exercise_companion: phony || cmake_object_order_depends_target_desktop_webview_auth_plugin flutter/flutter_assemble
 
 build CMakeFiles/exercise_companion.dir/main.cc.o: CXX_COMPILER__exercise_companion /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/main.cc || cmake_object_order_depends_target_exercise_companion
   DEFINES = -DAPPLICATION_ID=\"com.example.exercise_companion\"
   DEP_FILE = CMakeFiles/exercise_companion.dir/main.cc.o.d
   FLAGS = -g   -Wall -Werror -pthread
-  INCLUDES = -I/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral -isystem /snap/flutter/current/usr/include/gtk-3.0 -isystem /snap/flutter/current/usr/include/at-spi2-atk/2.0 -isystem /snap/flutter/current/usr/include/at-spi-2.0 -isystem /snap/flutter/current/usr/include/dbus-1.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /snap/flutter/current/usr/include/gio-unix-2.0 -isystem /snap/flutter/current/usr/include/cairo -isystem /snap/flutter/current/usr/include/pango-1.0 -isystem /snap/flutter/current/usr/include/fribidi -isystem /snap/flutter/current/usr/include/harfbuzz -isystem /snap/flutter/current/usr/include/atk-1.0 -isystem /snap/flutter/current/usr/include/pixman-1 -isystem /snap/flutter/current/usr/include/uuid -isystem /snap/flutter/current/usr/include/freetype2 -isystem /snap/flutter/current/usr/include/libpng16 -isystem /snap/flutter/current/usr/include/gdk-pixbuf-2.0 -isystem /snap/flutter/current/usr/include/libmount -isystem /snap/flutter/current/usr/include/blkid -isystem /snap/flutter/current/usr/include/glib-2.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/glib-2.0/include
+  INCLUDES = -I/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral -I/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/.plugin_symlinks/desktop_webview_auth/linux/include -isystem /snap/flutter/current/usr/include/gtk-3.0 -isystem /snap/flutter/current/usr/include/at-spi2-atk/2.0 -isystem /snap/flutter/current/usr/include/at-spi-2.0 -isystem /snap/flutter/current/usr/include/dbus-1.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /snap/flutter/current/usr/include/gio-unix-2.0 -isystem /snap/flutter/current/usr/include/cairo -isystem /snap/flutter/current/usr/include/pango-1.0 -isystem /snap/flutter/current/usr/include/fribidi -isystem /snap/flutter/current/usr/include/harfbuzz -isystem /snap/flutter/current/usr/include/atk-1.0 -isystem /snap/flutter/current/usr/include/pixman-1 -isystem /snap/flutter/current/usr/include/uuid -isystem /snap/flutter/current/usr/include/freetype2 -isystem /snap/flutter/current/usr/include/libpng16 -isystem /snap/flutter/current/usr/include/gdk-pixbuf-2.0 -isystem /snap/flutter/current/usr/include/libmount -isystem /snap/flutter/current/usr/include/blkid -isystem /snap/flutter/current/usr/include/glib-2.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/glib-2.0/include
   OBJECT_DIR = CMakeFiles/exercise_companion.dir
   OBJECT_FILE_DIR = CMakeFiles/exercise_companion.dir
 
@@ -115,7 +115,7 @@ build CMakeFiles/exercise_companion.dir/my_application.cc.o: CXX_COMPILER__exerc
   DEFINES = -DAPPLICATION_ID=\"com.example.exercise_companion\"
   DEP_FILE = CMakeFiles/exercise_companion.dir/my_application.cc.o.d
   FLAGS = -g   -Wall -Werror -pthread
-  INCLUDES = -I/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral -isystem /snap/flutter/current/usr/include/gtk-3.0 -isystem /snap/flutter/current/usr/include/at-spi2-atk/2.0 -isystem /snap/flutter/current/usr/include/at-spi-2.0 -isystem /snap/flutter/current/usr/include/dbus-1.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /snap/flutter/current/usr/include/gio-unix-2.0 -isystem /snap/flutter/current/usr/include/cairo -isystem /snap/flutter/current/usr/include/pango-1.0 -isystem /snap/flutter/current/usr/include/fribidi -isystem /snap/flutter/current/usr/include/harfbuzz -isystem /snap/flutter/current/usr/include/atk-1.0 -isystem /snap/flutter/current/usr/include/pixman-1 -isystem /snap/flutter/current/usr/include/uuid -isystem /snap/flutter/current/usr/include/freetype2 -isystem /snap/flutter/current/usr/include/libpng16 -isystem /snap/flutter/current/usr/include/gdk-pixbuf-2.0 -isystem /snap/flutter/current/usr/include/libmount -isystem /snap/flutter/current/usr/include/blkid -isystem /snap/flutter/current/usr/include/glib-2.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/glib-2.0/include
+  INCLUDES = -I/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral -I/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/.plugin_symlinks/desktop_webview_auth/linux/include -isystem /snap/flutter/current/usr/include/gtk-3.0 -isystem /snap/flutter/current/usr/include/at-spi2-atk/2.0 -isystem /snap/flutter/current/usr/include/at-spi-2.0 -isystem /snap/flutter/current/usr/include/dbus-1.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /snap/flutter/current/usr/include/gio-unix-2.0 -isystem /snap/flutter/current/usr/include/cairo -isystem /snap/flutter/current/usr/include/pango-1.0 -isystem /snap/flutter/current/usr/include/fribidi -isystem /snap/flutter/current/usr/include/harfbuzz -isystem /snap/flutter/current/usr/include/atk-1.0 -isystem /snap/flutter/current/usr/include/pixman-1 -isystem /snap/flutter/current/usr/include/uuid -isystem /snap/flutter/current/usr/include/freetype2 -isystem /snap/flutter/current/usr/include/libpng16 -isystem /snap/flutter/current/usr/include/gdk-pixbuf-2.0 -isystem /snap/flutter/current/usr/include/libmount -isystem /snap/flutter/current/usr/include/blkid -isystem /snap/flutter/current/usr/include/glib-2.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/glib-2.0/include
   OBJECT_DIR = CMakeFiles/exercise_companion.dir
   OBJECT_FILE_DIR = CMakeFiles/exercise_companion.dir
 
@@ -123,7 +123,7 @@ build CMakeFiles/exercise_companion.dir/flutter/generated_plugin_registrant.cc.o
   DEFINES = -DAPPLICATION_ID=\"com.example.exercise_companion\"
   DEP_FILE = CMakeFiles/exercise_companion.dir/flutter/generated_plugin_registrant.cc.o.d
   FLAGS = -g   -Wall -Werror -pthread
-  INCLUDES = -I/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral -isystem /snap/flutter/current/usr/include/gtk-3.0 -isystem /snap/flutter/current/usr/include/at-spi2-atk/2.0 -isystem /snap/flutter/current/usr/include/at-spi-2.0 -isystem /snap/flutter/current/usr/include/dbus-1.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /snap/flutter/current/usr/include/gio-unix-2.0 -isystem /snap/flutter/current/usr/include/cairo -isystem /snap/flutter/current/usr/include/pango-1.0 -isystem /snap/flutter/current/usr/include/fribidi -isystem /snap/flutter/current/usr/include/harfbuzz -isystem /snap/flutter/current/usr/include/atk-1.0 -isystem /snap/flutter/current/usr/include/pixman-1 -isystem /snap/flutter/current/usr/include/uuid -isystem /snap/flutter/current/usr/include/freetype2 -isystem /snap/flutter/current/usr/include/libpng16 -isystem /snap/flutter/current/usr/include/gdk-pixbuf-2.0 -isystem /snap/flutter/current/usr/include/libmount -isystem /snap/flutter/current/usr/include/blkid -isystem /snap/flutter/current/usr/include/glib-2.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/glib-2.0/include
+  INCLUDES = -I/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral -I/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/.plugin_symlinks/desktop_webview_auth/linux/include -isystem /snap/flutter/current/usr/include/gtk-3.0 -isystem /snap/flutter/current/usr/include/at-spi2-atk/2.0 -isystem /snap/flutter/current/usr/include/at-spi-2.0 -isystem /snap/flutter/current/usr/include/dbus-1.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /snap/flutter/current/usr/include/gio-unix-2.0 -isystem /snap/flutter/current/usr/include/cairo -isystem /snap/flutter/current/usr/include/pango-1.0 -isystem /snap/flutter/current/usr/include/fribidi -isystem /snap/flutter/current/usr/include/harfbuzz -isystem /snap/flutter/current/usr/include/atk-1.0 -isystem /snap/flutter/current/usr/include/pixman-1 -isystem /snap/flutter/current/usr/include/uuid -isystem /snap/flutter/current/usr/include/freetype2 -isystem /snap/flutter/current/usr/include/libpng16 -isystem /snap/flutter/current/usr/include/gdk-pixbuf-2.0 -isystem /snap/flutter/current/usr/include/libmount -isystem /snap/flutter/current/usr/include/blkid -isystem /snap/flutter/current/usr/include/glib-2.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/glib-2.0/include
   OBJECT_DIR = CMakeFiles/exercise_companion.dir
   OBJECT_FILE_DIR = CMakeFiles/exercise_companion.dir/flutter
 
@@ -135,10 +135,10 @@ build CMakeFiles/exercise_companion.dir/flutter/generated_plugin_registrant.cc.o
 #############################################
 # Link the executable intermediates_do_not_run/exercise_companion
 
-build intermediates_do_not_run/exercise_companion: CXX_EXECUTABLE_LINKER__exercise_companion CMakeFiles/exercise_companion.dir/main.cc.o CMakeFiles/exercise_companion.dir/my_application.cc.o CMakeFiles/exercise_companion.dir/flutter/generated_plugin_registrant.cc.o | /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/libflutter_linux_gtk.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgtk-3.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk-3.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpango-1.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libharfbuzz.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libatk-1.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo-gobject.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgio-2.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgobject-2.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libglib-2.0.so || flutter/flutter_assemble
+build intermediates_do_not_run/exercise_companion: CXX_EXECUTABLE_LINKER__exercise_companion CMakeFiles/exercise_companion.dir/main.cc.o CMakeFiles/exercise_companion.dir/my_application.cc.o CMakeFiles/exercise_companion.dir/flutter/generated_plugin_registrant.cc.o | plugins/desktop_webview_auth/libdesktop_webview_auth_plugin.so /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/libflutter_linux_gtk.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgtk-3.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk-3.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpango-1.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libharfbuzz.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libatk-1.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo-gobject.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgio-2.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgobject-2.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libglib-2.0.so || flutter/flutter_assemble plugins/desktop_webview_auth/libdesktop_webview_auth_plugin.so
   FLAGS = -g
   LINK_FLAGS = -B/snap/flutter/current/usr/lib/gcc/x86_64-linux-gnu/9 -B/snap/flutter/current/usr/lib/x86_64-linux-gnu -B/snap/flutter/current/lib/x86_64-linux-gnu -B/snap/flutter/current/usr/lib/ -L/snap/flutter/current/usr/lib/gcc/x86_64-linux-gnu/9 -L/snap/flutter/current/usr/lib/x86_64-linux-gnu -L/snap/flutter/current/lib/x86_64-linux-gnu -L/snap/flutter/current/usr/lib/ -lblkid -lgcrypt -llzma -llz4 -lgpg-error -luuid -lpthread -ldl -lepoxy -lfontconfig -B/snap/flutter/current/usr/lib/gcc/x86_64-linux-gnu/9 -B/snap/flutter/current/usr/lib/x86_64-linux-gnu -B/snap/flutter/current/lib/x86_64-linux-gnu -B/snap/flutter/current/usr/lib/ -L/snap/flutter/current/usr/lib/gcc/x86_64-linux-gnu/9 -L/snap/flutter/current/usr/lib/x86_64-linux-gnu -L/snap/flutter/current/lib/x86_64-linux-gnu -L/snap/flutter/current/usr/lib/ -lblkid -lgcrypt -llzma -llz4 -lgpg-error -luuid -lpthread -ldl -lepoxy -lfontconfig
-  LINK_LIBRARIES = -Wl,-rpath,/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral:  /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/libflutter_linux_gtk.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgtk-3.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk-3.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpango-1.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libharfbuzz.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libatk-1.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo-gobject.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgio-2.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgobject-2.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libglib-2.0.so
+  LINK_LIBRARIES = -Wl,-rpath,/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth:/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral:  plugins/desktop_webview_auth/libdesktop_webview_auth_plugin.so  /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/libflutter_linux_gtk.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgtk-3.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk-3.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpango-1.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libharfbuzz.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libatk-1.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo-gobject.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgio-2.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgobject-2.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libglib-2.0.so
   OBJECT_DIR = CMakeFiles/exercise_companion.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -237,11 +237,122 @@ build /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flut
   restat = 1
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/generated_plugins.cmake
+# =============================================================================
+
+
+#############################################
+# Utility command for install/strip
+
+build plugins/desktop_webview_auth/CMakeFiles/install/strip.util: CUSTOM_COMMAND plugins/desktop_webview_auth/all
+  COMMAND = cd /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth && /snap/flutter/141/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build plugins/desktop_webview_auth/install/strip: phony plugins/desktop_webview_auth/CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for install/local
+
+build plugins/desktop_webview_auth/CMakeFiles/install/local.util: CUSTOM_COMMAND plugins/desktop_webview_auth/all
+  COMMAND = cd /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth && /snap/flutter/141/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build plugins/desktop_webview_auth/install/local: phony plugins/desktop_webview_auth/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install
+
+build plugins/desktop_webview_auth/CMakeFiles/install.util: CUSTOM_COMMAND plugins/desktop_webview_auth/all
+  COMMAND = cd /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth && /snap/flutter/141/usr/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build plugins/desktop_webview_auth/install: phony plugins/desktop_webview_auth/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build plugins/desktop_webview_auth/list_install_components: phony
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build plugins/desktop_webview_auth/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth && /snap/flutter/141/usr/bin/cmake -S/home/chris/projects-synced/school/MAD/final/exercise_companion/linux -B/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build plugins/desktop_webview_auth/rebuild_cache: phony plugins/desktop_webview_auth/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build plugins/desktop_webview_auth/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth && /snap/flutter/141/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build plugins/desktop_webview_auth/edit_cache: phony plugins/desktop_webview_auth/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target desktop_webview_auth_plugin
+
+
+#############################################
+# Order-only phony target for desktop_webview_auth_plugin
+
+build cmake_object_order_depends_target_desktop_webview_auth_plugin: phony || flutter/flutter_assemble
+
+build plugins/desktop_webview_auth/CMakeFiles/desktop_webview_auth_plugin.dir/desktop_webview_auth_plugin.cc.o: CXX_COMPILER__desktop_webview_auth_plugin /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/.plugin_symlinks/desktop_webview_auth/linux/desktop_webview_auth_plugin.cc || cmake_object_order_depends_target_desktop_webview_auth_plugin
+  DEFINES = -DAPPLICATION_ID=\"com.example.exercise_companion\" -DFLUTTER_PLUGIN_IMPL -Ddesktop_webview_auth_plugin_EXPORTS
+  DEP_FILE = plugins/desktop_webview_auth/CMakeFiles/desktop_webview_auth_plugin.dir/desktop_webview_auth_plugin.cc.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden   -Wall -Werror -pthread
+  INCLUDES = -I/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral -isystem /snap/flutter/current/usr/include/gtk-3.0 -isystem /snap/flutter/current/usr/include/at-spi2-atk/2.0 -isystem /snap/flutter/current/usr/include/at-spi-2.0 -isystem /snap/flutter/current/usr/include/dbus-1.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /snap/flutter/current/usr/include/gio-unix-2.0 -isystem /snap/flutter/current/usr/include/cairo -isystem /snap/flutter/current/usr/include/pango-1.0 -isystem /snap/flutter/current/usr/include/fribidi -isystem /snap/flutter/current/usr/include/harfbuzz -isystem /snap/flutter/current/usr/include/atk-1.0 -isystem /snap/flutter/current/usr/include/pixman-1 -isystem /snap/flutter/current/usr/include/uuid -isystem /snap/flutter/current/usr/include/freetype2 -isystem /snap/flutter/current/usr/include/libpng16 -isystem /snap/flutter/current/usr/include/gdk-pixbuf-2.0 -isystem /snap/flutter/current/usr/include/libmount -isystem /snap/flutter/current/usr/include/blkid -isystem /snap/flutter/current/usr/include/glib-2.0 -isystem /snap/flutter/current/usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /usr/include/webkitgtk-4.0 -isystem /usr/include/libsoup-2.4 -isystem /usr/include/libxml2
+  OBJECT_DIR = plugins/desktop_webview_auth/CMakeFiles/desktop_webview_auth_plugin.dir
+  OBJECT_FILE_DIR = plugins/desktop_webview_auth/CMakeFiles/desktop_webview_auth_plugin.dir
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target desktop_webview_auth_plugin
+
+
+#############################################
+# Link the shared library plugins/desktop_webview_auth/libdesktop_webview_auth_plugin.so
+
+build plugins/desktop_webview_auth/libdesktop_webview_auth_plugin.so: CXX_SHARED_LIBRARY_LINKER__desktop_webview_auth_plugin plugins/desktop_webview_auth/CMakeFiles/desktop_webview_auth_plugin.dir/desktop_webview_auth_plugin.cc.o | /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/libflutter_linux_gtk.so /usr/lib/x86_64-linux-gnu/libwebkit2gtk-4.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgtk-3.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk-3.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpango-1.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libharfbuzz.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libatk-1.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo-gobject.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so /usr/lib/x86_64-linux-gnu/libsoup-2.4.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgio-2.0.so /usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgobject-2.0.so /snap/flutter/current/usr/lib/x86_64-linux-gnu/libglib-2.0.so || flutter/flutter_assemble
+  LANGUAGE_COMPILE_FLAGS = -g
+  LINK_FLAGS = -B/snap/flutter/current/usr/lib/gcc/x86_64-linux-gnu/9 -B/snap/flutter/current/usr/lib/x86_64-linux-gnu -B/snap/flutter/current/lib/x86_64-linux-gnu -B/snap/flutter/current/usr/lib/ -L/snap/flutter/current/usr/lib/gcc/x86_64-linux-gnu/9 -L/snap/flutter/current/usr/lib/x86_64-linux-gnu -L/snap/flutter/current/lib/x86_64-linux-gnu -L/snap/flutter/current/usr/lib/ -lblkid -lgcrypt -llzma -llz4 -lgpg-error -luuid -lpthread -ldl -lepoxy -lfontconfig -B/snap/flutter/current/usr/lib/gcc/x86_64-linux-gnu/9 -B/snap/flutter/current/usr/lib/x86_64-linux-gnu -B/snap/flutter/current/lib/x86_64-linux-gnu -B/snap/flutter/current/usr/lib/ -L/snap/flutter/current/usr/lib/gcc/x86_64-linux-gnu/9 -L/snap/flutter/current/usr/lib/x86_64-linux-gnu -L/snap/flutter/current/lib/x86_64-linux-gnu -L/snap/flutter/current/usr/lib/ -lblkid -lgcrypt -llzma -llz4 -lgpg-error -luuid -lpthread -ldl -lepoxy -lfontconfig   -Wl,--export-dynamic -pthread
+  LINK_LIBRARIES = -Wl,-rpath,/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral  /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/libflutter_linux_gtk.so  /usr/lib/x86_64-linux-gnu/libwebkit2gtk-4.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgtk-3.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk-3.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libpango-1.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libharfbuzz.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libatk-1.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo-gobject.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libcairo.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so  /usr/lib/x86_64-linux-gnu/libsoup-2.4.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgio-2.0.so  /usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libgobject-2.0.so  /snap/flutter/current/usr/lib/x86_64-linux-gnu/libglib-2.0.so
+  OBJECT_DIR = plugins/desktop_webview_auth/CMakeFiles/desktop_webview_auth_plugin.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = libdesktop_webview_auth_plugin.so
+  SONAME_FLAG = -Wl,-soname,
+  TARGET_FILE = plugins/desktop_webview_auth/libdesktop_webview_auth_plugin.so
+  TARGET_PDB = desktop_webview_auth_plugin.so.dbg
+
+# =============================================================================
 # Target aliases.
+
+build desktop_webview_auth_plugin: phony plugins/desktop_webview_auth/libdesktop_webview_auth_plugin.so
 
 build exercise_companion: phony intermediates_do_not_run/exercise_companion
 
 build flutter_assemble: phony flutter/flutter_assemble
+
+build libdesktop_webview_auth_plugin.so: phony plugins/desktop_webview_auth/libdesktop_webview_auth_plugin.so
 
 # =============================================================================
 # Folder targets.
@@ -251,7 +362,7 @@ build flutter_assemble: phony flutter/flutter_assemble
 #############################################
 # Folder: /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug
 
-build all: phony intermediates_do_not_run/exercise_companion flutter/all
+build all: phony intermediates_do_not_run/exercise_companion flutter/all plugins/desktop_webview_auth/all
 
 # =============================================================================
 
@@ -259,6 +370,13 @@ build all: phony intermediates_do_not_run/exercise_companion flutter/all
 # Folder: /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter
 
 build flutter/all: phony
+
+# =============================================================================
+
+#############################################
+# Folder: /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth
+
+build plugins/desktop_webview_auth/all: phony plugins/desktop_webview_auth/libdesktop_webview_auth_plugin.so
 
 # =============================================================================
 # Built-in targets
@@ -272,14 +390,14 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/CMakeLists.txt /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/CMakeLists.txt /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/generated_config.cmake /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/generated_plugins.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/CMakeLists.txt /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/CMakeLists.txt /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/.plugin_symlinks/desktop_webview_auth/linux/CMakeLists.txt /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/generated_config.cmake /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/generated_plugins.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/CMakeLists.txt /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/CMakeLists.txt /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/generated_config.cmake /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/generated_plugins.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
+build /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/CMakeLists.txt /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/CMakeLists.txt /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/.plugin_symlinks/desktop_webview_auth/linux/CMakeLists.txt /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral/generated_config.cmake /home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/generated_plugins.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/Linux.cmake /snap/flutter/141/usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
 
 
 #############################################

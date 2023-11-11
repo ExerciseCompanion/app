@@ -44,37 +44,37 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBbFKo1ndw9XUab80s59sPhWPyTT7fc4Iw',
-    appId: '1:291032520443:web:21c2a66b9df827e69cc25e',
-    messagingSenderId: '291032520443',
-    projectId: 'exercise-companion-uhm',
-    authDomain: 'exercise-companion-uhm.firebaseapp.com',
-    storageBucket: 'exercise-companion-uhm.appspot.com',
+    apiKey: 'AIzaSyC7Y9t9DHMtdfEjesbLsaVPMoh5ISraRoA',
+    appId: '1:949377327394:web:3bb71c2e23d9ca0246c57b',
+    messagingSenderId: '949377327394',
+    projectId: 'excercise-companion-uhm-app',
+    authDomain: 'excercise-companion-uhm-app.firebaseapp.com',
+    storageBucket: 'excercise-companion-uhm-app.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDA45lWsRidImh5_QaEQw2TC98IulTPw38',
-    appId: '1:291032520443:android:061e923c001e111b9cc25e',
-    messagingSenderId: '291032520443',
-    projectId: 'exercise-companion-uhm',
-    storageBucket: 'exercise-companion-uhm.appspot.com',
+    apiKey: 'AIzaSyBqF5--LigysBIlZFNLF53ynWA-i33hNHc',
+    appId: '1:949377327394:android:76190a06a609feb646c57b',
+    messagingSenderId: '949377327394',
+    projectId: 'excercise-companion-uhm-app',
+    storageBucket: 'excercise-companion-uhm-app.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD0baiAIGtg32Z3Zh2TsQTgtV6vRXc5uHU',
-    appId: '1:291032520443:ios:bf9a45eeca8d22f79cc25e',
-    messagingSenderId: '291032520443',
-    projectId: 'exercise-companion-uhm',
-    storageBucket: 'exercise-companion-uhm.appspot.com',
+    apiKey: 'AIzaSyCN6A_8_b_80SA52HL6Dr14OtyAXGyY9Xo',
+    appId: '1:949377327394:ios:f5de9e2ebca1441846c57b',
+    messagingSenderId: '949377327394',
+    projectId: 'excercise-companion-uhm-app',
+    storageBucket: 'excercise-companion-uhm-app.appspot.com',
     iosBundleId: 'com.example.exerciseCompanion',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD0baiAIGtg32Z3Zh2TsQTgtV6vRXc5uHU',
-    appId: '1:291032520443:ios:447c34e3b6c835bd9cc25e',
-    messagingSenderId: '291032520443',
-    projectId: 'exercise-companion-uhm',
-    storageBucket: 'exercise-companion-uhm.appspot.com',
+    apiKey: 'AIzaSyCN6A_8_b_80SA52HL6Dr14OtyAXGyY9Xo',
+    appId: '1:949377327394:ios:696430970292eaea46c57b',
+    messagingSenderId: '949377327394',
+    projectId: 'excercise-companion-uhm-app',
+    storageBucket: 'excercise-companion-uhm-app.appspot.com',
     iosBundleId: 'com.example.exerciseCompanion.RunnerTests',
   );
 }

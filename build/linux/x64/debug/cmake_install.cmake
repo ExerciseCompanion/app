@@ -63,7 +63,7 @@ file(INSTALL DESTINATION "/home/chris/projects-synced/school/MAD/final/exercise_
      NOT IS_SYMLINK "$ENV{DESTDIR}/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/exercise_companion")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/exercise_companion"
-         OLD_RPATH "/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral:"
+         OLD_RPATH "/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth:/home/chris/projects-synced/school/MAD/final/exercise_companion/linux/flutter/ephemeral:"
          NEW_RPATH "$ORIGIN/lib")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/snap/flutter/current/usr/bin/strip" "$ENV{DESTDIR}/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/exercise_companion")
@@ -96,6 +96,18 @@ file(INSTALL DESTINATION "/home/chris/projects-synced/school/MAD/final/exercise_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/lib/libdesktop_webview_auth_plugin.so")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+file(INSTALL DESTINATION "/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/lib" TYPE FILE FILES "/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth/libdesktop_webview_auth_plugin.so")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
   
   file(REMOVE_RECURSE "/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/bundle/data/flutter_assets")
   
@@ -116,6 +128,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter/cmake_install.cmake")
+  include("/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth/cmake_install.cmake")
 
 endif()
 

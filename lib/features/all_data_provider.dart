@@ -42,33 +42,24 @@ class AllData {
       required this.accessories,
       required this.currentUserID});
 
-  final UserCollection users;
-  final UserStepCollection userSteps;
-  final UserTaskCollection userTasks;
-  final UserPetCollection userPets;
-  final PetCollection pets;
-  final StoreCollection stores;
-  final AccessoryCollection accessories;
+  final List<User> users;
+  final List<UserStep> userSteps;
+  final List<UserTask> userTasks;
+  final List<UserPet> userPets;
+  final List<Pet> pets;
+  final List<Store> stores;
+  final List<Accessory> accessories;
   final int currentUserID;
-
-  // final List<User> users;
-  // final List<UserStep> userSteps;
-  // final List<UserTask> userTasks;
-  // final List<UserPet> userPets;
-  // final List<Pet> pets;
-  // final List<Store> stores;
-  // final List<Accessory> accessories;
-  // final int currentUserID;
 
   static AllData empty() {
     return AllData(
-        users: UserCollection(List.empty()),
-        userSteps: UserStepCollection(List.empty()),
-        userTasks: UserTaskCollection(List.empty()),
-        userPets: UserPetCollection(List.empty()),
-        pets: PetCollection(List.empty()),
-        stores: StoreCollection(List.empty()),
-        accessories: AccessoryCollection(List.empty()),
+        users: List.empty(),
+        userSteps: List.empty(),
+        userTasks: List.empty(),
+        userPets: List.empty(),
+        pets: List.empty(),
+        stores: List.empty(),
+        accessories: List.empty(),
         currentUserID: 0);
   }
 }
@@ -84,13 +75,13 @@ final allDataProvider = FutureProvider((ref) async {
 
   final currentUserID = ref.watch(currentUserIDProvider);
   return AllData(
-      users: UserCollection(await users),
-      userSteps: UserStepCollection(await userSteps),
-      userTasks: UserTaskCollection(await userTasks),
-      userPets: UserPetCollection(await userPets),
-      pets: PetCollection(await pets),
-      stores: StoreCollection(await stores),
-      accessories: AccessoryCollection(await accessories),
+      users: await users,
+      userSteps: await userSteps,
+      userTasks: await userTasks,
+      userPets: await userPets,
+      pets: await pets,
+      stores: await stores,
+      accessories: await accessories,
       currentUserID: currentUserID);
 });
 

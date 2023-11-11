@@ -44,7 +44,7 @@ class HomePage extends ConsumerWidget {
 
     int currentUserID = allData.currentUserID;
     UserCollection userDB = UserCollection(allData.users);
-    UserStepCollection userStepsDB = UserStepCollection(allData.userPets);
+    UserStepCollection userStepsDB = UserStepCollection(allData.userSteps);
 
     return Scaffold(
         /*appBar: BaseAppBar(

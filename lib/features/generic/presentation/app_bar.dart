@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../agc_error.dart';
 import '../../agc_loading.dart';
-import '../../user/data/user_provider.dart';
 
 class BaseAppBar extends ConsumerWidget implements PreferredSizeWidget {
   //final Color backgroundColor = Colors.red;
