@@ -2,7 +2,7 @@ import 'dart:collection';
 import 'dart:math';
 import 'package:exercise_companion/features/user/domain/user_step.dart';
 import 'package:intl/intl.dart';
-import 'package:exercise_companion/features/user/domain/user_db.dart';
+//import 'package:exercise_companion/features/user/domain/user_db.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'user_step.dart';
@@ -61,7 +61,7 @@ class UserStepsCollection {
     final int steps = _userSteps
         .firstWhere(
             (stepLog) => stepLog.userID == userID && stepLog.date == date,
-            orElse: () => UserStepsData(id: -1, userID: -1, date: "", steps: 0))
+            orElse: () => UserStep(id: -1, userID: -1, date: "", steps: 0))
         .steps;
 
     return steps;
@@ -83,6 +83,6 @@ class UserStepsCollection {
 
 //UserStepsDB userStepsDB = UserStepsDB();
 
-final userStepsDBProvider = Provider<UserStepsDB>((ref) {
+/*final userStepsDBProvider = Provider<UserStepsDB>((ref) {
   return UserStepsDB(ref);
-});
+});*/

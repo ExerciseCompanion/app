@@ -3,7 +3,7 @@
 import 'package:exercise_companion/features/user/domain/user_db.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../user/data/user_db_provider.dart';
+import '../../user/data/user_provider.dart';
 
 class BaseAppBar extends ConsumerWidget implements PreferredSizeWidget {
   //final Color backgroundColor = Colors.red;

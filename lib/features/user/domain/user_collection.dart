@@ -1,12 +1,14 @@
-import 'package:exercise_companion/features/accessory/domain/accessory_db.dart';
+//import 'package:exercise_companion/features/accessory/domain/accessory_db.dart';
+import 'package:exercise_companion/features/accessory/domain/accessory.dart';
 import 'package:exercise_companion/features/pet/data/pet_db_provider.dart';
-import 'package:exercise_companion/features/pet/domain/pet_db.dart';
+//import 'package:exercise_companion/features/pet/domain/pet_db.dart';
 import 'package:exercise_companion/features/store/domain/store_db.dart.delete';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../pet/domain/user_pets_db.dart';
+//import '../../pet/domain/user_pets_db.dart';
 import '../../accessory/data/accessory_db_provider.dart';
 import '../../pet/data/user_pet_db_provider.dart';
+import '../../pet/domain/user_pet.dart';
 import '../../store/data/store_db_provider.dart';
 
 import 'user.dart';
@@ -50,10 +52,10 @@ class UserCollection {
     return storeDB.getStoreItemsByIDs(nonPurchasedIds.toList());
   }
 
-  List<AccessoryData> getAccessories(int userID) {
+  List<Accessory> getAccessories(int userID) {
     final accessoryDB = ref.watch(accessoryDBProvider);
 
-    List<AccessoryData> accessories = [];
+    List<Accessory> accessories = [];
     List<int> accessoryIDs = getUser(userID).accessoryInventoryIDs;
     for (int accessoryID in accessoryIDs) {
       accessories.add(accessoryDB.getAccessory(accessoryID));
@@ -70,7 +72,7 @@ class UserCollection {
     final petDB = ref.watch(petDBProvider);
 
     int mainPetID = getUser(userID).mainPetID;
-    UserPetData userPet = userPetDB.getPet(mainPetID);
+    UserPet userPet = userPetDB.getPet(mainPetID);
     int? accessoryID = userPet.accessoryID;
 
     Map<String, String> assets = {
@@ -92,6 +94,7 @@ class UserCollection {
   }
 
   void setMainPet(int userId, int mainPetId) {
+    //getUser(userId).mainPetID = mainPetId;
     _users.firstWhere((element) => element.id == userId).mainPetID = mainPetId;
   }
 

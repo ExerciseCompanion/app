@@ -14,7 +14,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../pet/data/pet_home_provider.dart';
 import '../../pet/data/user_pet_db_provider.dart';
 import '../../pet/data/pet_db_provider.dart';
-import '../../user/data/user_db_provider.dart';
+import '../../user/data/user_provider.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({Key? key}) : super(key: key);
