@@ -1,0 +1,24 @@
+[{
+    "id": 0,
+    "userID": 0,
+    "title": "Step",
+    "description": "Walk 200 Steps",
+    "reward": 100,
+    "status": 0
+},
+{
+    "id": 1,
+    "userID": 0,
+    "title": "Pet",
+    "description": "Interact with your pet",
+    "reward": 100,
+    "status": 1
+},
+{
+    "id": 2,
+    "userID": 0,
+    "title": "Accessorize",
+    "description": "Change your pet's accessory",
+    "reward": 100,
+    "status": 2
+}]

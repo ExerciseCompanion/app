@@ -12,3 +12,10 @@
 /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter/CMakeFiles/rebuild_cache.dir
 /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter/CMakeFiles/edit_cache.dir
 /home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/flutter/CMakeFiles/flutter_assemble.dir
+/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth/CMakeFiles/install/strip.dir
+/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth/CMakeFiles/install/local.dir
+/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth/CMakeFiles/install.dir
+/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth/CMakeFiles/list_install_components.dir
+/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth/CMakeFiles/rebuild_cache.dir
+/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth/CMakeFiles/edit_cache.dir
+/home/chris/projects-synced/school/MAD/final/exercise_companion/build/linux/x64/debug/plugins/desktop_webview_auth/CMakeFiles/desktop_webview_auth_plugin.dir

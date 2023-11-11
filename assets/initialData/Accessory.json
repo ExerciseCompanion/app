@@ -1,0 +1,18 @@
+[{
+"id": 0, 
+"name": "None", 
+"description": "None", 
+"asset": "images/empty.png"
+},
+{
+"id": 1,
+"name": "Red Cap",
+"description": "A Red Cap",
+"asset": "images/red_cap.png"
+},
+{
+"id": 2,
+"name": "Top Hat",
+"description": "A Top Hat",
+"asset": "images/top_hat.png"
+}]

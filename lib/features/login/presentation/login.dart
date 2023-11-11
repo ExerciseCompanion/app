@@ -1,10 +1,14 @@
+import 'package:exercise_companion/features/all_data_provider.dart';
+import 'package:exercise_companion/features/user/domain/user_collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 
-import '../../user/domain/user_db.dart';
-import '../../user/data/user_db_provider.dart';
+//import '../../user/domain/user_db.dart';
+import '../../agc_error.dart';
+import '../../agc_loading.dart';
+import '../../user/data/user_provider.dart';
 
 /// Presents the page containing fields to enter a username and password, plus buttons.
 class LoginPage extends ConsumerWidget {
@@ -13,11 +17,12 @@ class LoginPage extends ConsumerWidget {
   static const routeName = '/';
   final _formKey = GlobalKey<FormBuilderState>();
 
-  void onPressed(BuildContext context, WidgetRef ref) {
+  void onPressed(BuildContext context, WidgetRef ref, AllData allData) {
     bool validEmailAndPassword =
         _formKey.currentState?.saveAndValidate() ?? false;
-    UserDB userDB = ref.read(userDBProvider);
     //UserDB userDB = ref.read(userDBProvider);
+    //UserDB userDB = ref.read(userDBProvider);
+    UserCollection userDB = UserCollection(allData.users);
 
     if (validEmailAndPassword) {
       String email = _formKey.currentState?.value['email'];
@@ -42,6 +47,14 @@ class LoginPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final AsyncValue<AllData> asyncAllData = ref.watch(allDataProvider);
+    return asyncAllData.when(
+        data: (allData) => _build(context, ref, allData),
+        loading: () => const AGCLoading(),
+        error: (error, st) => AGCError(error.toString(), st.toString()));
+  }
+
+  Widget _build(BuildContext context, WidgetRef ref, AllData allData) {
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -97,7 +110,7 @@ class LoginPage extends ConsumerWidget {
             SizedBox(
               height: 40,
               child: ElevatedButton(
-                  onPressed: () => {onPressed(context, ref)},
+                  onPressed: () => {onPressed(context, ref, allData)},
                   child: const Text('Sign in')),
             ),
             const SizedBox(height: 12.0),

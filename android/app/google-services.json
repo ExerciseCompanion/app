@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "949377327394",
+    "project_id": "excercise-companion-uhm-app",
+    "storage_bucket": "excercise-companion-uhm-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949377327394:android:76190a06a609feb646c57b",
+        "android_client_info": {
+          "package_name": "com.example.exercise_companion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqF5--LigysBIlZFNLF53ynWA-i33hNHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

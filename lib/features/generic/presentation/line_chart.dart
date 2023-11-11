@@ -1,14 +1,17 @@
-import 'package:exercise_companion/features/user/domain/user_db.dart';
-import 'package:exercise_companion/features/user/domain/user_steps_db.dart';
+// import 'package:exercise_companion/features/user/domain/user_db.dart';
+// import 'package:exercise_companion/features/user/domain/user_steps_db.dart';
+import 'package:exercise_companion/features/user/domain/user_step_collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
-import '../../user/data/user_db_provider.dart';
+import '../../all_data_provider.dart';
+import '../../user/data/user_provider.dart';
+import '../../user/domain/user_collection.dart';
 
 class LineChartSample2 extends StatefulWidget {
-  final WidgetRef ref;
-  const LineChartSample2({super.key, required this.ref});
+  final AllData allData;
+  const LineChartSample2({super.key, required this.allData});
 
   @override
   State<LineChartSample2> createState() => _LineChartSample2State();
@@ -33,7 +36,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
               bottom: 12,
             ),
             child: LineChart(
-              showAvg ? avgData() : mainData(widget.ref),
+              showAvg ? avgData() : mainData(widget.allData),
             ),
           ),
         ),
@@ -136,12 +139,15 @@ class _LineChartSample2State extends State<LineChartSample2> {
     return Text(text, style: style, textAlign: TextAlign.left);
   }
 
-  LineChartData mainData(WidgetRef ref) {
+  LineChartData mainData(AllData allData) {
     //print(userStepsDB.getPastWeekAsList(0));
-    final int currentUserID = ref.read(currentUserIDProvider);
-    final UserStepsDB userStepsDB = ref.read(userStepsDBProvider);
+    // final int currentUserID = ref.read(currentUserIDProvider);
+    // final UserStepsDB userStepsDB = ref.read(userStepsDBProvider);
 
-    List<int> steps = userStepsDB.getPastWeekAsList(currentUserID);
+    int currentUserID = allData.currentUserID;
+    UserStepCollection userStepDB = UserStepCollection(allData.userSteps);
+
+    List<int> steps = userStepDB.getPastWeekAsList(currentUserID);
     List<FlSpot> entries = [];
     for (int i = 0; i < steps.length; i++) {
       entries.add(FlSpot(i.toDouble(), steps[i].toDouble()));

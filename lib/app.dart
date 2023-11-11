@@ -6,9 +6,13 @@ import 'features/task/presentation/tasks.dart';
 import 'features/pet/presentation/customization.dart';
 import 'features/login/presentation/login.dart';
 import 'features/pedometer/presentation/pedometer.dart';
+import 'features/user/data/user_database.dart';
+import 'features/user/data/user_provider.dart';
+import 'features/user/domain/user.dart';
 import 'features/user/presentation/settings_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'features/user/data/theme_provider.dart';
+import 'init_database.dart';
 
 class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -26,6 +30,7 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    rewriteFirebase(ref);
     final theme = ref.watch(themeProvider);
 
     return MaterialApp(

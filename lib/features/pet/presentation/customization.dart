@@ -1,20 +1,34 @@
-import 'package:exercise_companion/features/user/domain/user_db.dart';
+// import 'package:exercise_companion/features/user/domain/user_db.dart';
+import 'package:exercise_companion/features/accessory/domain/accessory_collection.dart';
+import 'package:exercise_companion/features/agc_loading.dart';
 import 'package:flutter/material.dart';
-import '../../accessory/domain/accessory_db.dart';
+import '../../accessory/domain/accessory.dart';
+// import '../../accessory/domain/accessory_db.dart';
+import '../../agc_error.dart';
+import '../../all_data_provider.dart';
 import '../../generic/presentation/app_bar.dart';
 import '../../generic/presentation/bottom_bar.dart';
 import '../../accessory/presentation/accessory_card.dart';
-import 'pet.dart';
+import '../../user/domain/user_collection.dart';
+import 'pet_img.dart';
 import 'dart:math';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../data/pet_customization_provider.dart';
-import '../../user/data/user_db_provider.dart';
+import '../../user/data/user_provider.dart';
 
 class CustomizationPage extends ConsumerWidget {
   const CustomizationPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final AsyncValue<AllData> asyncAllData = ref.watch(allDataProvider);
+    return asyncAllData.when(
+        data: (allData) => _build(context, ref, allData),
+        loading: () => const AGCLoading(),
+        error: (error, st) => AGCError(error.toString(), st.toString()));
+  }
+
+  Widget _build(BuildContext context, WidgetRef ref, AllData allData) {
     //Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
 
     return Scaffold(
@@ -40,18 +54,22 @@ class CustomizationPage extends ConsumerWidget {
         ]),*/
         body: Stack(children: [
           ref.watch(customizePetProvider),
-          accessoryContainer(context, ref)
+          accessoryContainer(context, allData)
         ]),
         extendBodyBehindAppBar: true,
         resizeToAvoidBottomInset: false,
         bottomNavigationBar: BaseBottomNavigationBar());
   }
 
-  Widget accessoryContainer(BuildContext context, WidgetRef ref) {
-    int currentUserID = ref.read(currentUserIDProvider);
-    final userDB = ref.read(userDBProvider);
+  Widget accessoryContainer(BuildContext context, AllData allData) {
+    // int currentUserID = ref.read(currentUserIDProvider);
+    // final userDB = ref.read(userDBProvider);
+    int currentUserID = allData.currentUserID;
+    UserCollection userDB = UserCollection(allData.users);
+    AccessoryCollection accessoryDB = AccessoryCollection(allData.accessories);
 
-    List<AccessoryData> accesssories = userDB.getAccessories(currentUserID);
+    List<Accessory> accesssories =
+        userDB.getAccessories(currentUserID, accessoryDB);
 
     return Column(children: [
       Padding(
