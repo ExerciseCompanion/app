@@ -1,3 +1,6 @@
+import 'package:exercise_companion/features/accessory/domain/accessory_collection.dart';
+import 'package:exercise_companion/features/pet/domain/pet_collection.dart';
+import 'package:exercise_companion/features/pet/domain/user_pets_collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -36,7 +39,12 @@ class HomePetNotifier extends StateNotifier<PetImg> {
 
   void refresh() {
     UserCollection userDB = UserCollection(allData.users);
-    Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
+    UserPetCollection userPetDB = UserPetCollection(allData.userPets);
+    AccessoryCollection accessoryDB = AccessoryCollection(allData.accessories);
+    PetCollection petDB = PetCollection(allData.pets);
+
+    Map<String, String> assets =
+        userDB.getMainPetAsset(currentUserID, userPetDB, accessoryDB, petDB);
     state = PetImg(
         background: assets["background"] ?? "",
         pet: assets["pet"] ?? "",

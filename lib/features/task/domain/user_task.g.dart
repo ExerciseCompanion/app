@@ -9,7 +9,7 @@ part of 'user_task.dart';
 _$UserTaskImpl _$$UserTaskImplFromJson(Map<String, dynamic> json) =>
     _$UserTaskImpl(
       id: json['id'] as int,
-      UserTaskID: json['UserTaskID'] as int,
+      userID: json['userID'] as int,
       title: json['title'] as String,
       description: json['description'] as String,
       reward: json['reward'] as int,
@@ -19,7 +19,7 @@ _$UserTaskImpl _$$UserTaskImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$UserTaskImplToJson(_$UserTaskImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'UserTaskID': instance.UserTaskID,
+      'userID': instance.userID,
       'title': instance.title,
       'description': instance.description,
       'reward': instance.reward,

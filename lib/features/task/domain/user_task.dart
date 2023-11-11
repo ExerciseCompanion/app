@@ -7,7 +7,7 @@ part 'user_task.g.dart';
 class UserTask with _$UserTask {
   const factory UserTask({
     required int id,
-    required int UserTaskID,
+    required int userID,
     required String title,
     required String description,
     required int reward,

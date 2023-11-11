@@ -1,6 +1,6 @@
 import 'package:exercise_companion/features/store/domain/store_db.dart.delete';
-import 'package:exercise_companion/features/user/domain/user_db.dart';
-import 'package:exercise_companion/features/pet/domain/user_pets_db.dart';
+// import 'package:exercise_companion/features/user/domain/user_db.dart';
+// import 'package:exercise_companion/features/pet/domain/user_pets_db.dart';
 import 'package:exercise_companion/features/store/data/store_extended_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';

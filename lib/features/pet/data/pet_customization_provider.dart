@@ -4,8 +4,11 @@ import 'package:exercise_companion/features/user/data/user_database.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import '../../accessory/domain/accessory_collection.dart';
 import '../../all_data_provider.dart';
 import '../../user/domain/user_collection.dart';
+import '../domain/pet_collection.dart';
+import '../domain/user_pets_collection.dart';
 import '../presentation/pet_img.dart';
 import 'user_pet_provider.dart';
 import '../../user/data/user_provider.dart';
@@ -46,10 +49,14 @@ class CustomizePetNotifier extends StateNotifier<PetImg> {
   void setAccessory(int accessoryID) {
     print("Selected accessory ${accessoryID}");
     UserCollection userDB = UserCollection(allData.users);
+    UserPetCollection userPetDB = UserPetCollection(allData.userPets);
+    AccessoryCollection accessoryDB = AccessoryCollection(allData.accessories);
+    PetCollection petDB = PetCollection(allData.pets);
 
-    userDB.setMainPetAccessory(currentUserID, accessoryID);
+    userDB.setMainPetAccessory(currentUserID, accessoryID, userPetDB);
 
-    Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
+    Map<String, String> assets =
+        userDB.getMainPetAsset(currentUserID, userPetDB, accessoryDB, petDB);
     state = PetImg(
         background: assets["background"] ?? "",
         pet: assets["pet"] ?? "",
@@ -58,8 +65,12 @@ class CustomizePetNotifier extends StateNotifier<PetImg> {
 
   void refresh() {
     UserCollection userDB = UserCollection(allData.users);
+    UserPetCollection userPetDB = UserPetCollection(allData.userPets);
+    AccessoryCollection accessoryDB = AccessoryCollection(allData.accessories);
+    PetCollection petDB = PetCollection(allData.pets);
 
-    Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
+    Map<String, String> assets =
+        userDB.getMainPetAsset(currentUserID, userPetDB, accessoryDB, petDB);
     state = PetImg(
         background: assets["background"] ?? "",
         pet: assets["pet"] ?? "",

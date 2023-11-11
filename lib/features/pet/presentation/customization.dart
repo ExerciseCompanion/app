@@ -1,6 +1,7 @@
-import 'package:exercise_companion/features/user/domain/user_db.dart';
+// import 'package:exercise_companion/features/user/domain/user_db.dart';
 import 'package:flutter/material.dart';
-import '../../accessory/domain/accessory_db.dart';
+import '../../accessory/domain/accessory.dart';
+// import '../../accessory/domain/accessory_db.dart';
 import '../../generic/presentation/app_bar.dart';
 import '../../generic/presentation/bottom_bar.dart';
 import '../../accessory/presentation/accessory_card.dart';
@@ -51,7 +52,7 @@ class CustomizationPage extends ConsumerWidget {
     int currentUserID = ref.read(currentUserIDProvider);
     final userDB = ref.read(userDBProvider);
 
-    List<AccessoryData> accesssories = userDB.getAccessories(currentUserID);
+    List<Accessory> accesssories = userDB.getAccessories(currentUserID);
 
     return Column(children: [
       Padding(

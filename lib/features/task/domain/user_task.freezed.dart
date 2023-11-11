@@ -21,7 +21,7 @@ UserTask _$UserTaskFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserTask {
   int get id => throw _privateConstructorUsedError;
-  int get UserTaskID => throw _privateConstructorUsedError;
+  int get userID => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   int get reward => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ abstract class $UserTaskCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      int UserTaskID,
+      int userID,
       String title,
       String description,
       int reward,
@@ -61,7 +61,7 @@ class _$UserTaskCopyWithImpl<$Res, $Val extends UserTask>
   @override
   $Res call({
     Object? id = null,
-    Object? UserTaskID = null,
+    Object? userID = null,
     Object? title = null,
     Object? description = null,
     Object? reward = null,
@@ -72,9 +72,9 @@ class _$UserTaskCopyWithImpl<$Res, $Val extends UserTask>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      UserTaskID: null == UserTaskID
-          ? _value.UserTaskID
-          : UserTaskID // ignore: cast_nullable_to_non_nullable
+      userID: null == userID
+          ? _value.userID
+          : userID // ignore: cast_nullable_to_non_nullable
               as int,
       title: null == title
           ? _value.title
@@ -106,7 +106,7 @@ abstract class _$$UserTaskImplCopyWith<$Res>
   @useResult
   $Res call(
       {int id,
-      int UserTaskID,
+      int userID,
       String title,
       String description,
       int reward,
@@ -125,7 +125,7 @@ class __$$UserTaskImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? UserTaskID = null,
+    Object? userID = null,
     Object? title = null,
     Object? description = null,
     Object? reward = null,
@@ -136,9 +136,9 @@ class __$$UserTaskImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      UserTaskID: null == UserTaskID
-          ? _value.UserTaskID
-          : UserTaskID // ignore: cast_nullable_to_non_nullable
+      userID: null == userID
+          ? _value.userID
+          : userID // ignore: cast_nullable_to_non_nullable
               as int,
       title: null == title
           ? _value.title
@@ -165,7 +165,7 @@ class __$$UserTaskImplCopyWithImpl<$Res>
 class _$UserTaskImpl extends _UserTask {
   const _$UserTaskImpl(
       {required this.id,
-      required this.UserTaskID,
+      required this.userID,
       required this.title,
       required this.description,
       required this.reward,
@@ -178,7 +178,7 @@ class _$UserTaskImpl extends _UserTask {
   @override
   final int id;
   @override
-  final int UserTaskID;
+  final int userID;
   @override
   final String title;
   @override
@@ -190,7 +190,7 @@ class _$UserTaskImpl extends _UserTask {
 
   @override
   String toString() {
-    return 'UserTask(id: $id, UserTaskID: $UserTaskID, title: $title, description: $description, reward: $reward, status: $status)';
+    return 'UserTask(id: $id, userID: $userID, title: $title, description: $description, reward: $reward, status: $status)';
   }
 
   @override
@@ -199,8 +199,7 @@ class _$UserTaskImpl extends _UserTask {
         (other.runtimeType == runtimeType &&
             other is _$UserTaskImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.UserTaskID, UserTaskID) ||
-                other.UserTaskID == UserTaskID) &&
+            (identical(other.userID, userID) || other.userID == userID) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -210,8 +209,8 @@ class _$UserTaskImpl extends _UserTask {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, UserTaskID, title, description, reward, status);
+  int get hashCode =>
+      Object.hash(runtimeType, id, userID, title, description, reward, status);
 
   @JsonKey(ignore: true)
   @override
@@ -230,7 +229,7 @@ class _$UserTaskImpl extends _UserTask {
 abstract class _UserTask extends UserTask {
   const factory _UserTask(
       {required final int id,
-      required final int UserTaskID,
+      required final int userID,
       required final String title,
       required final String description,
       required final int reward,
@@ -243,7 +242,7 @@ abstract class _UserTask extends UserTask {
   @override
   int get id;
   @override
-  int get UserTaskID;
+  int get userID;
   @override
   String get title;
   @override
