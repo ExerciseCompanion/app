@@ -7,10 +7,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'user_step.dart';
 
-class UserStepsCollection {
+class UserStepCollection {
   //UserStepsDB(this.ref);
   //final ProviderRef<UserStepsDB> ref;
-  UserStepsCollection(userSteps) : _userSteps = userSteps;
+  UserStepCollection(userSteps) : _userSteps = userSteps;
   final List<UserStep> _userSteps;
 
   /*UserData getUser(String userID) {

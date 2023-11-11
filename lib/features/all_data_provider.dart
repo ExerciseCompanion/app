@@ -4,15 +4,22 @@ import 'accessory/data/accessory_provider.dart';
 //import 'chapter/data/chapter_provider.dart';
 //import 'garden/data/garden_provider.dart';
 //import 'news/data/news_provider.dart';
+import 'accessory/domain/accessory_collection.dart';
 import 'pet/data/pet_provider.dart';
 import 'pet/data/user_pet_provider.dart';
+import 'pet/domain/pet_collection.dart';
+import 'pet/domain/user_pets_collection.dart';
 import 'store/data/store_provider.dart';
+import 'store/domain/store_collection.dart';
 import 'task/data/user_task_provider.dart';
 import 'user/data/user_provider.dart';
+import 'user/domain/user_step_collection.dart';
+import 'task/domain/user_task_collection.dart';
 //import 'user/data/user_providers.dart';
 
 import 'user/data/user_step_provider.dart';
 import 'user/domain/user.dart';
+import 'user/domain/user_collection.dart';
 import 'user/domain/user_step.dart';
 import 'pet/domain/pet.dart';
 import 'pet/domain/user_pet.dart';
@@ -35,24 +42,33 @@ class AllData {
       required this.accessories,
       required this.currentUserID});
 
-  final List<User> users;
-  final List<UserStep> userSteps;
-  final List<UserTask> userTasks;
-  final List<UserPet> userPets;
-  final List<Pet> pets;
-  final List<Store> stores;
-  final List<Accessory> accessories;
+  final UserCollection users;
+  final UserStepCollection userSteps;
+  final UserTaskCollection userTasks;
+  final UserPetCollection userPets;
+  final PetCollection pets;
+  final StoreCollection stores;
+  final AccessoryCollection accessories;
   final int currentUserID;
+
+  // final List<User> users;
+  // final List<UserStep> userSteps;
+  // final List<UserTask> userTasks;
+  // final List<UserPet> userPets;
+  // final List<Pet> pets;
+  // final List<Store> stores;
+  // final List<Accessory> accessories;
+  // final int currentUserID;
 
   static AllData empty() {
     return AllData(
-        users: List.empty(),
-        userSteps: List.empty(),
-        userTasks: List.empty(),
-        userPets: List.empty(),
-        pets: List.empty(),
-        stores: List.empty(),
-        accessories: List.empty(),
+        users: UserCollection(List.empty()),
+        userSteps: UserStepCollection(List.empty()),
+        userTasks: UserTaskCollection(List.empty()),
+        userPets: UserPetCollection(List.empty()),
+        pets: PetCollection(List.empty()),
+        stores: StoreCollection(List.empty()),
+        accessories: AccessoryCollection(List.empty()),
         currentUserID: 0);
   }
 }
@@ -68,13 +84,13 @@ final allDataProvider = FutureProvider((ref) async {
 
   final currentUserID = ref.watch(currentUserIDProvider);
   return AllData(
-      users: await users,
-      userSteps: await userSteps,
-      userTasks: await userTasks,
-      userPets: await userPets,
-      pets: await pets,
-      stores: await stores,
-      accessories: await accessories,
+      users: UserCollection(await users),
+      userSteps: UserStepCollection(await userSteps),
+      userTasks: UserTaskCollection(await userTasks),
+      userPets: UserPetCollection(await userPets),
+      pets: PetCollection(await pets),
+      stores: StoreCollection(await stores),
+      accessories: AccessoryCollection(await accessories),
       currentUserID: currentUserID);
 });
 

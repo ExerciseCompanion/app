@@ -2,29 +2,49 @@
 // import 'package:exercise_companion/features/user/domain/user_db.dart';
 // import 'package:exercise_companion/features/pet/domain/user_pets_db.dart';
 // import 'package:exercise_companion/features/user/domain/user_steps_db.dart';
+import 'package:exercise_companion/features/pet/domain/pet_collection.dart';
+import 'package:exercise_companion/features/pet/domain/user_pets_collection.dart';
+import 'package:exercise_companion/features/user/domain/user_step_collection.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import '../../agc_error.dart';
+import '../../agc_loading.dart';
+import '../../all_data_provider.dart';
 import '../../generic/presentation/app_bar.dart';
 import '../../generic/presentation/bottom_bar.dart';
 import '../../generic/presentation/line_chart.dart';
 import '../../generic/presentation/aspect_box.dart';
 import '../../generic/presentation/bar.dart';
+import '../../pet/domain/user_pet.dart';
 import '../../pet/presentation/pet_img.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../pet/data/pet_home_provider.dart';
 import '../../pet/data/user_pet_provider.dart';
 import '../../pet/data/pet_provider.dart';
 import '../../user/data/user_provider.dart';
+import '../../user/domain/user_collection.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final AsyncValue<AllData> asyncAllData = ref.watch(allDataProvider);
+    return asyncAllData.when(
+        data: (allData) => _build(context, ref, allData),
+        loading: () => const AGCLoading(),
+        error: (error, st) => AGCError(error.toString(), st.toString()));
+  }
+
+  Widget _build(BuildContext context, WidgetRef ref, AllData allData) {
     //Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
-    int currentUserID = ref.read(currentUserIDProvider);
-    final userDB = ref.read(userDBProvider);
-    final userStepsDB = ref.read(userStepsDBProvider);
+    // int currentUserID = ref.read(currentUserIDProvider);
+    // final userDB = ref.read(userDBProvider);
+    // final userStepsDB = ref.read(userStepsDBProvider);
+
+    int currentUserID = allData.currentUserID;
+    UserCollection userDB = UserCollection(allData.users);
+    UserStepCollection userStepsDB = UserStepCollection(allData.userPets);
 
     return Scaffold(
         /*appBar: BaseAppBar(
@@ -32,7 +52,7 @@ class HomePage extends ConsumerWidget {
           title: "Home",
         ),*/
         body: SlidingUpPanel(
-          panel: _panel(context, ref),
+          panel: _panel(context, allData),
           collapsed: _collapsedPanel(
               context, userStepsDB.getTodaysSteps(currentUserID)),
           body: ref.read(homePetProvider),
@@ -59,13 +79,19 @@ class HomePage extends ConsumerWidget {
     );
   }
 
-  Widget _panel(BuildContext context, WidgetRef ref) {
-    int currentUserID = ref.read(currentUserIDProvider);
-    final userDB = ref.read(userDBProvider);
-    final userPetDB = ref.read(userPetDBProvider);
-    final petDB = ref.read(petDBProvider);
+  Widget _panel(BuildContext context, AllData allData) {
+    // int currentUserID = ref.read(currentUserIDProvider);
+    // final userDB = ref.read(userDBProvider);
+    // final userPetDB = ref.read(userPetDBProvider);
+    // final petDB = ref.read(petDBProvider);
+
+    int currentUserID = allData.currentUserID;
+    UserCollection userDB = UserCollection(allData.users);
+    PetCollection petDB = PetCollection(allData.pets);
+    UserPetCollection userPetDB = UserPetCollection(allData.userPets);
+
     int mainPetID = userDB.getUser(currentUserID).mainPetID;
-    UserPetData userPet = userPetDB.getPet(mainPetID);
+    UserPet userPet = userPetDB.getPet(mainPetID);
 
     return Container(
         decoration: BoxDecoration(
@@ -93,7 +119,7 @@ class HomePage extends ConsumerWidget {
               color: Color.fromARGB(255, 0, 208, 10)),
           const Padding(padding: EdgeInsets.all(10)),
           const Text("Steps"),
-          LineChartSample2(ref: ref),
+          LineChartSample2(allData: allData),
           ElevatedButton(
               style: ElevatedButton.styleFrom(
                   textStyle: const TextStyle(fontSize: 20)),

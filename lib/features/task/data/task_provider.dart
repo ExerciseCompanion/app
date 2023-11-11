@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../all_data_provider.dart';
 import '../../user/domain/user_collection.dart';
-import '../domain/user_task_collections.dart';
+import '../domain/user_task_collection.dart';
 import 'user_task_provider.dart';
 import '../../user/data/user_provider.dart';
 
