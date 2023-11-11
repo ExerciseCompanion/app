@@ -4,6 +4,8 @@ import 'package:exercise_companion/features/all_data_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import '../../accessory/domain/accessory_collection.dart';
+import '../../user/data/user_database.dart';
+import '../../user/domain/user.dart';
 import '../../user/domain/user_collection.dart';
 import '../domain/pet_collection.dart';
 import '../domain/user_pets_collection.dart';
@@ -22,9 +24,10 @@ final selectPetProvider =
   // final  AsyncValue<User> userPetDB = ref.read(userPetDatabaseProvider);
   final AsyncValue<AllData> asyncAllData = ref.watch(allDataProvider);
   return asyncAllData.when(
-      data: (allData) => SelectPetNotifier(currentUserID, allData),
-      loading: () => SelectPetNotifier(currentUserID, AllData.empty()),
-      error: (error, st) => SelectPetNotifier(currentUserID, AllData.empty()));
+      data: (allData) => SelectPetNotifier(currentUserID, ref, allData),
+      loading: () => SelectPetNotifier(currentUserID, ref, AllData.empty()),
+      error: (error, st) =>
+          SelectPetNotifier(currentUserID, ref, AllData.empty()));
 
   //return SelectPetNotifier(currentUserID, asyncAllData); //, userPetDB);
 });
@@ -32,10 +35,12 @@ final selectPetProvider =
 class SelectPetNotifier extends StateNotifier<List<Widget>> {
   int currentUserID;
   AllData allData;
+  StateNotifierProviderRef ref;
   //UserDatabase asyncAllData;
   //UserPetDatabase userPetDB;
 
-  SelectPetNotifier(this.currentUserID, this.allData) //, this.userPetDB)
+  SelectPetNotifier(
+      this.currentUserID, this.ref, this.allData) //, this.userPetDB)
       : super([]) {
     refresh();
   }
@@ -48,7 +53,21 @@ class SelectPetNotifier extends StateNotifier<List<Widget>> {
     PetCollection petDB = PetCollection(allData.pets);
     AccessoryCollection accessoryDB = AccessoryCollection(allData.accessories);
 
-    userDB.setMainPet(currentUserID, userPetId);
+    //userDB.setMainPet(currentUserID, userPetId);
+    User user = userDB.getUser(currentUserID);
+    UserDatabase userDatabase = ref.watch(userDatabaseProvider);
+    userDatabase.setUser(User(
+      id: user.id,
+      username: user.username,
+      email: user.email,
+      currency: user.currency,
+      mainPetID: userPetId,
+      backdropAsset: user.backdropAsset,
+      purchasedItemsIDs: user.purchasedItemsIDs,
+      petInventoryIDs: user.petInventoryIDs,
+      accessoryInventoryIDs: user.accessoryInventoryIDs,
+    ));
+
     state = userPetDB.getPetWidgets(currentUserID,
         userDB.getUser(currentUserID).mainPetID, petDB, accessoryDB);
   }

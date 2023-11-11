@@ -32,7 +32,7 @@ class UserCollection {
   }
 
   void addPurchasedItem(int userID, int itemID, int productId, int itemType,
-      UserPetCollection userPetDB) {
+      UserPetCollection userPetDB, PetCollection petDB) {
     //final userPetDB = ref.watch(userPetDBProvider);
 
     User user = getUser(userID);
@@ -43,7 +43,7 @@ class UserCollection {
     } else if (itemType == 1) {
       // pet
       //user.petInventoryIDs.add(productId);
-      userPetDB.addPet(userID, productId);
+      userPetDB.addPet(userID, productId, petDB);
     }
   }
 
@@ -92,18 +92,18 @@ class UserCollection {
     return assets;
   }
 
-  void setMainPetAccessory(
-      int userID, int acessoryID, UserPetCollection userPetDB) {
-    // final userPetDB = ref.read(userPetDBProvider);
+  // void setMainPetAccessory(
+  //     int userID, int acessoryID, UserPetCollection userPetDB) {
+  //   // final userPetDB = ref.read(userPetDBProvider);
 
-    int mainPetId = getUser(userID).mainPetID;
-    userPetDB.getPet(mainPetId).accessoryID = acessoryID;
-  }
+  //   int mainPetId = getUser(userID).mainPetID;
+  //   userPetDB.getPet(mainPetId).accessoryID = acessoryID;
+  // }
 
-  void setMainPet(int userId, int mainPetId) {
-    //getUser(userId).mainPetID = mainPetId;
-    _users.firstWhere((element) => element.id == userId).mainPetID = mainPetId;
-  }
+  // void setMainPet(int userId, int mainPetId) {
+  //   //getUser(userId).mainPetID = mainPetId;
+  //   _users.firstWhere((element) => element.id == userId).mainPetID = mainPetId;
+  // }
 
   bool checkUserEmail(String email) {
     //_users.firstWhere((element) => element.email == email, orElse: () => -1);
