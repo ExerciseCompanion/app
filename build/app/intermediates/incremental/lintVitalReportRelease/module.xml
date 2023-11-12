@@ -1,11 +1,11 @@
 <lint-module
     format="1"
-    dir="/root/projects-synced/school/MAD/final/exercise_companion/android/app"
+    dir="/root/projects-synced/school/MAD/final/app/android/app"
     name=":app"
     type="APP"
     maven="android:app:"
     gradle="7.3.0"
-    buildFolder="/root/projects-synced/school/MAD/final/exercise_companion/build/app"
+    buildFolder="/root/projects-synced/school/MAD/final/app/build/app"
     bootClassPath="/root/Android/Sdk/platforms/android-33/android.jar:/root/Android/Sdk/build-tools/30.0.3/core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-33">

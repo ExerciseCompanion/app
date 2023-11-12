@@ -31,21 +31,21 @@ class UserCollection {
     return _users.firstWhere((userData) => userData.email == email);
   }
 
-  void addPurchasedItem(int userID, int itemID, int productId, int itemType,
-      UserPetCollection userPetDB, PetCollection petDB) {
-    //final userPetDB = ref.watch(userPetDBProvider);
+  // void addPurchasedItem(int userID, int itemID, int productId, int itemType,
+  //     UserPetCollection userPetDB, PetCollection petDB) {
+  //   //final userPetDB = ref.watch(userPetDBProvider);
 
-    User user = getUser(userID);
-    user.purchasedItemsIDs.add(itemID);
-    if (itemType == 0) {
-      // accessory
-      user.accessoryInventoryIDs.add(productId);
-    } else if (itemType == 1) {
-      // pet
-      //user.petInventoryIDs.add(productId);
-      userPetDB.addPet(userID, productId, petDB);
-    }
-  }
+  //   User user = getUser(userID);
+  //   user.purchasedItemsIDs.add(itemID);
+  //   if (itemType == 0) {
+  //     // accessory
+  //     user.accessoryInventoryIDs.add(productId);
+  //   } else if (itemType == 1) {
+  //     // pet
+  //     //user.petInventoryIDs.add(productId);
+  //     userPetDB.addPet(userID, productId, petDB);
+  //   }
+  // }
 
   List<Store> getUnPurcahsedItems(int userID, StoreCollection storeDB) {
     //final storeDB = ref.watch(storeDBProvider);

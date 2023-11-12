@@ -1,4 +1,10 @@
-#Sat Oct 21 11:35:28 HST 2023
-base.0=/root/projects-synced/school/MAD/final/exercise_companion/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Sun Nov 12 10:25:52 HST 2023
+base.0=/root/projects-synced/school/MAD/final/app/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+base.1=/root/projects-synced/school/MAD/final/app/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
+base.2=/root/projects-synced/school/MAD/final/app/build/app/intermediates/dex/debug/mergeDexDebug/classes3.dex
 path.0=classes.dex
+path.1=classes2.dex
+path.2=classes3.dex
 renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.exercise_companion.app-mergeDebugResources-9:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.exercise_companion.app-mergeDebugResources-13:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/root/projects-synced/school/MAD/final/exercise_companion/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/root/projects-synced/school/MAD/final/app/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

@@ -19,23 +19,27 @@ class UserPetCollection {
   UserPetCollection(userPets) : _userPets = userPets;
   final List<UserPet> _userPets;
 
-  void addPet(int userID, int petID, PetCollection petDB) {
-    int maxID = _userPets
-        .reduce((current, next) => current.id > next.id ? current : next)
-        .id;
-    // PetDB petDB = ref.watch(petDBProvider);
-    Pet pet = petDB.getPet(petID);
-    UserPet petData = UserPet(
-        id: maxID += 1,
-        userID: userID,
-        petID: petID,
-        accessoryID: 0,
-        health: pet.maxHealth,
-        hunger: pet.maxHunger,
-        exp: pet.maxExp,
-        name: "Pet");
-    _userPets.add(petData);
-    //TODO: cjange hp to pet's deafult
+  // void addPet(int userID, int petID, PetCollection petDB) {
+  //   int maxID = _userPets
+  //       .reduce((current, next) => current.id > next.id ? current : next)
+  //       .id;
+  //   // PetDB petDB = ref.watch(petDBProvider);
+  //   Pet pet = petDB.getPet(petID);
+  //   UserPet petData = UserPet(
+  //       id: maxID += 1,
+  //       userID: userID,
+  //       petID: petID,
+  //       accessoryID: 0,
+  //       health: pet.maxHealth,
+  //       hunger: pet.maxHunger,
+  //       exp: pet.maxExp,
+  //       name: "Pet");
+  //   _userPets.add(petData);
+  //   //TODO: cjange hp to pet's deafult
+  // }
+
+  List<UserPet> all() {
+    return _userPets.toList();
   }
 
   UserPet getPet(int petID) {

@@ -9,6 +9,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../all_data_provider.dart';
+import '../../pet/data/user_pet_database.dart';
+import '../../pet/data/user_pet_provider.dart';
+import '../../pet/domain/pet.dart';
+import '../../pet/domain/user_pet.dart';
 import '../../pet/domain/user_pets_collection.dart';
 import '../../user/domain/user.dart';
 import '../../user/domain/user_collection.dart';
@@ -74,8 +78,39 @@ class StoreNotifier extends StateNotifier<List<Widget>> {
     UserPetCollection userPetDB = UserPetCollection(allData.userPets);
 
     if (userDB.getUser(currentUserID).currency >= cost) {
+      //userDB.addPurchasedItem(currentUserID, itemID, productId, itemType, userPetDB, petDB);
+
       User user = userDB.getUser(currentUserID);
       UserDatabase userDatabase = ref.watch(userDatabaseProvider);
+
+      List<int> newPurchasedItemIDs = [...user.purchasedItemsIDs];
+      List<int> newAccessoryInventoryIDs = [...user.accessoryInventoryIDs];
+      //List<int> newPurchasedItemIDs = [...user.purchasedItemsIDs];
+      newPurchasedItemIDs.add(itemID);
+
+      if (itemType == 0) {
+        newAccessoryInventoryIDs.add(productId);
+      } else if (itemType == 1) {
+        //UserPet userPet = userPetDB.getPet(currentUserID);
+        UserPetDatabase userPetDatabase = ref.watch(userPetDatabaseProvider);
+
+        int maxID = userPetDB
+            .all()
+            .reduce((current, next) => current.id > next.id ? current : next)
+            .id;
+        // PetDB petDB = ref.watch(petDBProvider);
+        Pet pet = petDB.getPet(productId);
+        userPetDatabase.setUserPet(UserPet(
+            id: maxID += 1,
+            userID: currentUserID,
+            petID: productId,
+            accessoryID: 0,
+            health: pet.maxHealth,
+            hunger: pet.maxHunger,
+            exp: pet.maxExp,
+            name: "Pet"));
+      }
+
       userDatabase.setUser(User(
         id: user.id,
         username: user.username,
@@ -83,14 +118,12 @@ class StoreNotifier extends StateNotifier<List<Widget>> {
         currency: user.currency - cost,
         mainPetID: user.mainPetID,
         backdropAsset: user.backdropAsset,
-        purchasedItemsIDs: user.purchasedItemsIDs,
+        purchasedItemsIDs: newPurchasedItemIDs,
         petInventoryIDs: user.petInventoryIDs,
-        accessoryInventoryIDs: user.accessoryInventoryIDs,
+        accessoryInventoryIDs: newAccessoryInventoryIDs,
       ));
 
       //userDB.getUser(currentUserID).currency -= cost;
-      userDB.addPurchasedItem(
-          currentUserID, itemID, productId, itemType, userPetDB, petDB);
     } else {
       print("Insufficent Funds");
     }
