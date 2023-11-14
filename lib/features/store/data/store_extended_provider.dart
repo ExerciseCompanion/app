@@ -72,7 +72,8 @@ class StoreNotifier extends StateNotifier<List<Widget>> {
   //   refresh();
   // }
 
-  void purchase(int itemID, int productId, int itemType, int cost) {
+  void purchase(
+      int itemID, int productId, int itemType, int cost, BuildContext context) {
     UserCollection userDB = UserCollection(allData.users);
     PetCollection petDB = PetCollection(allData.pets);
     UserPetCollection userPetDB = UserPetCollection(allData.userPets);
@@ -126,6 +127,8 @@ class StoreNotifier extends StateNotifier<List<Widget>> {
       //userDB.getUser(currentUserID).currency -= cost;
     } else {
       print("Insufficent Funds");
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text("Insufficent Funds")));
     }
     refresh();
   }

@@ -1,4 +1,6 @@
 // import 'package:exercise_companion/features/store/domain/store_db.dart.delete';
+import 'dart:js';
+
 import 'package:exercise_companion/features/pet/data/pet_customization_provider.dart';
 import 'package:exercise_companion/features/pet/data/pet_select_provider.dart';
 import 'package:exercise_companion/features/store/data/store_extended_provider.dart';
@@ -40,19 +42,22 @@ class ShopViewWidget extends ConsumerWidget {
     }
   }*/
 
-  void onBuy(WidgetRef ref, int itemID, int productID, int itemType, int cost) {
-    ref.read(storeProvider.notifier).purchase(itemID, productID, itemID, cost);
+  void onBuy(BuildContext context, WidgetRef ref, int itemID, int productID,
+      int itemType, int cost) {
+    ref
+        .read(storeProvider.notifier)
+        .purchase(itemID, productID, itemID, cost, context);
     ref.read(storeProvider.notifier).refresh();
     ref.read(selectPetProvider.notifier).refresh();
     ref.read(customizePetProvider.notifier).refresh();
     //ref.read(currencyProvider.notifier).refresh();
   }
 
-  Widget buyButton(WidgetRef ref) {
+  Widget buyButton(BuildContext context, WidgetRef ref) {
     return ElevatedButton(
         style:
             ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20)),
-        onPressed: () => {onBuy(ref, itemID, productID, type, cost)},
+        onPressed: () => {onBuy(context, ref, itemID, productID, type, cost)},
         child: const Text('Buy'));
   }
 
@@ -108,7 +113,8 @@ class ShopViewWidget extends ConsumerWidget {
                       bottom: 10,
                       left: 10,
                       right: 10,
-                      child: buyButton(ref)) //getSelectedWidget(selected))
+                      child: buyButton(
+                          context, ref)) //getSelectedWidget(selected))
                 ] //Center(child: Text("$index")),
                     ))));
   }

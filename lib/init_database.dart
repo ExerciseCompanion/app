@@ -27,8 +27,8 @@ void rewriteFirebase(WidgetRef ref) {
   UserDatabase userDatabase = ref.watch(userDatabaseProvider);
   userDatabase.setUser(const User(
       id: 0,
-      username: "@cleeuh",
-      email: "clee48@hawaii.edu",
+      username: "@example",
+      email: "example@example.edu",
       currency: 0,
       mainPetID: 0,
       backdropAsset: "images/backgrounds/test.jpg",
