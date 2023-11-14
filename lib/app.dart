@@ -34,7 +34,7 @@ class MyApp extends ConsumerWidget {
     final theme = ref.watch(themeProvider);
 
     return MaterialApp(
-      title: 'Shrine',
+      title: 'Excercise Companion',
       initialRoute: '/',
       routes: {
         '/ptest': (BuildContext context) => PedoMeterPage(),
