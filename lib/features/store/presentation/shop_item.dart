@@ -1,5 +1,5 @@
 // import 'package:exercise_companion/features/store/domain/store_db.dart.delete';
-import 'dart:js';
+// import 'dart:js';
 
 import 'package:exercise_companion/features/pet/data/pet_customization_provider.dart';
 import 'package:exercise_companion/features/pet/data/pet_select_provider.dart';

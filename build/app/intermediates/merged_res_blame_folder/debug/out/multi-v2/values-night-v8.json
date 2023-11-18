@@ -4,7 +4,7 @@
             "outputFile": "com.example.exercise_companion.app-mergeDebugResources-13:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/root/projects-synced/school/MAD/final/app/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/chris/projects-synced/school/MAD/final/app/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
