@@ -130,7 +130,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
     String text;
     int step = value.toInt();
-    if (step % 10 == 0) {
+    if (step % 1000 == 0) {
       text = "${step}";
     } else {
       return Container();

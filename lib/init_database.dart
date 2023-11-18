@@ -48,26 +48,28 @@ void rewriteFirebase(WidgetRef ref) {
 
   UserStepDatabase userStepDatabase = ref.watch(userStepDatabaseProvider);
   userStepDatabase.setUserStep(
-      const UserStep(id: 0, userID: 0, date: "10/24/2023", steps: 10));
+      const UserStep(id: 0, userID: 0, date: "11/20/2023", steps: 1000));
   userStepDatabase.setUserStep(
-      const UserStep(id: 1, userID: 0, date: "10/23/2023", steps: 5));
+      const UserStep(id: 1, userID: 0, date: "11/19/2023", steps: 500));
   userStepDatabase.setUserStep(
-      const UserStep(id: 2, userID: 0, date: "10/22/2023", steps: 20));
+      const UserStep(id: 2, userID: 0, date: "11/18/2023", steps: 3000));
   userStepDatabase.setUserStep(
-      const UserStep(id: 3, userID: 0, date: "10/21/2023", steps: 21));
+      const UserStep(id: 3, userID: 0, date: "11/17/2023", steps: 2100));
   userStepDatabase.setUserStep(
-      const UserStep(id: 4, userID: 0, date: "10/20/2023", steps: 22));
+      const UserStep(id: 4, userID: 0, date: "11/16/2023", steps: 2200));
   userStepDatabase.setUserStep(
-      const UserStep(id: 5, userID: 0, date: "10/19/2023", steps: 23));
+      const UserStep(id: 5, userID: 0, date: "11/15/2023", steps: 2300));
   userStepDatabase.setUserStep(
-      const UserStep(id: 6, userID: 0, date: "10/18/2023", steps: 24));
+      const UserStep(id: 6, userID: 0, date: "11/14/2023", steps: 1900));
+  userStepDatabase.setUserStep(
+      const UserStep(id: 7, userID: 0, date: "11/13/2023", steps: 1700));
 
   UserTaskDatabase userTaskDatabase = ref.watch(userTaskDatabaseProvider);
   userTaskDatabase.setUserTask(const UserTask(
       id: 0,
       userID: 0,
       title: "Step",
-      description: "Walk 200 Steps",
+      description: "Walk 20000 Steps",
       reward: 100,
       status: 0));
   userTaskDatabase.setUserTask(const UserTask(
@@ -93,7 +95,7 @@ void rewriteFirebase(WidgetRef ref) {
       accessoryID: 0,
       health: 100,
       hunger: 100,
-      exp: 100,
+      exp: 25,
       name: "Pet A"));
   userPetDatabase.setUserPet(const UserPet(
       id: 1,

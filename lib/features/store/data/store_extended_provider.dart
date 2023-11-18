@@ -125,6 +125,8 @@ class StoreNotifier extends StateNotifier<List<Widget>> {
       ));
 
       //userDB.getUser(currentUserID).currency -= cost;
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text("Purchase Successful")));
     } else {
       print("Insufficent Funds");
       ScaffoldMessenger.of(context)

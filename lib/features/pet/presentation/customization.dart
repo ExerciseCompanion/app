@@ -32,10 +32,10 @@ class CustomizationPage extends ConsumerWidget {
     //Map<String, String> assets = userDB.getMainPetAsset(currentUserID);
 
     return Scaffold(
-        appBar: BaseAppBar(
-          appBar: AppBar(),
-          title: "Wardrobe",
-        ),
+        // appBar: BaseAppBar(
+        //   appBar: AppBar(),
+        //   title: "Wardrobe",
+        // ),
         /*body: Column(children: [
           Container(
               decoration: const BoxDecoration(
@@ -56,7 +56,7 @@ class CustomizationPage extends ConsumerWidget {
           ref.watch(customizePetProvider),
           accessoryContainer(context, allData)
         ]),
-        extendBodyBehindAppBar: true,
+        // extendBodyBehindAppBar: true,
         resizeToAvoidBottomInset: false,
         bottomNavigationBar: BaseBottomNavigationBar());
   }
